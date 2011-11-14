@@ -1,6 +1,14 @@
 apply plugin: 'war'
-apply plugin: 'jetty'
-
+ 
 dependencies {
     compile project(':core')
+ 
+    compile "javax.validation:validation-api:1.0.0.GA",
+            "org.hibernate:hibernate-validator:4.0.2.GA"
+ 
+    runtime "javax.servlet:jstl:1.1.2",
+            "taglibs:standard:1.1.2",
+            "opensymphony:sitemesh:2.4.2"
+ 
+    providedCompile "javax.servlet:servlet-api:2.5"
 }
