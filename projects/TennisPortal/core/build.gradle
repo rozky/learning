@@ -1,0 +1,17 @@
+apply plugin: 'scala'
+
+dependencies {
+    // Libraries needed to run the scala tools
+    scalaTools 'org.scala-lang:scala-compiler:2.8.1'
+    scalaTools 'org.scala-lang:scala-library:2.8.1'
+
+    // Libraries needed for scala api
+    compile 'org.scala-lang:scala-library:2.8.1'
+}
+
+compileScala {
+    scalaCompileOptions.useCompileDaemon = true
+
+    // optionally specify host and port of the daemon:
+    scalaCompileOptions.daemonServer = "localhost:4243"
+}

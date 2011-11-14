@@ -4,6 +4,15 @@ dataSource {
     username = "sa"
     password = ""
 }
+
+couchdb {
+    host = "rozky.couchone.com"
+    port = 80
+    database = "pricemonitor"
+    username = ""
+    password = ""
+}
+
 hibernate {
     cache.use_second_level_cache = true
     cache.use_query_cache = true
