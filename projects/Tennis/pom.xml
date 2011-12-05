@@ -90,6 +90,7 @@
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
+                <version>7.0.1.v20091125</version>
                 <configuration>
                     <!-- scan period (this effects scan period also for java class files changes) -->
                     <scanIntervalSeconds>5</scanIntervalSeconds>
