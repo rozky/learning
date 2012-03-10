@@ -1,8 +1,12 @@
 package com.rozarltd.mongodb;
 
+import com.mongodb.DB;
+import com.mongodb.Mongo;
+import com.mongodb.MongoURI;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoDbUtils;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -19,16 +23,15 @@ public class MongoDbIntegrationTest {
 
     @Test
     public void shouldWork() throws UnknownHostException {
-//        // given
-//        // when
-////        MongoURI mongoUri = new MongoURI("mongodb://michal.rozar@gmail.com:g3tp1x3l@ds029797.mongolab.com:29797");
-//        MongoURI mongoUri = new MongoURI("mongodb://development:development@ds029297.mongolab.com:29297");
-//        Mongo mongo = new Mongo(mongoUri);
-////        DB betting = MongoDbUtils.getDB(mongo, "betting");
-//        DB betting = MongoDbUtils.getDB(mongo, "development");
-////        betting.authenticate("development")
-//        System.out.println("cool");
-//        // then
+        // given
+        // when
+        MongoURI mongoUri = new MongoURI("mongodb://development:development@ds029297.mongolab.com:29297");
+        Mongo mongo = new Mongo(mongoUri);
+//        DB betting = MongoDbUtils.getDB(mongo, "betting");
+        DB betting = MongoDbUtils.getDB(mongo, "development");
+//        betting.authenticate("development")
+        System.out.println("cool");
+        // then
     }
 
     @Test

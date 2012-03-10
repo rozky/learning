@@ -10,12 +10,10 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 @Configuration
 public class MongoDbRepositoryConfiguration extends AbstractMongoConfiguration {
 //    private static final String MONGO_LAB_DB_NAME = "betting";
-//    private static final String MONGO_LAB_USERNAME = "michal.rozar@gmail.com";
-//    private static final String MONGO_LAB_PASSWORD = "g3tp1x3l";
 //    private static final String MONGO_LAB_HOST = "ds029797.mongolab.com";
 //    private static final int MONGO_LAB_PORT = 29797;
 
-    // rozarlimited / g3tp1x3l
+    // rozarlimited
     private static final String MONGO_LAB_DB_NAME = "development"; // db password is: development
     private static final String MONGO_LAB_USERNAME = "development";
     private static final String MONGO_LAB_PASSWORD = "development";
