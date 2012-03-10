@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--<import resource="data-repository-context.xml" />-->
+
+    <!-- load dependencies on other modules -->
+    <import resource="../betfairapi/external/betfairapi-context.xml" />
+
+    <!-- load internal dependencies -->
+    <import resource="../internal/server-context-internal.xml"/>
+
+    <!--<context:component-scan base-package="com.rozarltd.betting.portal.service"/>-->
+    <context:component-scan base-package="com.rozarltd.betting.service"/>
+
+    <!--<context:property-placeholder location="classpath:/com/acme/jdbc.properties"/>-->
+</beans>

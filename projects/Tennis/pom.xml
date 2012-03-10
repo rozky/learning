@@ -1,40 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rozarltd.betting.portal.tennis</groupId>
     <artifactId>aggregator</artifactId>
-    <version>1.0.0.SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Tennis Portal - Aggregator Module</name>
 
     <modules>
-        <module>tennis-portal-web</module>
+        <module>tennis-portal-domain</module>
         <module>tennis-portal-server</module>
+        <module>tennis-portal-web</module>
     </modules>
 
     <properties>
         <!-- ===== languages ===== -->
         <java.version>1.6</java.version>
-        <spring.version>3.0.5.RELEASE</spring.version>
+        <spring.version>3.1.0.RELEASE</spring.version>
         <scala.version>2.9.1</scala.version>
 
-        <!-- ===== servlet, jsp, jstl ===== -->
+        <!-- ===== servlet and templating ===== -->
         <servlet.api.version>2.5</servlet.api.version>
         <jsp.api.version>2.1</jsp.api.version>
         <jstl.version>1.2</jstl.version>
+
+        <!-- ===== templating engine ===== -->
+        <!--<stringtemplate.version>4.0.2</stringtemplate.version>-->
+        <stringtemplate.version>3.2.1</stringtemplate.version>
+        <sitemesh.version>2.4.2</sitemesh.version>
 
         <!-- ===== logging ===== -->
         <slf4j.version>1.6.1</slf4j.version>
         <log4j.version>1.2.16</log4j.version>
 
+        <!-- ===== libraries ===== -->
+        <jasypt.version>1.9.0</jasypt.version>
+        <google.guava.version>11.0</google.guava.version>
+        <google.functional.collections.version>1.1.9</google.functional.collections.version>
+        <apache.commons.lang.version>2.6</apache.commons.lang.version>
+        <cglib.version>2.2.2</cglib.version>
+        <jackson.version>1.9.4</jackson.version>
+
         <!-- ===== testing =====-->
         <junit.version>4.8.2</junit.version>
-        <fest.assert.version>1.4</fest.assert.version>
         <mockito.version>1.8.5</mockito.version>
         <org.scalatest.version>1.1</org.scalatest.version>
+        <hamcrest.version>1.1</hamcrest.version>
 
         <!-- ===== plugin =====-->
         <maven.compiler.plugin.version>2.3.1</maven.compiler.plugin.version>
@@ -76,9 +89,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>2.5</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                </configuration>
             </plugin>
 
             <plugin>
@@ -88,33 +98,72 @@
             </plugin>
 
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>7.0.1.v20091125</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.10</version>
                 <configuration>
-                    <!-- scan period (this effects scan period also for java class files changes) -->
-                    <scanIntervalSeconds>5</scanIntervalSeconds>
-
-                    <!-- i don't know the reason for setting extraClasspath, but it should be set -->
-                    <webAppConfig>
-                        <extraClasspath>${basedir}/src/main/resources</extraClasspath>
-                    </webAppConfig>
-
-                    <!-- will be scanned paths for changes by jetty additionally (here is the path where js, css, etc... are exist) -->
-                    <scanTargets>
-                        <scanTarget>src/main/webapp</scanTarget>
-                    </scanTargets>
-
+                    <printSummary>false</printSummary>
+                    <redirectTestOutputToFile>false</redirectTestOutputToFile>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-idea-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <jdkName>1.5</jdkName>
+                    <jdkLevel>1.5</jdkLevel>
+                    <exclude>target,test-output,.clover</exclude>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>8.1.0.RC0</version>
+                <configuration>
+                    <!--&lt;!&ndash; scan period (this effects scan period also for java class files changes) &ndash;&gt;-->
+                    <!--<scanIntervalSeconds>5</scanIntervalSeconds>-->
+
+                    <webAppConfig>
+                        <extraClasspath>${basedir}/tennis-portal-web//src/main/resources</extraClasspath>
+                    </webAppConfig>
+
+
+                    <scanTargets>
+                        <scanTarget>tennis-portal-web/src/main/webapp</scanTarget>
+                    </scanTargets>
+
+                    <stopKey>foo</stopKey>
+                    <stopPort>9999</stopPort>
+
+                    <connectors>
+                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+                            <port>9090</port>
+                            <maxIdleTime>60000</maxIdleTime>
+                        </connector>
+                    </connectors>
+                </configuration>
+
+            </plugin>
+
 
         </plugins>
     </build>
 
     <dependencyManagement>
         <dependencies>
+            <!-- ===== project modules ===== -->
             <dependency>
-                <groupId>${project.groupId}</groupId>
+                <groupId>com.rozarltd.betting.portal.tennis</groupId>
+                <artifactId>tennis-portal-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.rozarltd.betting.portal.tennis</groupId>
                 <artifactId>tennis-portal-server</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -124,20 +173,33 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
                 <version>${servlet.api.version}</version>
-                <scope>runtime</scope>
+                <scope>provided</scope>
             </dependency>
+            <!--<dependency>-->
+            <!--<groupId>javax.servlet.jsp</groupId>-->
+            <!--<artifactId>jsp-api</artifactId>-->
+            <!--<version>${jsp.api.version}</version>-->
+            <!--&lt;!&ndash;<scope>runtime</scope>&ndash;&gt;-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+            <!--<groupId>jstl</groupId>-->
+            <!--<artifactId>jstl</artifactId>-->
+            <!--<version>${jstl.version}</version>-->
+            <!--&lt;!&ndash;<scope>runtime</scope>&ndash;&gt;-->
+            <!--</dependency>-->
+
+            <!-- ===== templating engine ===== -->
             <dependency>
-                <groupId>javax.servlet.jsp</groupId>
-                <artifactId>jsp-api</artifactId>
-                <version>${jsp.api.version}</version>
-                <scope>runtime</scope>
+                <groupId>org.antlr</groupId>
+                <artifactId>stringtemplate</artifactId>
+                <version>${stringtemplate.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>jstl</groupId>
-                <artifactId>jstl</artifactId>
-                <version>${jstl.version}</version>
-                <scope>runtime</scope>
+                <groupId>opensymphony</groupId>
+                <artifactId>sitemesh</artifactId>
+                <version>${sitemesh.version}</version>
             </dependency>
 
             <!-- ===== spring framework : core ===== -->
@@ -206,31 +268,54 @@
                 <version>${spring.version}</version>
             </dependency>
 
-            <!-- ===== scala standard library ===== -->
+            <!-- ===== encryption ===== -->
             <dependency>
-                <groupId>org.scala-lang</groupId>
-                <artifactId>scala-library</artifactId>
-                <version>${scala.version}</version>
+                <groupId>org.jasypt</groupId>
+                <artifactId>jasypt-spring3</artifactId>
+                <version>${jasypt.version}</version>
             </dependency>
+
+            <!-- ===== scala standard library ===== -->
+            <!--<dependency>-->
+            <!--<groupId>org.scala-lang</groupId>-->
+            <!--<artifactId>scala-library</artifactId>-->
+            <!--<version>${scala.version}</version>-->
+            <!--</dependency>-->
 
             <!-- ===== logging ===== -->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>jcl-over-slf4j</artifactId>
                 <version>${slf4j.version}</version>
-                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-log4j12</artifactId>
                 <version>${slf4j.version}</version>
-                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
-                <scope>runtime</scope>
+            </dependency>
+
+            <!-- ===== JSON support ===== -->
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${google.guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.googlecode.functional-collections</groupId>
+                <artifactId>functional-collections</artifactId>
+                <version>${google.functional.collections.version}</version>
             </dependency>
 
             <!-- ===== test ===== -->
@@ -240,12 +325,6 @@
                 <version>${junit.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.easytesting</groupId>
-                <artifactId>fest-assert</artifactId>
-                <version>${fest.assert.version}</version>
-                <scope>test</scope>
-            </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-all</artifactId>
@@ -267,6 +346,13 @@
                 <version>${spring.version}</version>
                 <scope>test</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-all</artifactId>
+                <version>${hamcrest.version}</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -276,24 +362,33 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
         </dependency>
+
+        <!-- ===== required to support @Configuration ===== -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
+        </dependency>
+
+        <!-- ===== apache libraries ===== -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${apache.commons.lang.version}</version>
+        </dependency>
+
         <!-- ===== logging ===== -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
-            <version>${slf4j.version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
-            <scope>runtime</scope>
         </dependency>
 
         <!-- ===== test ===== -->
@@ -303,14 +398,13 @@
         </dependency>
 
         <dependency>
-            <groupId>org.easytesting</groupId>
-            <artifactId>fest-assert</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
-            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
         </dependency>
     </dependencies>
 

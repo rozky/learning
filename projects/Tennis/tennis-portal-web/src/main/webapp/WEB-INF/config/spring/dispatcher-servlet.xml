@@ -5,31 +5,44 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="
-       http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.springframework.org/schema/mvc
-       http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 
-    <!-- ====== automatically register all controllers ===== -->
-    <context:component-scan base-package="com.rozarltd.cashback.portal.mvc.controller"/>
+    <!-- ====== Creates the JSR-303 Validator ===== -->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
 
     <!-- ===== configure MVC ===== -->
-    <mvc:annotation-driven/>
-    <mvc:resources mapping="/resources/**" location="/resources/"/>
-    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+    <mvc:annotation-driven validator="validator"/>
 
-    <!-- ====== configure view resolver ===== -->
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/WEB-INF/jsp/"/>
-        <property name="suffix" value=".jsp"/>
+    <!-- ====== automatically register all controllers ===== -->
+    <context:component-scan base-package="com.rozarltd.betting.portal.tennis.web.controller"/>
+    <context:component-scan base-package="com.rozarltd.betting.portal.tennis.web.betfair.controller"/>
+    <context:component-scan base-package="com.rozarltd.betting.portal.tennis.web.service"/>
+
+    <mvc:resources mapping="/static/**" location="/static/"/>
+
+    <bean id="viewResolver" class="com.watchitlater.spring.StringTemplateViewResolver">
+        <property name="templateErrorListener" ref="templateErrorListener"/>
+        <property name="templateRoot" value="/WEB-INF/stringtemplate/views/"/>
+        <property name="sharedRoot" value="/WEB-INF/stringtemplate/shared"/>
+        <property name="renderers">
+            <list>
+                <bean class="com.rozarltd.stringtemplate.renderer.PageletRenderer" />
+                <bean class="com.rozarltd.stringtemplate.renderer.DateAttributeRenderer" />
+            </list>
+        </property>
+
     </bean>
 
-    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="msg/messages"/>
-        <property name="cacheSeconds" value="1"/>
-    </bean>
+    <bean id="templateErrorListener"
+          class="com.watchitlater.spring.log.Slf4jStringTemplateErrorListener"/>
+
+    <!--<bean id="templateProvider" class="com.watchitlater.spring.WebStringTemplateGroup">-->
+        <!--<constructor-arg name="groupName" value="modules" />-->
+        <!--<constructor-arg name="templateRoot" value="/WEB-INF/stringtemplate/views/modules" />-->
+        <!--<constructor-arg name="loader" value="modules" />-->
+    <!--</bean>-->
 
 </beans>
+

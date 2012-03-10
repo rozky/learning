@@ -1,0 +1,112 @@
+.box {
+    border-bottom: 1px solid #ffffff;
+    box-shadow: #E9E9E9 0px 10px 10px -10px;
+    margin-bottom: 10px;
+}
+
+.header {
+    color: #999999;
+}
+
+.header h2 {
+    background-color: #cccccc;
+    color: #666666;
+    font-size: 1.08em;
+    font-weight: bold;
+    padding: 4px 10px;
+
+}
+
+div.matches {
+    border: 1px solid #DFDFDF;
+
+}
+
+div.matches table {
+    width: 100%;
+}
+
+.matches tr:hover {
+  background-color: #f1f9fd;
+}
+
+.matches td {
+
+}
+
+.matches td {
+    border-top: 1px solid #EAEAEA;
+    border-left: 1px solid #EAEAEA;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+.matches .time {
+    color: #8FAE28;
+    padding-left: 7px;
+    text-align: center;
+    width: 60px;
+}
+
+.matches .homeTeam, .matches .awayTeam {
+    font-weight: bold;
+    text-align: left;
+    width: 200px;
+}
+
+.matches .homeTeam, .matches .awayTeam {
+    font-weight: bold;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+
+.matches .homeTeam {
+
+}
+
+.matches .homePrice, .matches .awayPrice {
+    background: none repeat scroll 0 0 #E5F4FB;
+    border-left-color: #E5F4FB;
+    color: #81C4E1;
+    padding: 2px 2px;
+    width: 40px;
+}
+
+.matches .homePrice:hover, .matches .awayPrice:hover {
+    background: #81c4e1;
+    color: #ffffff;
+}
+
+.matches .awayTeam {
+    text-align: left;
+    padding-left: 7px;
+}
+
+.matches .homePrice, .matches .awayPrice {
+    cursor: pointer;
+    font-weight: bold;
+    width: 50px;
+}
+
+.matches .moreMarkets {
+    color: #999999;
+    text-align: center;
+    /*width: 45px;*/
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.pipe {
+    text-align: center;
+    width: 10px;
+}

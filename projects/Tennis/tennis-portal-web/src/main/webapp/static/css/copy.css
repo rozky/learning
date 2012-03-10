@@ -1,0 +1,4827 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+nav ul {
+    list-style: none outside none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: none;
+}
+a {
+    background: none repeat scroll 0 0 transparent;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+ins {
+    background-color: #FFFF99;
+    color: #000000;
+    text-decoration: none;
+}
+mark {
+    background-color: #FFFF99;
+    color: #000000;
+    font-style: italic;
+    font-weight: bold;
+}
+del {
+    text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #CCCCCC -moz-use-text-color -moz-use-text-color;
+    border-right: 0 none;
+    border-style: solid none none;
+    border-width: 1px 0 0;
+    display: block;
+    height: 1px;
+    margin: 1em 0;
+    padding: 0;
+}
+input, select {
+    vertical-align: middle;
+}
+body {
+    font: 13px/1.231 sans-serif;
+}
+select, input, textarea, button {
+    font: 99% sans-serif;
+}
+pre, code, kbd, samp {
+    font-family: monospace,sans-serif;
+}
+body, select, input, textarea {
+    color: #444444;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+html {
+    overflow-y: scroll;
+}
+a:hover, a:active {
+    outline: medium none;
+}
+a, a:active, a:visited {
+    color: #607890;
+}
+a:hover {
+    color: #003366;
+}
+ul, ol {
+    margin-left: 1.8em;
+}
+ol {
+    list-style-type: decimal;
+}
+nav ul, nav li {
+    margin: 0;
+}
+small {
+    font-size: 85%;
+}
+strong, th {
+    font-weight: bold;
+}
+td, td img {
+    vertical-align: top;
+}
+sub {
+    font-size: smaller;
+    vertical-align: sub;
+}
+sup {
+    font-size: smaller;
+    vertical-align: super;
+}
+pre {
+    padding: 15px;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+textarea {
+    overflow: auto;
+}
+.ie6 legend, .ie7 legend {
+    margin-left: -7px;
+}
+input[type="radio"] {
+    vertical-align: text-bottom;
+}
+input[type="checkbox"] {
+    vertical-align: bottom;
+}
+.ie7 input[type="checkbox"] {
+    vertical-align: baseline;
+}
+.ie6 input {
+    vertical-align: text-bottom;
+}
+label, input[type="button"], input[type="submit"], button {
+    cursor: pointer;
+}
+button, input, select, textarea {
+    margin: 0;
+}
+input:valid, textarea:valid {
+}
+input:invalid, textarea:invalid {
+    border-radius: 1px 1px 1px 1px;
+    box-shadow: 0 0 5px red;
+}
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid {
+    background-color: #F0DDDD;
+}
+*::-moz-selection {
+    background: none repeat scroll 0 0 #FF5E99;
+    color: #FFFFFF;
+    text-shadow: none;
+}
+a:link {
+}
+button {
+    overflow: visible;
+    width: auto;
+}
+.ie7 img {
+}
+.ir {
+    background-repeat: no-repeat;
+    direction: ltr;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    text-indent: -999em;
+}
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+.visuallyhidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+.invisible {
+    visibility: hidden;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+}
+* {
+    background: none repeat scroll 0 0 transparent !important;
+    color: #444444 !important;
+    text-shadow: none !important;
+}
+a, a:visited {
+    color: #444444 !important;
+    text-decoration: underline;
+}
+a:after {
+    content: " (" attr(href) ")";
+}
+abbr:after {
+    content: " (" attr(title) ")";
+}
+.ir a:after {
+    content: "";
+}
+pre, blockquote {
+    border: 1px solid #999999;
+    page-break-inside: avoid;
+}
+thead {
+    display: table-header-group;
+}
+tr, img {
+    page-break-inside: avoid;
+}
+p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+}
+h2, h3 {
+    page-break-after: avoid;
+}
+#fancybox-loading {
+    cursor: pointer;
+    display: none;
+    height: 40px;
+    left: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    width: 40px;
+    z-index: 1104;
+}
+#fancybox-loading div {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox.png");
+    height: 480px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+}
+#fancybox-overlay {
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1100;
+}
+#fancybox-tmp {
+    border: 0 none;
+    display: none;
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+}
+#fancybox-wrap {
+    display: none;
+    left: 0;
+    outline: medium none;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    z-index: 1101;
+}
+#fancybox-outer {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+#fancybox-content {
+    border: 0 solid #FFFFFF;
+    height: 0;
+    outline: medium none;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 0;
+    z-index: 1102;
+}
+#fancybox-hide-sel-frame {
+    background: none repeat scroll 0 0 transparent;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1101;
+}
+#fancybox-close {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox.png") repeat scroll -40px 0 transparent;
+    cursor: pointer;
+    display: none;
+    height: 30px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 30px;
+    z-index: 1103;
+}
+#fancybox-error {
+    color: #444444;
+    font: 12px/20px Arial;
+    margin: 0;
+    padding: 14px;
+}
+#fancybox-img {
+    border: medium none;
+    height: 100%;
+    line-height: 0;
+    margin: 0;
+    outline: medium none;
+    padding: 0;
+    vertical-align: top;
+    width: 100%;
+}
+#fancybox-frame {
+    border: medium none;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+#fancybox-left, #fancybox-right {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/blank.gif") repeat scroll 0 0 transparent;
+    bottom: 0;
+    cursor: pointer;
+    display: none;
+    height: 100%;
+    outline: medium none;
+    position: absolute;
+    width: 35%;
+    z-index: 1102;
+}
+#fancybox-left {
+    left: 0;
+}
+#fancybox-right {
+    right: 0;
+}
+#fancybox-left-ico, #fancybox-right-ico {
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    left: -9999px;
+    margin-top: -15px;
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    z-index: 1102;
+}
+#fancybox-left-ico {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox.png");
+    background-position: -40px -30px;
+}
+#fancybox-right-ico {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox.png");
+    background-position: -40px -60px;
+}
+#fancybox-left:hover, #fancybox-right:hover {
+    visibility: visible;
+}
+#fancybox-left:hover span {
+    left: 20px;
+}
+#fancybox-right:hover span {
+    left: auto;
+    right: 20px;
+}
+.fancybox-bg {
+    border: 0 none;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 20px;
+    z-index: 1001;
+}
+#fancybox-bg-n {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox-x.png");
+    left: 0;
+    top: -20px;
+    width: 100%;
+}
+#fancybox-bg-ne {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox.png");
+    background-position: -40px -162px;
+    right: -20px;
+    top: -20px;
+}
+#fancybox-bg-e {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox-y.png");
+    background-position: -20px 0;
+    height: 100%;
+    right: -20px;
+    top: 0;
+}
+#fancybox-bg-se {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox.png");
+    background-position: -40px -182px;
+    bottom: -20px;
+    right: -20px;
+}
+#fancybox-bg-s {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox-x.png");
+    background-position: 0 -20px;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+}
+#fancybox-bg-sw {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox.png");
+    background-position: -40px -142px;
+    bottom: -20px;
+    left: -20px;
+}
+#fancybox-bg-w {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox-y.png");
+    height: 100%;
+    left: -20px;
+    top: 0;
+}
+#fancybox-bg-nw {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox.png");
+    background-position: -40px -122px;
+    left: -20px;
+    top: -20px;
+}
+#fancybox-title {
+    font-family: Helvetica;
+    font-size: 12px;
+    z-index: 1102;
+}
+.fancybox-title-inside {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #333333;
+    padding-bottom: 10px;
+    position: relative;
+    text-align: center;
+}
+.fancybox-title-outside {
+    color: #FFFFFF;
+    padding-top: 10px;
+}
+.fancybox-title-over {
+    bottom: 0;
+    color: #FFFFFF;
+    left: 0;
+    position: absolute;
+    text-align: left;
+}
+#fancybox-title-over {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancy_title_over.png");
+    display: block;
+    padding: 10px;
+}
+.fancybox-title-float {
+    bottom: -20px;
+    height: 32px;
+    left: 0;
+    position: absolute;
+}
+#fancybox-title-float-wrap {
+    border: medium none;
+    border-collapse: collapse;
+    width: auto;
+}
+#fancybox-title-float-wrap td {
+    border: medium none;
+    white-space: nowrap;
+}
+#fancybox-title-float-left {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox.png") no-repeat scroll -40px -90px transparent;
+    padding: 0 0 0 15px;
+}
+#fancybox-title-float-main {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox-x.png") repeat scroll 0 -40px transparent;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 29px;
+    padding: 0 0 3px;
+}
+#fancybox-title-float-right {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/fancybox/fancybox.png") no-repeat scroll -55px -90px transparent;
+    padding: 0 0 0 15px;
+}
+.fancybox-ie6 #fancybox-close {
+    background: none repeat scroll 0 0 transparent;
+}
+.fancybox-ie6 #fancybox-left-ico {
+    background: none repeat scroll 0 0 transparent;
+}
+.fancybox-ie6 #fancybox-right-ico {
+    background: none repeat scroll 0 0 transparent;
+}
+.fancybox-ie6 #fancybox-title-over {
+    background: none repeat scroll 0 0 transparent;
+}
+.fancybox-ie6 #fancybox-title-float-left {
+    background: none repeat scroll 0 0 transparent;
+}
+.fancybox-ie6 #fancybox-title-float-main {
+    background: none repeat scroll 0 0 transparent;
+}
+.fancybox-ie6 #fancybox-title-float-right {
+    background: none repeat scroll 0 0 transparent;
+}
+.fancybox-ie6 #fancybox-bg-w, .fancybox-ie6 #fancybox-bg-e, .fancybox-ie6 #fancybox-left, .fancybox-ie6 #fancybox-right, #fancybox-hide-sel-frame {
+}
+#fancybox-loading.fancybox-ie6 {
+    margin-top: 0;
+    position: absolute;
+}
+#fancybox-loading.fancybox-ie6 div {
+    background: none repeat scroll 0 0 transparent;
+}
+.fancybox-ie .fancybox-bg {
+    background: none repeat scroll 0 0 transparent !important;
+}
+.fancybox-ie #fancybox-bg-n {
+}
+.fancybox-ie #fancybox-bg-ne {
+}
+.fancybox-ie #fancybox-bg-e {
+}
+.fancybox-ie #fancybox-bg-se {
+}
+.fancybox-ie #fancybox-bg-s {
+}
+.fancybox-ie #fancybox-bg-sw {
+}
+.fancybox-ie #fancybox-bg-w {
+}
+.fancybox-ie #fancybox-bg-nw {
+}
+#scrollAddBox {
+    position: fixed;
+}
+body {
+    background: none repeat scroll 0 0 #BBBBBB;
+    color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 75%;
+    margin: 0;
+    text-align: center;
+}
+hr {
+    display: none;
+}
+a, a:active, a:visited, a:hover {
+    color: #1A8EC1;
+    text-decoration: underline;
+}
+#main .articles a:visited, #main .articlelist a:visited, #main .similar_articles a:visited, #main .toparticle a:visited {
+    color: #666666;
+}
+a:hover {
+    text-decoration: none;
+}
+ul, ol, menu {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+input, textarea, select {
+    font-family: Tahoma,Geneva,sans-serif;
+}
+*::-moz-selection {
+    background: none repeat scroll 0 0 #1A8EC1;
+}
+a:link {
+}
+.clickable {
+    cursor: pointer;
+}
+#ad_zone_43 {
+    padding: 5px;
+}
+#container {
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 0 30px -20px #000000;
+    margin: 0 auto;
+    padding: 0 25px;
+    text-align: left;
+    width: 970px;
+}
+header {
+    margin-bottom: 20px;
+    padding-top: 40px;
+    position: relative;
+}
+header .links {
+    color: #AAAAAA;
+    padding-right: 165px;
+    position: absolute;
+    right: 0;
+    top: 12px;
+}
+header .links a {
+    color: #000000;
+    margin-right: 15px;
+    text-decoration: none;
+}
+header .links a:hover {
+    text-decoration: underline;
+}
+#pbutton {
+    position: absolute;
+    right: 0;
+    top: -6px;
+}
+nav menu {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/menu.gif") repeat-x scroll left center #1A8EC1;
+    font-size: 1.25em;
+    font-weight: bold;
+    height: 46px;
+    overflow: hidden;
+}
+#container nav menu a.topmenu {
+    border-left: 1px solid #4BB8E8;
+    border-right: 1px solid #016896;
+    color: #FFFFFF;
+    display: block;
+    min-width: 63px;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+}
+nav menu li {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/menu.gif") repeat-x scroll left center #1A8EC1;
+    float: left;
+}
+#container nav menu a.topmenu:hover, #container nav menu li.active a.topmenu, #container nav menu a.topmenu:focus {
+    background: none repeat scroll 0 0 #064E7A;
+    border-left-color: #2175AB;
+    border-right-color: #034165;
+}
+nav menu input {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/menu-search.gif") no-repeat scroll left center #48ABD7;
+    border: 0 none;
+    color: #FFFFFF;
+    font-size: 0.8em;
+    font-weight: bold;
+    height: 19px;
+    margin: 9px 20px 0 30px;
+    padding: 5px 13px 5px 27px;
+    width: 110px;
+}
+nav menu input:focus {
+    outline: medium none;
+}
+nav menu .home {
+    font-size: 1.5em;
+}
+#container nav menu .home a.topmenu {
+    border-left: 0 none;
+    height: 46px;
+    line-height: 46px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+.ie6 #container nav menu .home a.topmenu {
+    float: left;
+}
+#container nav menu .home a.topmenu img {
+    margin-top: -5px;
+}
+nav menu .search {
+    border-left: 1px solid #4BB8E8;
+    height: 46px;
+}
+#container nav menu ul {
+    border: 0 none;
+    border-radius: 0 0 0 0;
+    font-size: 0.8em;
+    margin-top: 26px;
+    position: absolute;
+}
+#container nav menu ul li {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 transparent;
+    border-color: -moz-use-text-color -moz-use-text-color #95D3EB;
+    border-radius: 0 0 0 0;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    float: none;
+}
+#container nav menu ul li a {
+    border: 0 none;
+    border-radius: 0 0 0 0;
+    padding: 7px 17px;
+    text-align: left;
+}
+#container nav menu ul li a.ui-state-hover {
+    background: none repeat scroll 0 0 #AEDCEF;
+    text-decoration: none;
+}
+#container nav menu ul li strong {
+    background: none repeat scroll 0 0 rgba(255, 255, 0, 0.5);
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+#container nav menu ul li small {
+    display: block;
+}
+#container nav menu .ajaxSearching {
+    display: none;
+}
+nav ul {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/submenu.gif") repeat-x scroll left top #C9E8F4;
+    border-top: 1px solid #FFFFFF;
+    font-weight: bold;
+}
+#headerMore {
+    float: right;
+}
+nav ul li {
+    float: left;
+}
+nav ul strong, nav ul span, #container nav ul a {
+    color: #0F5A92;
+    display: block;
+    padding: 7px 15px;
+    text-decoration: none;
+}
+#container nav ul a.nike-blog-menu {
+    color: #000000;
+}
+#container nav ul a:hover {
+    text-decoration: underline;
+}
+#container nav ul .active a {
+    text-decoration: underline;
+}
+#container nav ul .level1 {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/submenu-level1.gif") no-repeat scroll right center transparent;
+    padding-right: 18px;
+}
+#container nav ul .level1 a {
+    background: none repeat scroll 0 0 #81C4E1;
+}
+#container nav ul .level2 {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/submenu-level2.gif") no-repeat scroll right center transparent;
+    padding-right: 18px;
+}
+#container nav ul .level2 a {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/submenu-level1-2.gif") no-repeat scroll left center #9AD3EC;
+    margin-left: -18px;
+    padding-left: 33px;
+}
+#container nav ul .level3 a {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/submenu-level3.gif") no-repeat scroll right center transparent;
+    padding-right: 18px;
+}
+#container nav ul .level99 {
+    float: right;
+    margin-left: 1px;
+    position: relative;
+}
+#container nav ul .level99 span {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/submenu-level99.gif") repeat-x scroll left bottom #168FBE;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+#container nav ul .level99.active span {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border-bottom: 1px solid #F4F4F4;
+    color: #000000;
+    margin-bottom: -1px;
+}
+#container nav .pulldownmenu {
+    background: none repeat scroll 0 0 #F4F4F4;
+    box-shadow: 0 20px 30px -30px #000000;
+    padding: 15px 0;
+    position: absolute;
+    width: 970px;
+    z-index: 9999;
+}
+#container nav .pulldownmenu table {
+    border-top: 1px solid #FFFFFF;
+    width: 100%;
+}
+#container nav .pulldownmenu td {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border-bottom: 1px solid #FFFFFF;
+    padding: 3px 5px;
+    vertical-align: middle;
+}
+#container nav .pulldownmenu tr.even td, #container nav .pulldownmenu tr:nth-child(2n) td {
+    background: none repeat scroll 0 0 #F0F0F0;
+}
+#container nav .pulldownmenu td.sport {
+    color: #999999;
+    text-align: right;
+}
+#container nav .pulldownmenu td.flag {
+    width: 24px;
+}
+#container nav .pulldownmenu .favorites {
+    margin-left: 3px;
+}
+#container nav .pull_favorites tr:hover td, #container nav .pull_favorites tr.even:hover td, #container nav .pulldownmenu tr.focus td, #container nav .pulldownmenu tr.even.focus td {
+    background-color: #E5F4FB;
+    cursor: pointer;
+}
+#container nav .pulldownmenu a {
+    color: #000000;
+    text-decoration: none;
+}
+#container nav .pull_leagues {
+    float: left;
+    margin: 0 0 0 20px;
+    width: 640px;
+}
+#container nav .pull_favorites {
+    float: right;
+    margin: 0 20px 0 0;
+    width: 270px;
+}
+#container nav .pull_scroll {
+    height: 217px;
+    overflow: auto;
+}
+.ie7 #container nav .pull_leagues table {
+    width: 640px;
+}
+.ie7 #container nav .pull_favorites table {
+    width: 250px;
+}
+#container nav .pulldownmenu .tabheader {
+    background: none repeat scroll 0 0 #E8E8E8;
+    border-top: 1px solid #FFFFFF;
+    padding: 5px;
+}
+#container nav .pulldownmenu .tabheader p {
+    float: left;
+}
+#container nav .pulldownmenu .tabheader p.filter {
+    float: right;
+    margin-top: 2px;
+}
+#container nav .pulldownmenu .tabheader input {
+    margin-left: 5px;
+    padding: 2px 3px;
+    width: 300px;
+}
+#container nav .pulldownmenu .tabheader label span {
+    display: block;
+    float: left;
+    font-size: 1.25em;
+    padding: 1px 3px;
+}
+#container nav .pulldownmenu .tabheader strong {
+    display: block;
+    font-size: 1.25em;
+    font-weight: normal;
+    padding: 1px 3px;
+}
+#container nav .pulldownmenu ul {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/pulldown-theme.jpg") no-repeat scroll left bottom transparent;
+    border: 0 none;
+    font-size: 1.42em;
+    height: 200px;
+    margin: -15px 0;
+    overflow: auto;
+    padding: 15px 20px 15px 400px;
+}
+#container nav .pulldownmenu ul li {
+    line-height: 40px;
+    margin: 5px 0;
+}
+#container nav .pulldownmenu ul a {
+    color: #000000;
+    display: block;
+    font-weight: normal;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 0 0 40px;
+    width: 140px;
+}
+#container .ui-autocomplete {
+    border: 3px solid #AAAAAA;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    height: 300px;
+    overflow: auto;
+    position: absolute;
+    text-align: left;
+    top: 60px;
+}
+#container .ui-autocomplete p {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #DDDDDD;
+    border-color: -moz-use-text-color #EEEEEE #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    padding: 5px;
+}
+#container .ui-autocomplete a {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    -moz-transition: none 0s ease 0s;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: -moz-use-text-color #EEEEEE #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    cursor: pointer;
+    display: block;
+    padding: 5px 5px 3px 35px;
+    position: relative;
+    text-decoration: none;
+}
+#container .ui-autocomplete a .img-suggest {
+    background-color: #FFFFFF;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    height: 25px;
+    left: 3px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 4px;
+    width: 25px;
+}
+#container .ui-autocomplete a span {
+    color: #999999;
+    display: block;
+}
+#container #main .modryodklik {
+    color: #1A8EC1;
+    display: block;
+    font-weight: normal;
+}
+.title {
+    padding: 0 20px 20px;
+}
+.title h1 {
+    color: #999999;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 5px 15px 11px 0;
+}
+.title h1 strong {
+    color: #000000;
+}
+.title .groupmenu {
+    padding: 7px;
+}
+.title .groupmenu select {
+    margin: 5px 0 7px;
+    padding: 1px;
+}
+.title .logo {
+    float: left;
+    margin-right: 20px;
+}
+.tltle iframe {
+    border: 0 none;
+    overflow: hidden;
+}
+.title menu {
+    float: left;
+    margin: -2px 20px 0 -3px;
+}
+.title menu li {
+    float: left;
+    font-weight: bold;
+    margin-right: 5px;
+    padding: 5px;
+}
+.title menu select {
+    margin: -4px 10px 0 0;
+    padding: 1px;
+}
+#container .title menu a, .title menu span.active {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/blue-light.gif") no-repeat scroll center center #E5F4FB;
+    display: block;
+    float: left;
+    margin: -5px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+#container .title menu a.active, #container .title menu a:hover, .title menu span.active {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/blue-semilight.gif") no-repeat scroll center center #81C4E1;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.title .adbanner {
+    float: right;
+    margin-right: -20px;
+    padding-top: 10px;
+}
+.title_results h1 {
+    float: left;
+}
+.title_results menu {
+    margin: 10px 20px 0;
+}
+#container .title_results .m_live a {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/red-light.gif") no-repeat scroll center center #FFF2F2;
+    color: #E00000;
+}
+#container .title_results .m_live a:hover, .title_results .m_live span.active {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/red.gif") no-repeat scroll center center #E00000;
+    color: #FFFFFF;
+}
+#container .img-detail {
+    background-color: #FFFFFF;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 50px;
+    margin: 0 0 -20px;
+    padding: 0;
+    width: 50px;
+}
+.detailtitle {
+    position: relative;
+}
+.detailtitle h1 {
+    float: none;
+    margin: 0 -20px;
+    padding: 10px 0;
+    width: 680px;
+}
+.detailtitle h1 strong {
+    display: block;
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: 5px;
+    width: 220px;
+}
+.detailtitle .home {
+    float: left;
+    text-align: right;
+}
+.detailtitle .away {
+    float: right;
+    text-align: left;
+}
+.detailtitle .home a, .detailtitle .away a {
+    color: #000000;
+}
+.detailtitle h1 span {
+    color: #1A8EC1;
+    display: block;
+    float: left;
+    font-size: 1.5em;
+    margin: 0 20px;
+    text-align: center;
+    width: 200px;
+}
+.detailtitle h1 span img {
+    font-size: 0.25em;
+    height: 50px;
+    margin: -10px 0 -20px;
+    position: relative;
+    width: 50px;
+}
+.detailtitle h1 span em {
+    float: left;
+    font-style: normal;
+    margin-top: -5px;
+    position: relative;
+    width: 96px;
+}
+.detailtitle h1 span em.live {
+    color: #E00000;
+}
+.detailtitle h1.matchsport-14 em {
+    font-size: 0.67em;
+    padding-top: 0.3em;
+}
+.detailtitle h1 small {
+    display: block;
+    font-size: 0.5em;
+    font-weight: bold;
+    line-height: 1em;
+    margin: -0.5em 0;
+}
+.detailtitle .last {
+    clear: both;
+    margin: 0 -20px;
+    width: 680px;
+}
+.detailtitle .lmbox {
+    position: relative;
+    width: 220px;
+}
+.ie7 .detailtitle .lmbox {
+    margin-top: -5px;
+}
+.ie6 .detailtitle .lmbox {
+    margin-top: -15px;
+    width: 220px;
+}
+.detailtitle .lmbox.home .lm {
+    float: right;
+}
+.detailtitle .run {
+    clear: both;
+    color: #999999;
+    font-weight: bold;
+    text-align: center;
+    width: 640px;
+}
+.detailtitle menu {
+    clear: both;
+    float: none;
+    height: 25px;
+    margin: 10px 0 0 160px;
+}
+.ie6 .detailtitle menu {
+    margin-left: 180px;
+}
+.box {
+    margin: 0 0 10px;
+}
+.adbanner object, .adbanner img {
+    display: block;
+}
+#container .favorites, #container #main .favorites {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/favorites.png") no-repeat scroll 0 -32px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    padding: 0;
+    width: 16px;
+}
+.ie6 #container .favorites, .ie6 #container #main .favorites {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/favorites.gif");
+}
+#container .favorites_active, #container #main .favorites_active {
+    background-position: 0 0;
+}
+#container .favorites:hover, #container .favorites_active:hover, #container #main .favorites:hover, #container #main .favorites_active:hover {
+    background-position: 0 -16px;
+}
+.header {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey.gif") repeat-y scroll left center #CCCCCC;
+    color: #999999;
+    margin: 0 0 1px;
+}
+.header em {
+    color: #000000;
+    font-style: normal;
+}
+.header strong {
+    color: #000000;
+    font-weight: normal;
+}
+.header h2 {
+    font-size: 1.08em;
+    font-weight: bold;
+    padding: 6px 10px 5px;
+}
+.header h2 a {
+    color: #666666;
+    text-decoration: underline;
+}
+.header h2 a:hover {
+    text-decoration: none;
+}
+#container .header h2 a.favorites {
+    cursor: pointer;
+    float: right;
+    margin: 0 0 0 10px;
+}
+.header h2 .country_flag {
+    display: inline-block;
+    margin: -1px 7px -4px -3px;
+}
+.header h2 select {
+    font-size: 0.76em;
+}
+.header p {
+    color: #000000;
+    float: right;
+    font-size: 0.92em;
+    padding: 3px;
+}
+#container .header p a, .header p span {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey.gif") repeat-y scroll left center #F0F0F0;
+    border: 1px solid #EEEEEE;
+    color: #000000;
+    display: inline-block;
+    line-height: 1.8em;
+    margin-left: 4px;
+    padding: 0 8px;
+    text-decoration: none;
+}
+#container .header p a:hover {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #FFFFFF;
+}
+#container .header p a.active, #container .header p span.active {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-dark-short.gif") repeat-y scroll left center #666666;
+    border-color: #555555;
+    color: #FFFFFF;
+    cursor: text;
+}
+.header .hidden {
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -9999px;
+    visibility: visible;
+    width: 5px;
+}
+.header img {
+    margin: -1px 0 1px;
+}
+#container .header a.favorites {
+    border: 0 none;
+    margin: 2px 0 -4px 7px;
+}
+.articles .header {
+    background-color: #E0E0E0;
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-light.gif");
+    color: #000000;
+}
+.results_mini .header h2 {
+    color: #666666;
+    padding: 4px 10px;
+}
+.results_mini .header h2 strong {
+    color: #666666;
+    margin-right: 7px;
+}
+.results_mini .header p {
+    padding: 4px;
+}
+.gamedetail .header {
+    background-color: #E0E0E0;
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-light.gif");
+}
+.gamedetail p {
+    color: #999999;
+    font-size: 1em;
+    margin: 0;
+    padding-right: 10px;
+}
+#container .gamedetail .header a.favorites {
+    margin: 0 1px -2px 3px;
+    position: relative;
+    top: 2px;
+}
+.topread .header {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-dark-long.gif") repeat-y scroll left center #999999;
+    color: #FFFFFF;
+}
+aside .topread .header {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-dark-short.gif");
+}
+.topread .header p {
+    color: #FFFFFF;
+}
+.topread .header p a, .topread .header p span {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-dark-long.gif") repeat-y scroll -250px center #777777;
+    border-color: #666666;
+    color: #FFFFFF;
+}
+.topread .header p a:hover {
+    background: none repeat scroll 0 0 #333333;
+    border-color: #333333;
+}
+#container .topread .header p a.active, #container .topread .header p span.active {
+    background-color: #555555;
+    background-position: left center;
+    border-color: #444444;
+}
+.leaguetable .header {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-dark-long.gif") repeat-y scroll left center #999999;
+    color: #FFFFFF;
+}
+aside .leaguetable .header {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-dark-short.gif");
+}
+.leaguetable .header p {
+    color: #FFFFFF;
+}
+.leaguetable .header p a, .leaguetable .header p span {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-dark-long.gif") repeat-y scroll -250px center #777777;
+    border-color: #666666;
+    color: #FFFFFF;
+}
+.leaguetable .header p a:hover {
+    background: none repeat scroll 0 0 #333333;
+    border-color: #333333;
+}
+#container .leaguetable .header p a.active, #container .leaguetable .header p span.active {
+    background-color: #555555;
+    background-position: left center;
+    border-color: #444444;
+}
+.homestyle.results .header {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-dark-long.gif") repeat-y scroll left center #999999;
+    color: #FFFFFF;
+}
+.homestyle.results .header p {
+    color: #FFFFFF;
+}
+.homestyle.results .header p a, .homestyle.results .header p span {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-dark-long.gif") repeat-y scroll left center #555555;
+    border-color: #444444;
+    color: #FFFFFF;
+}
+.homestyle.results .header p a:hover {
+    background: none repeat scroll 0 0 #333333;
+    border-color: #333333;
+}
+#container .homestyle .scrollinside {
+    height: 140px;
+    overflow: auto;
+}
+.informations .header {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-dark-long.gif") repeat-y scroll left center #999999;
+    color: #FFFFFF;
+}
+aside .informations .header {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-dark-short.gif");
+}
+.informations .header p {
+    color: #FFFFFF;
+}
+.informations .header p a, .informations .header p span {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-dark-long.gif") repeat-y scroll -250px center #777777;
+    border-color: #666666;
+    color: #FFFFFF;
+}
+.informations .header p a:hover {
+    background: none repeat scroll 0 0 #333333;
+    border-color: #333333;
+}
+#container .informations .header p a.active, #container .informations .header p span.active {
+    background-color: #555555;
+    background-position: left center;
+    border-color: #444444;
+}
+.otherleagues .header {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/blue.gif") repeat-y scroll left center #81C4E1;
+    color: #FFFFFF;
+}
+.otherleagues .header p {
+    color: #FFFFFF;
+}
+#container .otherleagues .header p a {
+    background: none repeat scroll 0 0 #3FA4D1;
+    color: #FFFFFF;
+}
+#container .otherleagues .header p a:hover {
+    background: none repeat scroll 0 0 #4BADD8;
+}
+#container .otherleagues .header p a.active, #container .otherleagues .header p span.active {
+    background: none repeat scroll 0 0 #1A8EC1;
+}
+.mutual .header {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/blue.gif") repeat-y scroll left center #81C4E1;
+    color: #FFFFFF;
+}
+.mutual .header p {
+    color: #FFFFFF;
+}
+#container .mutual .header p a {
+    background: none repeat scroll 0 0 #3FA4D1;
+    color: #FFFFFF;
+}
+#container .mutual .header p a:hover {
+    background: none repeat scroll 0 0 #4BADD8;
+}
+#container .mutual .header p a.active, #container .mutual .header p span.active {
+    background: none repeat scroll 0 0 #1A8EC1;
+}
+.last .header {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/green.gif") repeat-y scroll left center #C2DA73;
+    color: #FFFFFF;
+}
+.last .header p {
+    color: #FFFFFF;
+}
+#container .last .header p a {
+    background: none repeat scroll 0 0 #A3BF45;
+    color: #FFFFFF;
+}
+#container .last .header p a:hover {
+    background: none repeat scroll 0 0 #ABC64E;
+}
+#container .last .header p a.active, #container .last .header p span.active {
+    background: none repeat scroll 0 0 #8EAD27;
+}
+.miniprofiles .header {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/blue.gif") repeat-y scroll left center #81C4E1;
+    color: #FFFFFF;
+}
+.miniprofiles .header p {
+    color: #FFFFFF;
+}
+#container .miniprofiles .header p a {
+    background: none repeat scroll 0 0 #3FA4D1;
+    color: #FFFFFF;
+}
+#container .miniprofiles .header p a:hover {
+    background: none repeat scroll 0 0 #4BADD8;
+}
+#container .miniprofiles .header p a.active, #container .miniprofiles .header p span.active {
+    background: none repeat scroll 0 0 #1A8EC1;
+}
+section {
+    float: left;
+    width: 660px;
+}
+section.fullsize {
+    width: 970px;
+}
+section.searchresults {
+    width: 580px;
+}
+td {
+    vertical-align: middle;
+}
+section article {
+    font-size: 1.25em;
+    margin-right: 20px;
+    padding-bottom: 0;
+}
+section article iframe {
+    float: left;
+    margin-bottom: 1em;
+}
+section article p {
+    clear: both;
+    line-height: 1.5;
+    margin: 1em 0;
+}
+section article ul {
+    clear: both;
+    list-style: circle outside none;
+    margin: 1em 0 1em 30px;
+}
+section article ol {
+    clear: both;
+    list-style: decimal outside none;
+    margin: 1em 0 1em 30px;
+}
+section article li {
+    margin: 0.25em 0;
+}
+section article ul.similar_articles {
+    list-style: none outside none;
+    margin: 1em 0;
+}
+section article ul.similar_articles li {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/list-style.gif") no-repeat scroll left 4px transparent;
+    margin: 0.5em 0;
+    padding-left: 20px;
+}
+section article table {
+    clear: both;
+    margin: 1em 0;
+}
+section article strong {
+    font-weight: bold;
+}
+section article em {
+    color: inherit;
+}
+section article img {
+    margin: 5px 10px 5px 0;
+}
+section article .article-image {
+    background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+    float: left;
+    font-size: 0.8em;
+    margin: 5px 17px 15px 0;
+}
+section article .article-image img {
+    margin: 0 0 -3px;
+}
+section article .article-image .img-title {
+    clear: both;
+    display: block;
+    padding: 8px 0 5px;
+    text-align: center;
+}
+section article p.perex, section article .introtext {
+    clear: none;
+    font-weight: bold;
+    margin-bottom: 1em;
+    margin-left: 110px;
+}
+section article .introtext .datetime {
+    color: #666666;
+}
+section article p.more {
+    clear: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: right;
+}
+section article p.info {
+    color: #999999;
+    font-size: 0.8em;
+}
+section article p.info strong {
+    color: #333333;
+    font-weight: normal;
+}
+section article h1 {
+    clear: both;
+    color: #1A8EC1;
+    font-size: 2em;
+    font-weight: normal;
+    margin: 0 0 0.5em;
+}
+section article h2 {
+    clear: both;
+    color: #000000;
+    font-size: 1.67em;
+    font-weight: normal;
+    margin: 1em 0 0.35em;
+}
+section article h3 {
+    clear: both;
+    color: #000000;
+    font-size: 1.47em;
+    font-weight: normal;
+    margin: 1em 0 0.45em;
+}
+section article h4 {
+    clear: both;
+    color: #000000;
+    font-size: 1.27em;
+    font-weight: normal;
+    margin: 1em 0 0.65em;
+}
+section article h5 {
+    clear: both;
+    color: #000000;
+    font-size: 1.15em;
+    font-weight: normal;
+    margin: 1em 0 0.7em;
+}
+section article h6 {
+    clear: both;
+    color: #000000;
+    font-size: 1.15em;
+    font-weight: normal;
+    margin: 1em 0 0.7em;
+}
+section article .similar_articles_name {
+    color: #1A8EC1;
+}
+#comments h2 {
+    color: #1A8EC1;
+}
+section article .box-article {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border: 1px dashed #DDDDDD;
+    margin: 1em 0;
+    padding: 0 20px;
+}
+section.searchresults h1 {
+    font-size: 1.7em;
+    font-weight: normal;
+    margin: 0.5em 0 0;
+}
+section .articlesearch {
+    font-size: 1.27em;
+    margin: 1em 0;
+}
+section .articlesearch input {
+    padding: 3px;
+    width: 400px;
+}
+section .articlesearch .submit {
+    padding: 2px 10px;
+    position: relative;
+    top: -1px;
+    width: auto;
+}
+section .highlight {
+    color: #444444;
+}
+section .polling {
+    background: none repeat scroll 0 0 #EFF9FC;
+    border: 1px solid #DFDFDF;
+    margin: 1em 0;
+    padding: 10px 20px;
+}
+#container section .polling p {
+    margin: 0;
+}
+#container section .polling .poll-head {
+    margin-bottom: 0.5em;
+}
+section .polling .option-title {
+    clear: both;
+    display: block;
+}
+section .polling .option-around {
+    background: none repeat scroll 0 0 #000000;
+    display: block;
+    float: left;
+    height: 8px;
+    margin: 5px 10px 5px 0;
+    overflow: hidden;
+    position: relative;
+    width: 560px;
+}
+section .polling .option-progress {
+    background: none repeat scroll 0 0 #1A8EC1;
+    border-right: 1px solid #FFFFFF;
+    display: block;
+    height: 8px;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+section .polling .option-weight {
+    position: relative;
+    top: -2px;
+}
+section #comments {
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 640px;
+}
+section #comments .comment {
+    border-top: 1px solid #DFDFDF;
+    clear: both;
+    font-size: 0.93em;
+    padding-top: 7px;
+    position: relative;
+}
+section #comments .profileFoto {
+    border: 1px solid #FFFFFF;
+    float: left;
+    height: 48px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 48px;
+}
+section #comments .profileFoto img {
+    display: block;
+    margin-top: -6px;
+}
+section #comments .comment h3, section #comments .comment h4 {
+    clear: none;
+    font-size: 0.86em;
+    margin: 0 0 0 60px;
+    padding: 3px 0 5px;
+}
+section #comments .comment h3 em, section #comments .comment h4 em {
+    color: #999999;
+    font-size: 1em;
+    font-style: normal;
+    margin-left: 10px;
+}
+section #comments .comment p {
+    clear: none;
+    font-size: 0.86em;
+    margin: 0 0 7px 60px;
+    overflow: hidden;
+}
+section #comments .comment p a {
+    text-decoration: underline;
+}
+section #comments .comment p a:hover {
+    text-decoration: none;
+}
+section #comments ul {
+    clear: none;
+    list-style: none outside none;
+    margin: 8px 0 10px 60px;
+}
+section #comments li {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border-bottom: 1px solid #DFDFDF;
+    border-top: 1px solid #DFDFDF;
+    margin: 0 0 -1px;
+    min-height: 58px;
+    padding: 6px;
+    position: relative;
+}
+section #comments li textarea {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DFDFDF;
+    font-size: 0.84em;
+    height: 1.5em;
+    line-height: 1.5em;
+    padding: 3px 5px;
+    width: 556px;
+}
+section #comments li.info {
+    min-height: 0;
+}
+section #comments li.mycomment {
+    background: none repeat scroll 0 0 #EFF9FC;
+}
+section .notlogged {
+    background: none repeat scroll 0 0 #EFF9FC;
+    border-bottom: 1px solid #DFDFDF;
+    border-top: 1px solid #DFDFDF;
+    padding: 10px;
+}
+section #comments .discusionclicks {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+section #comments .discusionclicks .positive, section #comments .discusionclicks .negative, section #comments .discusionclicks .report {
+    background: none repeat scroll 0 0 #CCCCCC;
+    border: 1px solid #BBBBBB;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    font-size: 10px;
+    margin-right: 5px;
+    padding: 2px 5px 1px;
+    text-decoration: none;
+}
+section #comments .discusionclicks .report {
+    background: none repeat scroll 0 0 transparent;
+    border-color: transparent;
+    color: #999999;
+    float: right;
+    margin-left: 10px;
+}
+section #comments .report:hover {
+    color: #BB0000;
+}
+section #comments .newreaction a {
+    border-color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    font-size: 11px;
+    margin-right: 15px;
+    padding: 2px 5px 1px;
+    text-decoration: underline;
+}
+section #comments .newreaction a:hover {
+    text-decoration: none;
+}
+section #comments.previewcomment .comment {
+    cursor: pointer;
+    min-height: 60px;
+}
+section #comments.previewcomment .comment:hover {
+    background: none repeat scroll 0 0 #EEEEEE;
+}
+section #comments .votecomment .positive:before {
+    content: "+ ";
+}
+section #comments .votecomment .negative:before {
+    content: "- ";
+}
+section #comments .votecomment .positive:hover {
+    background: none repeat scroll 0 0 #EEFFEE;
+    color: green;
+}
+section #comments .votecomment .negative:hover {
+    background: none repeat scroll 0 0 #FFEEEE;
+    color: red;
+}
+section #comments .newreaction {
+    text-align: right;
+}
+section .toparticle {
+    margin: 0 30px 20px 0;
+}
+section .toparticle img {
+    border: 1px solid #FFFFFF;
+    float: left;
+    margin-bottom: 5px;
+    width: 300px;
+}
+section .toparticle h1 {
+    font-size: 1.6em;
+    margin-left: 335px;
+}
+#container section .toparticle a {
+    text-decoration: none;
+}
+#container section .toparticle a:hover, #container section .toparticle a:hover h1 {
+    text-decoration: underline;
+}
+section .toparticle p {
+    color: #666666;
+    font-size: 1em;
+    margin: 1em 0 1em 335px;
+}
+#container section .toparticle p a {
+    color: #000000;
+    display: inline-block;
+    font-size: 1em;
+    margin-right: 15px;
+    padding: 7px 0 7px 40px;
+}
+#container section .toparticle .discussion {
+    margin-right: -30px;
+}
+section .articles {
+    clear: both;
+    margin: 20px 0;
+}
+section .articles .header {
+    margin-right: 30px;
+}
+section .articles.atypelong .header {
+    margin-right: 0;
+}
+section .articles ul {
+    margin: 10px 0;
+    overflow: hidden;
+}
+section .articles ul li {
+    border-top: 1px solid #DFDFDF;
+    float: left;
+    font-size: 1.17em;
+    height: 3.5em;
+    margin-right: 40px;
+    margin-top: -1px;
+    overflow: hidden;
+    width: 290px;
+}
+#container section .articles ul a {
+    display: block;
+    line-height: 1.25em;
+    min-height: 2em;
+    padding: 0.5em 5px 0.5em 40px;
+    text-decoration: none;
+}
+#container section .articles ul a:hover {
+    text-decoration: underline;
+}
+section .articles ul .toplink {
+    background-color: #F1F9FC;
+}
+section .articles strong {
+    color: #444444;
+    font-weight: normal;
+}
+section .articles.articles_results {
+    border: 1px solid #DFDFDF;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+section .articles.articles_results ul li {
+    margin-left: 25px;
+    margin-right: 0;
+}
+#container section img.articlecontenticon {
+    border: 0 none;
+    box-shadow: none;
+    float: none;
+    height: auto;
+    margin: 0;
+    position: static;
+    width: auto;
+}
+#container section article h1 img.articlecontenticon {
+    display: none;
+}
+section .articles.smallleft {
+    float: left;
+    margin-top: 0;
+    width: 330px;
+}
+section .articles.smallright {
+    clear: none;
+    float: right;
+    margin-top: 0;
+    width: 330px;
+}
+section .articles.atype2 ul li {
+    height: 7.7em;
+}
+#container section .articles.atype2 ul a {
+    padding-left: 90px;
+}
+#container section .articles.atype2 ul a:hover {
+    text-decoration: none;
+}
+#container section .articles.atype2 ul a:hover * {
+    text-decoration: underline;
+}
+section .articles.atype2 ul p {
+    clear: both;
+    color: #666666;
+    font-size: 0.86em;
+    line-height: 1.25em;
+    margin-top: 0.5em;
+}
+section .articles.atype2 img {
+    border: 1px solid #FFFFFF;
+    float: left;
+    margin-bottom: 5px;
+    margin-left: -87px;
+    margin-top: 3px;
+}
+section.searchresults .articles.atype2 ul li {
+    float: none;
+    height: auto;
+    width: 580px;
+}
+section.searchresults .articles.atype2 p {
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+section .articles.atype3 ul li {
+    height: 8.2em;
+}
+#container section .articles.atype3 ul a {
+    padding-left: 3px;
+}
+#container section .articles.atype3 ul a:hover {
+    text-decoration: none;
+}
+#container section .articles.atype3 ul a:hover * {
+    text-decoration: underline;
+}
+section .articles.atype3 ul h2 {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+section .articles.atype3 ul p {
+    color: #666666;
+    font-size: 0.86em;
+    line-height: 1.25em;
+    margin-left: 90px;
+    margin-top: 0.1em;
+}
+section .articles.atype3 img {
+    border: 1px solid #FFFFFF;
+    float: left;
+    margin-top: 5px;
+}
+section .articles.atype4 ul li {
+    height: 8em;
+}
+#container section .articles.atype4 ul a {
+    padding-left: 160px;
+}
+#container section .articles.atype4 ul a:hover {
+    text-decoration: none;
+}
+#container section .articles.atype4 ul a:hover * {
+    text-decoration: underline;
+}
+section .articles.atype4 ul a p {
+    color: #666666;
+    font-size: 0.86em;
+    line-height: 1.25em;
+    margin-top: 0.5em;
+}
+section .articles.atype4 img {
+    border: 1px solid #FFFFFF;
+    float: left;
+    margin-left: -157px;
+    margin-top: 3px;
+}
+section .articles.atype5 ul li {
+    float: none;
+    height: auto;
+    width: 580px;
+}
+#container section .articles.atype5 ul a {
+    padding-left: 90px;
+}
+#container section .articles.atype5 ul a:hover {
+    text-decoration: none;
+}
+#container section .articles.atype5 ul a:hover * {
+    text-decoration: underline;
+}
+section .articles.atype5 ul a p {
+    color: #666666;
+    font-size: 0.86em;
+    line-height: 1.25em;
+    margin-top: 0.5em;
+}
+section .articles.atype5 img {
+    border: 1px solid #FFFFFF;
+    float: left;
+    margin-left: -87px;
+    margin-top: 3px;
+}
+#container section .articles.atype6 ul li {
+    height: 55px;
+}
+#container section .articles.atype6 ul li a {
+    display: block;
+    height: 50px;
+    padding-left: 50px;
+    position: relative;
+}
+#container section .articles.atype6 ul li img.coverimg {
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 9px;
+}
+section .articles.atype7 {
+    margin-right: -10px;
+}
+section .articles.atype7 ul li {
+    height: 4.7em;
+}
+#container section .articles.atype7 ul a {
+    padding-left: 90px;
+}
+#container section .articles.atype7 ul a:hover {
+    text-decoration: none;
+}
+#container section .articles.atype7 ul a:hover * {
+    text-decoration: underline;
+}
+section .articles.atype7 img {
+    border: 1px solid #FFFFFF;
+    float: left;
+    margin-left: -87px;
+    margin-top: 3px;
+}
+section .articles.players .header {
+    margin-right: 0;
+}
+section .articles.players ul li {
+    height: 6.7em;
+    margin-right: 20px;
+    width: 310px;
+}
+#container section .articles.players ul a {
+    padding-left: 90px;
+}
+#container section .articles.players ul a:hover {
+    text-decoration: none;
+}
+#container section .articles.players ul a:hover * {
+    text-decoration: underline;
+}
+section .articles.players ul a p {
+    color: #666666;
+    font-size: 0.86em;
+    line-height: 1.25em;
+    margin-top: 0.5em;
+}
+section .articles.players img {
+    border: 1px solid #FFFFFF;
+    float: left;
+    margin-left: -87px;
+    margin-top: 3px;
+}
+section.searchresults .articles.players ul li {
+    float: none;
+    height: auto;
+    width: 580px;
+}
+section.searchresults .articles.players p {
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+section .sectiontitle {
+    clear: both;
+    color: #1A8EC1;
+    font-size: 2em;
+    font-weight: normal;
+    margin: 0 0 -0.5em;
+}
+section .commercelink {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px dashed #CCCCCC;
+    padding: 10px 20px;
+}
+section .buttons {
+    font-size: 1.42em;
+    margin: 20px 40px 20px 0;
+    text-align: center;
+}
+#container section .buttons a {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/blue-semilight.gif") no-repeat scroll center center #81C4E1;
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 6px 15px;
+    text-decoration: none;
+}
+#container section .buttons a:hover {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/blue.gif") no-repeat scroll left center #1A8EC1;
+}
+section .pagenum {
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 25px;
+    margin-right: 40px;
+    text-align: center;
+}
+section .pagenum strong {
+    background: none repeat scroll 0 0 #FFFFFF;
+    font-size: 1.18em;
+    padding: 0 20px;
+    position: relative;
+    top: 0.5em;
+}
+.generateTablebox {
+    border: 1px solid #DFDFDF;
+    font-size: 0.8em;
+    margin: 1em 0;
+    padding: 1px;
+}
+#container .generateTablebox table {
+    margin: 0;
+}
+#container .generateTable td.tim {
+    color: #000000;
+    font-weight: bold;
+    text-align: left;
+}
+#container .generateTable td {
+    background-color: #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+    color: #666666;
+    font-weight: bold;
+    padding: 6px 10px;
+    text-align: center;
+    width: 20px;
+}
+#container .generateTable td.autosize {
+    text-align: left;
+    width: auto;
+}
+#container .generateTable tr:nth-child(2n-1) td, #container .generateTable tr:nth-child(2n-1) th {
+    background-color: #F7F7F7;
+}
+#container .generateTable tr.tableEven td {
+    background-color: #F7F7F7;
+}
+#container .generateTable th, #container .generateTable tr:nth-child(1) th {
+    background-color: #E8E8E8;
+    border: 0 none;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    text-align: center;
+}
+#container .generateTable th.tim {
+    text-align: left;
+}
+#container .generateTable tr:hover td {
+    background-color: #E5F4FB;
+}
+#container .generateTable .tableBody {
+    color: #1A8EC1;
+}
+#container .generateTable .position {
+    background-position: 26px center;
+    background-repeat: no-repeat;
+    font-weight: normal;
+    padding-left: 4px;
+    padding-right: 14px;
+}
+#container .generateTable .score {
+    font-weight: normal;
+    width: 50px;
+}
+#container .generateTable .series {
+    font-weight: normal;
+    padding: 4px;
+    text-align: center;
+}
+#container .generateTable .serieshead {
+    font-size: 0.75em;
+    min-width: 70px;
+    padding-bottom: 1px;
+    padding-top: 3px;
+}
+#container .generateTable .count {
+    color: #000000;
+}
+#container .generateTable .legend {
+    color: #999999;
+    font-size: 0.75em;
+    font-weight: normal;
+    line-height: 1.5em;
+    text-align: left;
+}
+#container .generateTable strong, #container .generateTable .flag_left {
+    padding-left: 37px;
+}
+#container .generateTable tr.selectedTeam td, #container .generateTable tr.selectedTeam th {
+    background-color: #CBE8F4;
+}
+#container .generateTable tfoot .lm {
+    display: inline-block;
+    float: none;
+}
+article .box {
+    font-size: 0.8em;
+}
+article .box h2 {
+    margin: 0;
+    padding: 4px 10px;
+}
+article .box table {
+    margin: 0;
+}
+article .box table td {
+    padding-bottom: 3px;
+    padding-top: 4px;
+}
+article .box li {
+    list-style: none outside none;
+    margin: 0;
+}
+article .box ul {
+    margin: 0;
+}
+div.table {
+    border: 1px solid #DFDFDF;
+    padding: 1px;
+}
+section table {
+    width: 100%;
+}
+section td, section th {
+    border-top: 1px solid #EAEAEA;
+    padding: 4px 10px;
+    vertical-align: middle;
+}
+section tr:first-child td, section tr:first-child th {
+    border: medium none;
+}
+section th {
+    background-color: #F7F7F7;
+    text-align: left;
+}
+section th em {
+    color: #999999;
+    font-style: normal;
+}
+section table tbody tr:hover td {
+    background-color: #F1F9FD;
+}
+section .noMatches {
+    border: 1px solid #EAEAEA;
+    font-weight: bold;
+    padding: 5px 10px 6px;
+}
+.profiles {
+    margin-right: -25px;
+    min-height: 160px;
+}
+.profiles.homeprofiles {
+    height: 200px;
+    margin-right: 0;
+}
+.profiles li {
+    background: none repeat scroll 0 0 #F8F8F8;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    float: left;
+    height: 141px;
+    margin: 5px 10px 5px 0;
+    overflow: hidden;
+    width: 211px;
+}
+.profiles.homeprofiles li {
+    margin: 0 6px 6px 0;
+    width: 204px;
+}
+.profiles.homeprofiles .header {
+    margin-bottom: 7px;
+    margin-right: 30px;
+}
+.profiles li .photo {
+    border: 1px solid #CCCCCC;
+    float: left;
+    margin: 2px 10px 2px 2px;
+    position: relative;
+}
+.profiles li .photo img {
+    display: block;
+}
+#container .profiles li .photo .country_flag {
+    background-color: #FFFFFF;
+    bottom: 3px;
+    left: 3px;
+    position: absolute;
+}
+.profiles li h3 {
+    font-weight: normal;
+    margin: 0.75em 0;
+}
+.profiles li p {
+    margin: 0.75em 0;
+}
+.profiles a {
+    text-decoration: none;
+}
+.profiles a:hover {
+    text-decoration: underline;
+}
+.iconbox {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/gameinfo-icons.gif");
+    background-position: center top;
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    height: 25px;
+    margin: -6px 5px 0 0;
+    width: 21px;
+}
+.iconbox.card_y {
+    background-position: center -47px;
+}
+.iconbox.card_r {
+    background-position: center -97px;
+}
+.iconbox.change {
+    background-position: center -145px;
+}
+.iconbox.goal1 {
+    background-position: center -247px;
+}
+.iconbox.goal2 {
+    background-position: center -296px;
+}
+.iconbox.assist {
+    background-position: center -346px;
+}
+section .box {
+    clear: both;
+}
+.box.nikeblogloga {
+    text-align: center;
+}
+.box.nikeblogloga a {
+    margin: 0 20px;
+}
+.box.leaguetable .table {
+    margin-bottom: -1px;
+}
+.box.leaguetable .table th {
+    background-color: #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+    color: #000000;
+    font-weight: bold;
+    padding: 6px 10px;
+}
+.box.leaguetable .table td {
+    background-color: #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+    color: #666666;
+    font-weight: bold;
+    padding: 6px 10px;
+    text-align: center;
+    width: 20px;
+}
+.box.leaguetable .table td.autosize {
+    text-align: left;
+    width: auto;
+}
+.box.leaguetable .table tbody tr:nth-child(2n-1) td, .box.leaguetable .table tbody tr:nth-child(2n-1) th {
+    background-color: #F7F7F7;
+}
+.box.leaguetable .table tbody tr.odd td, .box.leaguetable .table tbody tr.odd th, .box.leaguetable .table tfoot td {
+    background-color: #F7F7F7;
+}
+.box.leaguetable .table tfoot td {
+    text-align: left;
+}
+.box.leaguetable .table thead td, .box.leaguetable .table thead th {
+    background-color: #E8E8E8;
+    border: 0 none;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+#container .box.leaguetable .table tbody tr:hover td, #container .box.leaguetable .table tbody tr:hover th {
+    background-color: #E5F4FB;
+}
+.box.leaguetable .table td.position {
+    background-position: 26px center;
+    background-repeat: no-repeat;
+    font-weight: normal;
+    padding-left: 4px;
+    padding-right: 14px;
+}
+.box.leaguetable .table td.score {
+    font-weight: normal;
+    width: 50px;
+}
+.box.leaguetable .table td.series {
+    font-weight: normal;
+    padding: 4px;
+    text-align: center;
+}
+.box.leaguetable .table td.serieshead {
+    font-size: 0.75em;
+    min-width: 70px;
+    padding-bottom: 1px;
+    padding-top: 3px;
+}
+.ie6 .box.leaguetable .table td.serieshead {
+    width: 70px;
+}
+.ie7 .box.leaguetable .table td.serieshead {
+    width: 70px;
+}
+.box.leaguetable .table tr.serieshead td {
+    padding: 0 4px 4px;
+}
+.box.leaguetable .table td.count {
+    color: #000000;
+}
+.box.leaguetable .table td.legend {
+    color: #999999;
+    font-size: 0.75em;
+    font-weight: normal;
+    line-height: 1.5em;
+    text-align: left;
+}
+.box.leaguetable .table strong, .box.leaguetable .table thead th {
+    color: #1A8EC1;
+}
+.box.leaguetable .table .flag_left {
+    padding-left: 37px;
+}
+#main .box.leaguetable tr.selectedTeam td, #main .box.leaguetable tr.selectedTeam th {
+    background-color: #CBE8F4;
+}
+.box.leaguetable tfoot .lm {
+    display: inline-block;
+    float: none;
+}
+.box.leaguetable .table small {
+    color: #999999;
+    font-size: 1em;
+    font-weight: normal;
+}
+#main .box.leaguetable tbody a {
+    color: #000000;
+}
+aside .box.leaguetable tbody a.borderboxik {
+    text-decoration: underline;
+}
+aside .box.leaguetable tbody a.borderboxik:hover {
+    text-decoration: none;
+}
+.box.leaguetable .antibold td, .box.leaguetable .antibold th {
+    font-weight: normal;
+}
+.box.leaguetable .antibold .borderboxik {
+    font-weight: bold;
+}
+.box.leaguetable .table .up td.position {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/table-icon-up.gif");
+}
+.box.leaguetable .table .down td.position {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/table-icon-down.gif");
+}
+.box.leaguetable .table .lma td.position {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/table-icon-lm.gif");
+}
+.box.leaguetable .table .uefa td.position {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/table-icon-uefa.gif");
+}
+#container .box.leaguetable .table .down td, #container .box.leaguetable .table .down th {
+    background-color: #FFF2F2;
+}
+#container .leaguetable .summary td, #container .leaguetable .summary th {
+    background: none repeat scroll 0 0 #DDDDDD;
+    color: #000000;
+}
+.box.leaguetable.multibox {
+    margin-top: -21px;
+}
+.box.leaguetable.multibox .table {
+    background: none repeat scroll 0 0 #E1E1E1;
+    padding: 9px 9px 8px;
+}
+.box.leaguetable.multibox .table table {
+    border-top: 1px solid #FFFFFF;
+}
+.box.leaguetable.multibox .table-extra {
+    background: none repeat scroll 0 0 #E1E1E1;
+    padding: 9px 9px 8px;
+}
+.box.leaguetable.multibox .table-extra .table {
+    padding: 0;
+}
+.box.leaguetable_mini .table th, .box.leaguetable_mini .table td {
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+#container article .box.leaguetable {
+    font-size: 0.8em;
+    margin: 1em 0;
+}
+#container article .box.leaguetable .table table {
+    margin: 0;
+}
+#container article .box.leaguetable h2 {
+    clear: none;
+    color: #FFFFFF;
+    margin: 0;
+}
+#container article .box.leaguetable p {
+    margin: 0;
+}
+#container article .box.leaguetable td {
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+#container article .box.leaguetable .header p {
+    font-size: 1em;
+}
+.box.results_mini .table td, .box.results_mini .table th {
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+.box.miniprofiles .table td {
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-top: 1px solid #FFFFFF;
+    color: #666666;
+    cursor: pointer;
+    padding: 5px;
+    text-align: right;
+}
+.box.miniprofiles .table th {
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-top: 1px solid #FFFFFF;
+    color: #666666;
+    cursor: pointer;
+    font-weight: normal;
+    padding: 5px;
+    vertical-align: middle;
+}
+.box.miniprofiles .table td.small {
+    text-align: center;
+    width: 10px;
+}
+.box.miniprofiles .table td:first-child {
+    width: 35px;
+}
+.box.results .table .time {
+    color: #8FAE28;
+    padding-left: 0;
+    text-align: center;
+    width: 35px;
+}
+.box.results .table .time3 {
+    color: #8FAE28;
+    text-align: right;
+}
+.box.results .table .frist_child {
+    padding-left: 7px;
+}
+.box.results .table .type {
+    color: #8FAE28;
+    padding-left: 0;
+    width: 35px;
+}
+.box.results .table .date {
+    color: #999999;
+    text-align: center;
+    width: 35px;
+}
+.box.results .table .run {
+    color: #999999;
+    text-align: right;
+    width: 140px;
+}
+.box.results .table .team1 {
+    font-weight: bold;
+    padding-right: 5px;
+    text-align: right;
+    width: 173px;
+}
+.box.results .table .team2 {
+    font-weight: bold;
+    padding-left: 5px;
+    width: 173px;
+}
+.box.results .table .team1.flag_right {
+    padding-right: 35px;
+    width: 143px;
+}
+.box.results .table .team2.flag_left {
+    padding-left: 35px;
+    width: 143px;
+}
+.box.results .table .morelink {
+    text-align: right;
+}
+.box.results .table small {
+    color: #999999;
+    font-size: 1em;
+    font-weight: normal;
+}
+.box.results .table .score {
+    color: #1A8EC1;
+    font-size: 1.17em;
+    font-weight: bold;
+    line-height: 0.667em;
+    padding: 0;
+    text-align: center;
+    width: 40px;
+}
+.box.results .table .score a {
+    text-decoration: none;
+}
+.box.results .table .position {
+    color: #999999;
+    text-align: center;
+}
+.box.results .table .live, .box.results .table .live a {
+    color: #E00000;
+}
+.box.results .table .score small {
+    display: block;
+    font-size: 0.644em;
+}
+.box.results .table .game_looser {
+    color: #999999;
+}
+.box.results .analyzer {
+    background: none repeat scroll 0 0 #E5F4FB;
+    color: #81C4E1;
+    display: block;
+    float: right;
+    font-size: 0.92em;
+    font-weight: bold;
+    height: 17px;
+    line-height: 17px;
+    margin: -1px -7px -1px 4px;
+    padding: 0 4px;
+    text-decoration: none;
+}
+.box.results .analyzer:hover {
+    background: none repeat scroll 0 0 #81C4E1;
+    color: #FFFFFF;
+}
+.box.results .cell-center {
+    text-align: center;
+}
+.resultsad {
+    float: right;
+    margin: 50px 40px 20px 20px;
+    overflow: hidden;
+    text-align: center;
+    width: 200px;
+}
+.resultsad h3 {
+    font-size: 1.5em;
+    margin: 0.5em 0 0;
+}
+.resultsad p {
+    color: #666666;
+    font-size: 1.25em;
+    margin: 0;
+}
+.resultsad ul {
+    font-size: 1.25em;
+    margin: 5px 0 1em;
+}
+.resultsad li {
+    display: inline;
+    margin: 0 5px;
+}
+.homestyle.box {
+    float: left;
+    margin-bottom: 20px;
+    width: 400px;
+}
+.homestyle.box.results .table {
+    background: none repeat scroll 0 0 #E1E1E1;
+    padding: 9px 9px 8px;
+}
+.homestyle.box.results table {
+    font-size: 0.92em;
+    font-weight: normal;
+}
+.homestyle.box.results th, .homestyle.box.results td {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border-bottom: 1px solid #E1E1E1;
+    padding: 3px;
+    vertical-align: middle;
+}
+.homestyle.box.results th {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding: 3px 6px;
+}
+.homestyle.box.results .table .team1 {
+    font-weight: normal;
+    width: auto;
+}
+.homestyle.box.results .table .team2 {
+    font-weight: normal;
+    width: auto;
+}
+.homestyle.box.results .table .score {
+    font-size: 1em;
+    padding: 3px 6px;
+    width: auto;
+}
+.homestyle.box.results .table .time {
+    font-size: 0.82em;
+    padding: 3px 6px;
+    text-align: left;
+    width: auto;
+}
+.homestyle.box.results .table .date {
+    width: auto;
+}
+.homestyle.box.results tr:hover td, .homestyle.box.results tr.active td {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.box.tipratesfull td {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-right: 1px solid #EEEEEE;
+    color: #999999;
+    padding: 5px 10px;
+    text-align: center;
+}
+.box.tipratesfull th {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: -moz-use-text-color #EEEEEE -moz-use-text-color -moz-use-text-color;
+    border-style: none solid none none;
+    border-width: 0 1px 0 0;
+    padding: 0 10px 5px;
+    text-align: center;
+}
+.box.tipratesfull th.live {
+    color: #E00000;
+}
+.box.tipratesfull th.final {
+    color: #1A8EC1;
+}
+.box.tipratesfull .adbanner {
+    border: 0 none;
+    height: 23px;
+    margin: 0 0 0 auto;
+    text-align: right;
+    width: 172px;
+}
+.box.gamedetail td {
+    color: #999999;
+    font-weight: bold;
+    width: 43%;
+}
+.box.gamedetail th {
+    text-align: center;
+}
+.box.gamedetail th span {
+    color: #999999;
+}
+.box.gamedetail strong {
+    color: #000000;
+}
+.box.gamedetail tbody a {
+    color: #999999;
+}
+.box.gamedetail tbody strong a {
+    color: #000000;
+}
+.box.gamedetail .time2 {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/gameinfo-icons.gif");
+    background-position: left top;
+    background-repeat: no-repeat;
+    color: #8FAE28;
+    text-align: center;
+    width: auto;
+}
+.box.gamedetail .gameteam1 {
+    text-align: right;
+}
+.box.gamedetail .home_event_card_y .time2 {
+    background-position: left -47px;
+}
+.box.gamedetail .home_event_card_r .time2 {
+    background-position: left -97px;
+}
+.box.gamedetail .home_event_change .time2 {
+    background-position: left -145px;
+}
+.box.gamedetail .matchsport-1 .home_event_goal .time2 {
+    background-position: left -247px;
+}
+.box.gamedetail .matchsport-2 .home_event_goal .time2 {
+    background-position: left -297px;
+}
+.box.gamedetail .away_event_card_y .time2 {
+    background-position: right -47px;
+}
+.box.gamedetail .away_event_card_r .time2 {
+    background-position: right -97px;
+}
+.box.gamedetail .away_event_change .time2 {
+    background-position: right -195px;
+}
+.box.gamedetail .matchsport-1 .away_event_goal .time2 {
+    background-position: right -247px;
+}
+.box.gamedetail .matchsport-2 .away_event_goal .time2 {
+    background-position: right -297px;
+}
+#container .ii_icon {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/gameinfo-icons-small.gif");
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+#container .ii_goal {
+    background-position: center -245px;
+}
+#container .ii_card_y {
+    background-position: center -45px;
+}
+#container .ii_card_r {
+    background-position: center -95px;
+}
+.box.calendar {
+    background: none repeat scroll 0 0 #E1E1E1;
+    padding: 10px;
+}
+.box.calendar thead td {
+    padding-bottom: 9px;
+}
+.box.calendar tfoot td {
+    padding-top: 9px;
+}
+.box.calendar td {
+    border: 1px solid #E1E1E1;
+    text-align: center;
+}
+#container .box.calendar a, .box.calendar span {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/white.gif") repeat-y scroll left center #F9F9F9;
+    color: #000000;
+    display: block;
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+}
+#container .box.calendar a.other, .box.calendar span.other {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-light.gif") repeat-y scroll right center #EBEBEB;
+    color: #777777;
+}
+#container .box.calendar a.active, .box.calendar span.active {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/blue.gif") repeat-y scroll left center #1A8EC1;
+    color: #FFFFFF;
+}
+#container .box.calendar a:hover, #container .box.calendar a.other:hover {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/blue-semilight.gif") no-repeat scroll center center #F1F9FD;
+    color: #FFFFFF;
+}
+.box.calendar strong {
+    color: #999999;
+    display: block;
+    font-weight: normal;
+    padding: 5px;
+    text-decoration: none;
+}
+.ie6 #container .box.calendar td a {
+    margin-bottom: -1px;
+    position: relative;
+}
+.ie6 .box.calendar td strong {
+    margin-bottom: -1px;
+    position: relative;
+}
+#calendarBoxFilter {
+    margin-bottom: -20px;
+    position: relative;
+    top: -20px;
+}
+#container #calendarBoxFilter tbody a {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/blue-light.gif") no-repeat scroll center center #E5F4FB;
+    color: #1A8EC1;
+}
+#container #calendarBoxFilter tbody a:hover {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/blue-semilight.gif") no-repeat scroll center center #F1F9FD;
+    color: #FFFFFF;
+}
+#container #calendarBoxFilter tbody a.other {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/grey-light.gif") repeat-y scroll left center #EBEBEB;
+    color: #777777;
+}
+#container #calendarBoxFilter tbody a.active {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/headers/blue.gif") repeat-y scroll left center #1A8EC1;
+    color: #FFFFFF;
+}
+.box.filter fieldset {
+    background: none repeat scroll 0 0 #E1E1E1;
+    padding: 10px;
+    width: 280px;
+}
+.box.filter fieldset p {
+    clear: both;
+    margin: 4px 0 2px;
+}
+.box.filter fieldset strong {
+    display: block;
+    float: left;
+    font-weight: normal;
+    padding-top: 2px;
+    width: 100px;
+}
+.box.filter fieldset select {
+    padding: 1px;
+    width: 175px;
+}
+.box.filter fieldset strong {
+    display: block;
+    float: left;
+    font-weight: normal;
+    padding-top: 2px;
+    width: 100px;
+}
+.box.filter fieldset .inputbefore {
+    margin: 0 0 1px;
+}
+.box.filter fieldset .inputbefore label {
+    background: none repeat scroll 0 0 #EBEBEB;
+    color: #999999;
+    display: block;
+    font-weight: bold;
+    padding: 5px;
+}
+.box.filter fieldset .inputbefore label.active {
+    background: none repeat scroll 0 0 #F9F9F9;
+}
+.box.filter fieldset .inputbefore label:hover {
+    background: none repeat scroll 0 0 #E5F4FB;
+}
+.box.filter fieldset .inputbefore strong {
+    color: #000000;
+    display: inline;
+    float: none;
+    font-weight: bold;
+    width: auto;
+}
+.lmbox {
+    display: block;
+    height: 15px;
+    width: 102px;
+}
+.ie6 .lmbox {
+    width: 105px;
+}
+.box.leaguetable_mini .lmbox {
+    margin: -2px 0;
+}
+.lmbox10 {
+    width: 170px;
+}
+.ie6 .lmbox10 {
+    width: 175px;
+}
+.lm {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/last-matches-icon.gif");
+    display: block;
+    float: left;
+    font-size: 0.92em;
+    height: 15px;
+    margin: 0 1px;
+    text-align: left;
+    text-indent: -9999px;
+    width: 15px;
+}
+.lm.p {
+    background-position: -15px 0;
+}
+.lm.r {
+    background-position: -30px 0;
+}
+.lm.vp {
+    background-position: -45px 0;
+}
+.lm.pp {
+    background-position: -60px 0;
+}
+.run .lm {
+    display: inline-block;
+    float: none;
+    margin: 0 -5px -1px 5px;
+    position: relative;
+    top: -1px;
+}
+.posledne {
+    display: block;
+    height: 15px;
+    width: 170px;
+}
+.ie6 .posledne {
+    width: 175px;
+}
+.tabico {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/last-matches-icon.gif");
+    display: block;
+    float: left;
+    font-size: 0.92em;
+    height: 15px;
+    margin: 0 1px;
+    text-align: left;
+    text-indent: -9999px;
+    width: 15px;
+}
+.tabico.icoP {
+    background-position: -15px 0;
+}
+.tabico.icoR {
+    background-position: -30px 0;
+}
+.tabico.icoVP {
+    background-position: -45px 0;
+}
+.tabico.icoPP {
+    background-position: -60px 0;
+}
+.tiprates {
+    color: #000000;
+    font-size: 0.75em;
+    width: 125px;
+}
+.tiprates li {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/tiprates.gif") no-repeat scroll center 999px transparent;
+    float: left;
+    margin-bottom: -1px;
+    padding-top: 5px;
+    text-align: center;
+    width: 25px;
+}
+.tiprates .rate_1 {
+    background-position: center 0;
+}
+.tiprates .rate_2 {
+    background-position: center -40px;
+}
+.tiprates .rate_3 {
+    background-position: center -80px;
+}
+.tiprates .rate_5 {
+    background-position: center -120px;
+}
+.tiprates .rate_4 {
+    background-position: center -160px;
+}
+#analyzerBackground {
+    background: none repeat scroll 0 0 #EEEEEE;
+    cursor: not-allowed;
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    z-index: 998;
+}
+#analyzer {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 3px solid #CCCCCC;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 0 20px 0 #DDDDDD;
+    position: absolute;
+    width: 692px;
+    z-index: 999;
+}
+#container #analyzer a:focus {
+    outline: medium none;
+}
+#analyzer section {
+    border: 1px solid #E3E3E3;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 10px 0 #DDDDDD;
+    margin: 5px;
+    padding: 0 10px;
+}
+#analyzer table {
+    font-size: 0.91em;
+}
+#analyzer td, #analyzer th {
+    padding: 2px 10px;
+}
+#analyzer .time2 {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/gameinfo-icons-small.gif");
+}
+#analyzer .team1, #analyzer .team2 {
+    background-image: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+#analyzer .title {
+    padding-bottom: 10px;
+}
+#analyzer .header h2 {
+    font-size: 1em;
+}
+#analyzer .header p {
+    padding-top: 2px;
+}
+#analyzer .gamedetail .header p {
+    font-size: 1em;
+    padding-top: 7px;
+}
+#analyzer .detailtitle h1 {
+    font-size: 1.5em;
+}
+#analyzer .detailtitle menu {
+    border-bottom: 1px solid #CCCCCC;
+    margin: 20px -20px 0;
+    padding-left: 10px;
+}
+#analyzer .detailtitle li {
+    background: none repeat scroll 0 0 transparent;
+}
+#container #analyzer .detailtitle li a {
+    background: none repeat scroll 0 0 #FFFFFF;
+    line-height: 1.18em;
+}
+#container #analyzer .detailtitle li a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+#container #analyzer .detailtitle li a.active {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #CCCCCC #CCCCCC -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    color: #000000;
+    margin-bottom: -6px;
+    margin-left: -6px;
+    margin-right: -6px;
+    padding-bottom: 6px;
+}
+#closeAnalyzer {
+    background: none repeat scroll 0 0 #000000;
+    border-radius: 15px 15px 15px 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    padding: 7px 10px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+}
+#analyzer .leaguetable .lm {
+    margin-top: 2px;
+}
+#container .articleresults {
+    font-size: 0.91em;
+}
+#container .articleresults .header p {
+    margin: 0;
+}
+#container .articleresults .header h2 {
+    margin: 0;
+}
+#container .articleresults td {
+    border-collapse: collapse;
+}
+#container .box.withboxes {
+    border: 1px solid #DDDDDD;
+    padding: 10px 10px 0;
+}
+#container .box.withboxes .table {
+    border: 0 none;
+}
+#container .articleresults .detailtitle h1 strong, #container .articleresults .detailtitle .lmbox {
+    width: 190px;
+}
+#container .articleresults .detailtitle h1 {
+    font-size: 1.5em;
+    width: 620px;
+}
+#container .articleresults .detailtitle .last {
+    width: 620px;
+}
+#container .articleresults .detailtitle .run {
+    width: 580px;
+}
+aside {
+    float: right;
+    width: 300px;
+}
+aside table {
+    width: 100%;
+}
+aside img {
+    display: block;
+}
+aside img.articlecontenticon {
+    display: inline-block;
+}
+aside .header img {
+    display: inline;
+}
+aside.searchinresults {
+    width: 380px;
+}
+aside.searchinresults h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+    margin: 1.5em 0 0.5em;
+    padding: 0 10px;
+}
+aside.searchinresults .box h2:first-child {
+    margin-top: 0.5em;
+}
+aside.searchinresults ul {
+    font-size: 1.25em;
+    margin: 0.75em 0 0;
+}
+aside.searchinresults li a {
+    background: none repeat scroll 0 0 #F4F4F4;
+    display: block;
+    margin-top: 1px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+aside.searchinresults li a:hover {
+    background: none repeat scroll 0 0 #E5F4FB;
+}
+aside.searchinresults li a span {
+    color: #666666;
+    display: block;
+    float: right;
+    font-size: 0.8em;
+    margin: 2px 0;
+}
+aside .photo {
+    background: none repeat scroll 0 0 #EEEEEE;
+}
+aside .photo p {
+    padding: 7px 15px;
+}
+.articlelist {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border: 1px solid #DFDFDF;
+    color: #999999;
+    font-size: 1em;
+    list-style: decimal outside none;
+    padding: 15px 15px 5px;
+}
+.articlelist li {
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.articlelist li a {
+    text-decoration: none;
+}
+#container .articlelist li a:hover {
+    text-decoration: underline;
+}
+.articlelist2 {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border: 1px solid #DFDFDF;
+    font-size: 1em;
+    list-style: none outside none;
+    padding: 15px 15px 5px;
+}
+.articlelist2 li {
+    clear: both;
+    margin-bottom: 10px;
+}
+.articlelist2 li a {
+    text-decoration: none;
+}
+#container .articlelist2 li a:hover {
+    text-decoration: underline;
+}
+.articlelist2 li a img {
+    float: left;
+    margin: 0 10px 5px 0;
+}
+.box.aukro {
+    border: 1px solid #999999;
+    padding: 0 10px;
+    text-align: center;
+}
+.aukro p {
+    clear: both;
+    font-size: 1.18em;
+    margin: 1em 0;
+}
+.aukro img {
+    display: block;
+    margin-bottom: 5px;
+}
+#container .aukro a {
+    color: #333333;
+    margin: 0 10px;
+    text-decoration: none;
+}
+#container .aukro a:hover {
+    text-decoration: underline;
+}
+.aukro .aukro_product {
+    clear: none;
+    float: left;
+    font-size: 1em;
+    margin: 0 5px 10px;
+    width: 128px;
+}
+#container .aukro .aukro_product a {
+    display: block;
+    margin: 0;
+}
+.listbox {
+    border: 1px solid #DFDFDF;
+    padding: 10px 10px 1px;
+}
+.listbox ul {
+    margin-bottom: 9px;
+}
+.listbox li {
+    margin-bottom: 1px;
+    position: relative;
+}
+#container .listbox li a {
+    background-color: #F4F4F4;
+    border: 2px solid #F4F4F4;
+    color: #999999;
+    display: block;
+    padding: 6px 27px 5px 35px;
+    position: relative;
+    text-decoration: none;
+    width: 212px;
+}
+.listbox li a span.country_flag {
+    left: 5px;
+    position: absolute;
+    top: 3px;
+}
+#container .listbox li:nth-child(2n) a {
+    background-color: #F0F0F0;
+    border-color: #F0F0F0;
+}
+#container .listbox li a:hover {
+    background-color: #E5F4FB;
+    border-color: #E5F4FB;
+}
+.listbox li a strong {
+    color: #000000;
+    display: block;
+}
+.listbox li a em {
+    float: right;
+    font-style: normal;
+}
+#container .listbox .favorites {
+    position: absolute;
+    right: 5px;
+    top: 4px;
+}
+.listbox li a img {
+    float: left;
+    margin: -2px 10px 0 -30px;
+}
+aside .box.results .table {
+    background: none repeat scroll 0 0 #E1E1E1;
+    padding: 9px 9px 8px;
+}
+aside .box.results table {
+    font-size: 0.92em;
+    font-weight: normal;
+}
+aside .box.results th, aside .box.results td {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border-bottom: 1px solid #E1E1E1;
+    padding: 3px;
+    vertical-align: middle;
+}
+aside .box.results th {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding: 3px 6px;
+}
+aside .box.results .table .team1 {
+    font-weight: normal;
+    width: auto;
+}
+aside .box.results .table .team2 {
+    font-weight: normal;
+    width: auto;
+}
+aside .box.results .table .score {
+    font-size: 1em;
+    padding: 3px 6px;
+    width: auto;
+}
+aside .box.results .table .time {
+    font-size: 0.82em;
+    padding: 3px 6px;
+    text-align: left;
+    width: auto;
+}
+aside .box.results .table .date {
+    width: auto;
+}
+aside .box.results tr:hover td, aside .box.results tr.active td {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+aside .box.leaguetable table {
+    font-size: 0.92em;
+}
+aside .box.leaguetable .table .legend {
+    font-size: 0.92em;
+}
+aside .box.informations .table {
+    background: none repeat scroll 0 0 #F7F7F7;
+    color: #666666;
+    padding: 5px 10px;
+    width: 278px;
+}
+aside .box.informations .table td {
+    border-top: 1px solid #DFDFDF;
+    padding: 5px 0;
+}
+aside .box.informations .table th {
+    color: #000000;
+    padding: 5px 0;
+    text-align: left;
+}
+aside .box.informations img {
+    width: 280px;
+}
+aside .digisport {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/aside-digi.gif") no-repeat scroll 14px 10px transparent;
+    border: 1px solid #0E91BF;
+    padding: 55px 15px 10px;
+}
+aside .digisport .time {
+    color: #666666;
+    padding-right: 3px;
+}
+.rating {
+    font-size: 1.8em;
+    height: 16px;
+    margin: 5px 0;
+}
+.rating strong, .rating span, .rating a {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/media-rating.gif") no-repeat scroll right top transparent;
+    display: block;
+    float: left;
+    height: 16px;
+    margin-right: 1px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 17px;
+}
+.rating strong {
+    background-position: left top;
+}
+.rating a:hover, .rating em:hover a.rating1 {
+    background-position: left top;
+}
+.rating em:hover em:hover a.rating2 {
+    background-position: left top;
+}
+.rating em:hover em:hover em:hover a.rating3 {
+    background-position: left top;
+}
+.rating em:hover em:hover em:hover em:hover a.rating4 {
+    background-position: left top;
+}
+.rating em:hover em:hover em:hover em:hover em:hover a.rating5 {
+    background-position: left top;
+}
+.rating .ratetitle {
+    float: left;
+    font-size: 0.53em;
+    font-style: normal;
+    margin-right: 10px;
+}
+#media {
+    clear: both;
+    margin: 0 0 10px;
+}
+#media ul {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/media-bgr.gif") repeat-x scroll left top #F7F7F7;
+    border: 1px solid #BBBBBB;
+    float: left;
+    padding-left: 2px;
+    width: 476px;
+}
+#media ul.video {
+    margin-right: 10px;
+}
+#media li {
+    float: left;
+    margin-left: 8px;
+    padding: 15px 0 12px;
+    width: 148px;
+}
+#media li a {
+    color: #000000;
+    display: block;
+}
+#media h3 {
+    height: 4.08em;
+    line-height: 1.36em;
+}
+#media .image {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #BBBBBB;
+    display: block;
+    padding: 3px;
+    position: relative;
+}
+#media a:hover .image {
+    border: 3px solid #1A8EC1;
+    padding: 1px;
+}
+#media .image img {
+    display: block;
+}
+#media .image span {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/media-video.png") no-repeat scroll center center transparent;
+    display: block;
+    height: 90px;
+    left: 3px;
+    position: absolute;
+    top: 3px;
+    width: 140px;
+}
+#media a:hover span {
+    left: 1px;
+    top: 1px;
+}
+#media .photo .image span {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/media-photo.png");
+}
+#magazines {
+    clear: both;
+    margin-bottom: 10px;
+    width: 970px;
+}
+#magazines td {
+    background: none repeat scroll 0 0 #DEF2F9;
+    border-right: 10px solid #FFFFFF;
+    padding: 0 20px 10px;
+    vertical-align: top;
+    width: 202px;
+}
+#magazines td:last-child {
+    border-right: 0 none;
+}
+#magazines td:hover {
+    background: none repeat scroll 0 0 #D6EDF6;
+}
+#magazines h3 {
+    font-size: 1.54em;
+    margin: 1em 0 0.7em;
+}
+#magazines h4 {
+    border-top: 1px dotted #96D1E5;
+    font-size: 1.18em;
+    font-weight: normal;
+    margin: 0.7em 0;
+    padding-top: 0.7em;
+}
+#magazines .first-image-magazine {
+    border-top: 1px dotted #96D1E5;
+    padding-top: 1em;
+}
+#magazines .first-image-magazine h4 {
+    border: 0 none;
+    font-weight: bold;
+    padding-top: 0;
+}
+#magazines img {
+    border: 10px solid #FFFFFF;
+    display: block;
+}
+.fullsizead {
+    margin-bottom: 10px;
+    text-align: center;
+}
+footer {
+    clear: both;
+    color: #666666;
+    font-size: 1em;
+    padding: 10px 0 30px;
+    position: relative;
+}
+.footadlinks {
+    border-top: 1px solid #DFDFDF;
+    padding-top: 10px;
+}
+.footadlinks .item {
+    float: left;
+    margin: 0;
+    padding: 10px 1% 10px 0;
+    text-align: left;
+    width: 23.9%;
+}
+.footadlinks img {
+    border: 1px solid #000000;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+#container .footadlinks a {
+    color: #333333;
+}
+.footadlinks .h2 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    display: block;
+    float: none;
+    font-size: 1.09em;
+    margin-top: -19px;
+    padding: 0;
+    width: 8.5em;
+}
+.box.sideadlinks .content {
+    border: 1px solid #DFDFDF;
+    padding: 10px;
+}
+.box.sideadlinks .content .item {
+    clear: both;
+    min-height: 42px;
+    padding: 10px 1% 10px 0;
+    text-align: left;
+}
+.box.sideadlinks .content img {
+    border: 1px solid #000000;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+#container .box.sideadlinks .content a {
+    color: #333333;
+}
+.box.sideadlinks .content .h2 {
+    display: block;
+    font-size: 1.09em;
+}
+#container footer a {
+    text-decoration: none;
+}
+#container footer a:hover {
+    text-decoration: underline;
+}
+footer .copyright {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/menu.gif") repeat-x scroll left center #1A8EC1;
+    color: #FFFFFF;
+    font-size: 1.25em;
+}
+#container footer .copyright a {
+    color: #FFFFFF;
+}
+footer .copyright p {
+    float: right;
+    padding: 12px 15px;
+}
+footer .copyright p.footlinks {
+    color: #69C6EE;
+    float: left;
+}
+footer .c_stlpec {
+    float: left;
+    margin: 20px 0 10px 15px;
+    width: 98px;
+}
+.ie6 footer .c_stlpec {
+    margin: 10px 0 10px 8px;
+}
+footer h6 {
+    color: #333333;
+    font-weight: normal;
+    line-height: 2em;
+    margin-bottom: 5px;
+}
+#container footer h6 a {
+    color: #333333;
+    text-decoration: none;
+}
+#container footer h6 a:hover {
+    color: #333333;
+    text-decoration: underline;
+}
+footer ul {
+    line-height: 1.75em;
+}
+footer .c_logo {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/azet_footer_logo.gif") no-repeat scroll left top transparent;
+    bottom: 40px;
+    display: block;
+    height: 24px;
+    position: absolute;
+    right: 15px;
+    text-indent: -9999px;
+    width: 62px;
+}
+#container a.discussion {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/discussion.png");
+    background-position: 5px center;
+    background-repeat: no-repeat;
+}
+#container a.category {
+    background-position: 5px center;
+    background-repeat: no-repeat;
+}
+#container .category_d a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/default.png");
+}
+#container .category_n a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/nezaradene.png");
+}
+#container .category_1 a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/futbal.png");
+}
+#container .category_2 a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/hokej.png");
+}
+#container .category_3 a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/motosport.png");
+}
+#container .category_4 a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/tenis.png");
+}
+#container .category_5 a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/cyklistika.png");
+}
+#container .category_6 a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/basketbal.png");
+}
+#container .category_7 a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/hadzana.png");
+}
+#container .category_8 a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/volejbal.png");
+}
+#container .category_9 a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/hokejbal.png");
+}
+#container .category_10 a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/zimne.png");
+}
+#container .category_11 a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/vodne.png");
+}
+#container .category_12 a.category {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/categories/atletika.png");
+}
+.float_right {
+    float: right;
+    margin-left: 10px;
+}
+.float_left {
+    float: left;
+    margin-right: 10px;
+}
+#article_photogallery {
+    background: none repeat scroll 0 0 #EEEEEE;
+    margin: 1em 0;
+    min-height: 150px;
+    overflow: auto;
+    padding: 0 5px;
+    width: 630px;
+}
+#container #article_photogallery table {
+    height: 130px;
+    margin: 5px 0 0;
+    padding: 0;
+    width: auto;
+}
+#container #article_photogallery td {
+    padding: 5px;
+}
+#container #article_photogallery tr:hover td {
+    background: none repeat scroll 0 0 transparent;
+}
+#article_photogallery img {
+    height: 130px;
+    margin: 0;
+}
+.nikeblog aside img {
+    display: inline;
+}
+#container nav menu a {
+    -moz-transition: all 0.33s linear 0s;
+}
+.title menu a, .title menu span {
+    border-radius: 4px 4px 4px 4px;
+}
+#analyzer .title menu a {
+    border-radius: 4px 4px 0 0;
+}
+.header, .box.calendar {
+    border-radius: 3px 3px 0 0;
+}
+.header p a, .header p span {
+    border-radius: 3px 3px 3px 3px;
+}
+.box, nav > ul {
+    border-bottom: 1px solid #FFFFFF;
+    box-shadow: 0 10px 10px -10px #E9E9E9;
+}
+.box.results .analyzer, .box.calendar td a, .box.calendar td span {
+    border-radius: 3px 3px 3px 3px;
+}
+#analyzer {
+    display: none;
+}
+#load_overlay {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/loader.gif") no-repeat scroll center center #ACDEF4;
+    cursor: not-allowed;
+    display: block;
+    opacity: 0.8;
+    position: absolute;
+    z-index: 1999;
+}
+#load_overlay.analyzer_spinner {
+    border-radius: 12px 12px 12px 12px;
+    padding: 3px;
+}
+nav menu {
+    border-radius: 8px 8px 0 0;
+}
+nav menu li:first-child a, nav menu li:first-child {
+    border-radius: 8px 0 0 0;
+}
+footer .copyright {
+    border-radius: 0 0 8px 8px;
+}
+.articles .header, section .buttons a {
+    border-radius: 4px 4px 4px 4px;
+}
+.articles img, .toparticle img {
+    box-shadow: 0 0 2px 1px #81C4E1;
+}
+.custom_menu_picture {
+    margin-bottom: 10px;
+}
+.one-video {
+    background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+    float: left;
+    margin: 0 10px 10px 0;
+    position: relative;
+}
+.one-video .video-play {
+    left: 40px;
+    position: absolute;
+    top: 30px;
+}
+.video-time {
+    display: block;
+    margin: -15px 0 -5px;
+    text-align: center;
+}
+#foreground-layout {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+#foreground-player {
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+    position: absolute;
+    top: 50%;
+}
+.box-zlavy-azet {
+    background: none repeat scroll 0 0 #ECF9FD;
+    border: 1px solid #DDDDDD;
+    height: 83px;
+    margin-bottom: 10px;
+    padding: 10px 13px 0;
+    position: relative;
+    width: 272px;
+}
+.box-zlavy-azet a {
+    text-decoration: none;
+}
+.box-zlavy-azet a:hover {
+    text-decoration: underline;
+}
+.box-zlavy-azet .dnone {
+    display: none;
+}
+.box-zlavy-azet .item {
+    padding: 5px 0 10px;
+}
+.box-zlavy-azet .item .title {
+    display: block;
+    font-size: 14px;
+    height: 1.3em;
+    line-height: 1.3em;
+    margin-bottom: 8px;
+    margin-left: 70px;
+    overflow: hidden;
+    padding: 0;
+}
+.box-zlavy-azet .item .buy {
+    background: url("http://s.aimg.skhttp://s.aimg.sk/projects/css/aktuality/img/buy.png") no-repeat scroll left top transparent;
+    display: block;
+    float: right;
+    height: 17px;
+    margin-top: 4px;
+    width: 49px;
+}
+.box-zlavy-azet .item .price {
+    color: #429F2B;
+    float: left;
+    font-size: 15px;
+    padding-top: 1px;
+}
+.box-zlavy-azet .item .price-old {
+    color: #808080;
+    float: left;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-top: 1px;
+    text-decoration: line-through;
+}
+.box-zlavy-azet .img {
+    float: left;
+}
+.box-zlavy-azet span.h2 {
+    color: #3C3C4C;
+    font-size: 1.25em;
+    margin-bottom: 0.25em;
+}
+.box-zlavy-azet span.h2 a {
+    color: #3C3C4C;
+}
+.box-zlavy-azet .box-zlavy-azet-inside {
+    position: relative;
+}
+.box-zlavy-azet .box-zlavy-azet-inside .box-zlavy-azet-change {
+    color: #A3A7B3;
+    font-size: 14px;
+    position: absolute;
+    right: 5px;
+    top: -3px;
+}
+.box-zlavy-azet .box-zlavy-azet-settings {
+    background-color: #A3A7B3;
+    display: none;
+    left: -1px;
+    opacity: 0.95;
+    padding: 10px 1px 6px 0;
+    position: absolute;
+    text-align: center;
+    top: -1px;
+    z-index: 999;
+}
+.box-zlavy-azet .box-zlavy-azet-settings select {
+    border: 1px solid #A5A5A5;
+    box-shadow: 0 0 10px #CCCCCC;
+    padding: 2px;
+    position: relative;
+    top: 40%;
+    vertical-align: middle;
+}
+.box-zlavy-azet .box-zlavy-azet-settings .zlavy-loading {
+    color: #DDDDDD;
+    position: relative;
+    text-shadow: 0 2px 5px #000000;
+    top: 40%;
+    vertical-align: middle;
+}
+.box-zlavy-azet .box-zlavy-azet-settings .box-zlavy-azet-close {
+    color: #FFFFFF;
+    font-size: 14px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+.box-zlavy-azet .zlavy-bull {
+    color: #CCCCCC;
+    font-size: 14px;
+    padding: 0 4px;
+    position: relative;
+    top: -1px;
+}
+.box-zlavy-azet .zlavy-city {
+    font-size: 14px;
+    position: relative;
+    top: -1px;
+}
+.socials {
+    height: 25px;
+    margin: 1em 0;
+}
+.socials p {
+    float: right;
+    margin: 0;
+}
+.socials img {
+    margin: 0;
+}
+.user-bubble {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/bubble-sprite.png") no-repeat scroll left top transparent;
+    display: none;
+    font-family: Arial;
+    height: 145px;
+    position: absolute;
+    width: 310px;
+    z-index: 9999;
+}
+.user-bubble a.photo {
+    display: block;
+    float: left;
+    height: 110px;
+    left: 22px;
+    position: relative;
+    top: 16px;
+    width: 88px;
+}
+.user-bubble .data {
+    float: right;
+    margin: 15px 0;
+    padding-right: 15px;
+    width: 173px;
+}
+.user-bubble .data p {
+    margin-bottom: 0;
+}
+.user-bubble p a {
+    color: #198DC1;
+}
+.user-bubble p span, .user-bubble p a {
+    display: block;
+}
+.user-bubble .nick {
+    font-size: 11pt;
+    font-weight: bold;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+.user-bubble .sex, .user-bubble .city {
+    color: #2F2F2F;
+    font-size: 12px;
+    line-height: 18px;
+}
+.user-bubble .city {
+    margin-bottom: 5px;
+}
+.user-bubble a.dnone {
+    display: none;
+}
+.user-bubble.female {
+    background-position: left bottom;
+}
+.user-bubble.female a {
+    color: #CC3333;
+}
+.user-bubble .user-box {
+    bottom: 22px;
+    height: 16px;
+    padding-top: 5px;
+    position: absolute;
+    right: 11px;
+    width: 175px;
+}
+.user-bubble.male .user-box {
+    border-color: #198DC1;
+}
+.user-bubble.female .user-box {
+    border-color: #A77D97;
+}
+.user-bubble .user-box li {
+    float: left;
+    height: 16px;
+    margin-right: 8px;
+    position: relative;
+}
+.user-bubble .user-box a {
+    position: relative;
+    text-decoration: none;
+}
+.user-bubble small {
+    font-size: 11px;
+}
+.user-bubble .user-box li small {
+    color: #949596;
+    padding-right: 3px;
+    position: relative;
+    top: -7px;
+}
+.user-bubble .user-box .text {
+    display: none;
+}
+.user-bubble .icon {
+    background: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/pokec_sprite_32px.gif") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    position: relative;
+    top: -5px;
+    width: 19px;
+}
+.user-bubble .fot .icon {
+    background-position: -6px -295px;
+}
+.user-bubble .vid .icon {
+    background-position: -6px -391px;
+}
+.user-bubble .rp-send .icon {
+    background-position: -6px -6px;
+}
+.user-bubble .fri-add .icon {
+    background-position: -6px -201px;
+}
+.user-bubble .user-box .fri-add {
+    float: right;
+    margin-right: 10px;
+}
+#pokecButton #pokecButtonContainer {
+    border: 1px solid #FFFFFF;
+    box-shadow: none !important;
+}
+#pokecButton #pokecButtonContainer:hover {
+    border: 1px solid #CCCCCC;
+}
+#pokecButton.open #pokecButtonOverlay {
+    border-bottom: 1px solid #EEEEEE !important;
+}
+div#pokecButton.open #pokecButtonContainer {
+    border: 1px solid #AAAAAA !important;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3) !important;
+}
+.skin_ad_zone {
+    display: none;
+    position: absolute;
+}
+.ie6 .skin_ad_zone, .ie7 .skin_ad_zone {
+    clear: both;
+}
+.skin_ad_zone a.link_ad {
+    display: block;
+    height: 99%;
+    width: 99%;
+}
+.ie7 .skin_ad_zone a.link_ad {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/about:blank");
+}
+.ad_zone_fixed {
+    position: fixed;
+}
+#skin_ad_left {
+    height: 575px;
+    left: -148px;
+    top: 0;
+    width: 135px;
+}
+#skin_ad_right {
+    height: 575px;
+    right: -148px;
+    top: 0;
+    width: 135px;
+}
+.country_flag {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/flags.png");
+    background-repeat: no-repeat;
+    display: block;
+    height: 20px;
+    overflow: hidden;
+    width: 24px;
+}
+.ie6 #container .country_flag {
+    background-image: url("http://s.aimg.sk/projects/css/sport/spravodajstvo/img/flags.gif");
+}
+.calculate_position {
+    background-position: 0 -4px;
+}
+.country_1 {
+    background-position: 0 -4px;
+}
+.country_84 {
+    background-position: 0 -28px;
+}
+.country_61 {
+    background-position: 0 -76px;
+}
+.country_85 {
+    background-position: 0 -100px;
+}
+.country_53 {
+    background-position: 0 -148px;
+}
+.country_3 {
+    background-position: 0 -1564px;
+}
+.country_86 {
+    background-position: 0 -172px;
+}
+.country_87 {
+    background-position: 0 -220px;
+}
+.country_27 {
+    background-position: 0 -244px;
+}
+.country_60 {
+    background-position: 0 -268px;
+}
+.country_66 {
+    background-position: 0 -5380px;
+}
+.country_208 {
+    background-position: 0 -5380px;
+}
+.country_36 {
+    background-position: 0 -340px;
+}
+.country_56 {
+    background-position: 0 -388px;
+}
+.country_88 {
+    background-position: 0 -412px;
+}
+.country_89 {
+    background-position: 0 -436px;
+}
+.country_90 {
+    background-position: 0 -460px;
+}
+.country_91 {
+    background-position: 0 -484px;
+}
+.country_15 {
+    background-position: 0 -532px;
+}
+.country_92 {
+    background-position: 0 -556px;
+}
+.country_93 {
+    background-position: 0 -580px;
+}
+.country_94 {
+    background-position: 0 -628px;
+}
+.country_45 {
+    background-position: 0 -508px;
+}
+.country_95 {
+    background-position: 0 -652px;
+}
+.country_41 {
+    background-position: 0 -676px;
+}
+.country_96 {
+    background-position: 0 -700px;
+}
+.country_25 {
+    background-position: 0 -724px;
+}
+.country_97 {
+    background-position: 0 -772px;
+}
+.country_34 {
+    background-position: 0 -796px;
+}
+.country_98 {
+    background-position: 0 -820px;
+}
+.country_99 {
+    background-position: 0 -844px;
+}
+.country_28 {
+    background-position: 0 -1324px;
+}
+.country_100 {
+    background-position: 0 -1012px;
+}
+.country_8 {
+    background-position: 0 -1348px;
+}
+.country_43 {
+    background-position: 0 -3268px;
+}
+.country_70 {
+    background-position: 0 -1036px;
+}
+.country_76 {
+    background-position: 0 -1060px;
+}
+.country_29 {
+    background-position: 0 -1372px;
+}
+.country_101 {
+    background-position: 0 -1420px;
+}
+.country_102 {
+    background-position: 0 -1444px;
+}
+.country_103 {
+    background-position: 0 -1396px;
+}
+.country_104 {
+    background-position: 0 -1516px;
+}
+.country_69 {
+    background-position: 0 -1492px;
+}
+.country_105 {
+    background-position: 0 -1612px;
+}
+.country_48 {
+    background-position: 0 -1636px;
+}
+.country_106 {
+    background-position: 0 -1660px;
+}
+.country_55 {
+    background-position: 0 -1708px;
+}
+.country_107 {
+    background-position: 0 -1732px;
+}
+.country_51 {
+    background-position: 0 -5380px;
+}
+.country_108 {
+    background-position: 0 -3892px;
+}
+.country_23 {
+    background-position: 0 -1756px;
+}
+.country_4 {
+    background-position: 0 -1780px;
+}
+.country_109 {
+    background-position: 0 -1828px;
+}
+.country_110 {
+    background-position: 0 -1852px;
+}
+.country_111 {
+    background-position: 0 -1924px;
+}
+.country_30 {
+    background-position: 0 -1996px;
+}
+.country_112 {
+    background-position: 0 -2020px;
+}
+.country_46 {
+    background-position: 0 -1876px;
+}
+.country_113 {
+    background-position: 0 -2092px;
+}
+.country_115 {
+    background-position: 0 -2140px;
+}
+.country_116 {
+    background-position: 0 -2116px;
+}
+.country_117 {
+    background-position: 0 -2164px;
+}
+.country_118 {
+    background-position: 0 -2188px;
+}
+.country_9 {
+    background-position: 0 -3484px;
+}
+.country_119 {
+    background-position: 0 -2212px;
+}
+.country_31 {
+    background-position: 0 -1276px;
+}
+.country_78 {
+    background-position: 0 -2308px;
+}
+.country_120 {
+    background-position: 0 -2332px;
+}
+.country_121 {
+    background-position: 0 -2380px;
+}
+.country_122 {
+    background-position: 0 -2356px;
+}
+.country_20 {
+    background-position: 0 -2404px;
+}
+.country_44 {
+    background-position: 0 -2284px;
+}
+.country_32 {
+    background-position: 0 -2428px;
+}
+.country_80 {
+    background-position: 0 -2476px;
+}
+.country_75 {
+    background-position: 0 -2500px;
+}
+.country_123 {
+    background-position: 0 -5404px;
+}
+.country_124 {
+    background-position: 0 -2524px;
+}
+.country_72 {
+    background-position: 0 -4516px;
+}
+.country_125 {
+    background-position: 0 -868px;
+}
+.country_126 {
+    background-position: 0 -892px;
+}
+.country_79 {
+    background-position: 0 -916px;
+}
+.country_127 {
+    background-position: 0 -940px;
+}
+.country_128 {
+    background-position: 0 -3988px;
+}
+.country_57 {
+    background-position: 0 -2548px;
+}
+.country_129 {
+    background-position: 0 -2572px;
+}
+.country_130 {
+    background-position: 0 -2692px;
+}
+.country_131 {
+    background-position: 0 -3700px;
+}
+.country_74 {
+    background-position: 0 -1108px;
+}
+.country_132 {
+    background-position: 0 -1132px;
+}
+.country_133 {
+    background-position: 0 -1180px;
+}
+.country_134 {
+    background-position: 0 -2596px;
+}
+.country_83 {
+    background-position: 0 -2620px;
+}
+.country_64 {
+    background-position: 0 -2644px;
+}
+.country_135 {
+    background-position: 0 -1228px;
+}
+.country_136 {
+    background-position: 0 -1300px;
+}
+.country_137 {
+    background-position: 0 -2668px;
+}
+.country_81 {
+    background-position: 0 -2692px;
+}
+.country_138 {
+    background-position: 0 -2716px;
+}
+.country_139 {
+    background-position: 0 -2788px;
+}
+.country_140 {
+    background-position: 0 -2764px;
+}
+.country_141 {
+    background-position: 0 -2812px;
+}
+.country_142 {
+    background-position: 0 -2836px;
+}
+.country_49 {
+    background-position: 0 -1684px;
+}
+.country_62 {
+    background-position: 0 -2860px;
+}
+.country_37 {
+    background-position: 0 -2884px;
+}
+.country_40 {
+    background-position: 0 -2740px;
+}
+.country_47 {
+    background-position: 0 -2908px;
+}
+.country_42 {
+    background-position: 0 -2956px;
+}
+.country_143 {
+    background-position: 0 -2980px;
+}
+.country_26 {
+    background-position: 0 -2260px;
+}
+.country_82 {
+    background-position: 0 -3028px;
+}
+.country_144 {
+    background-position: 0 -3004px;
+}
+.country_145 {
+    background-position: 0 -3052px;
+}
+.country_146 {
+    background-position: 0 -3076px;
+}
+.country_54 {
+    background-position: 0 -3100px;
+}
+.country_147 {
+    background-position: 0 -3316px;
+}
+.country_148 {
+    background-position: 0 -5188px;
+}
+.country_149 {
+    background-position: 0 -3172px;
+}
+.country_150 {
+    background-position: 0 -3148px;
+}
+.country_13 {
+    background-position: 0 -5380px;
+}
+.country_151 {
+    background-position: 0 -3196px;
+}
+.country_152 {
+    background-position: 0 -3700px;
+}
+.country_153 {
+    background-position: 0 -3364px;
+}
+.country_63 {
+    background-position: 0 -3220px;
+}
+.country_154 {
+    background-position: 0 -2332px;
+}
+.country_155 {
+    background-position: 0 -3244px;
+}
+.country_156 {
+    background-position: 0 -3340px;
+}
+.country_157 {
+    background-position: 0 -3388px;
+}
+.country_158 {
+    background-position: 0 -3700px;
+}
+.country_5 {
+    background-position: 0 -1900px;
+}
+.country_159 {
+    background-position: 0 -3436px;
+}
+.country_160 {
+    background-position: 0 -3580px;
+}
+.country_161 {
+    background-position: 0 -3580px;
+}
+.country_162 {
+    background-position: 0 -3556px;
+}
+.country_21 {
+    background-position: 0 -3676px;
+}
+.country_163 {
+    background-position: 0 -3532px;
+}
+.country_164 {
+    background-position: 0 -3724px;
+}
+.country_165 {
+    background-position: 0 -3748px;
+}
+.country_166 {
+    background-position: 0 -3700px;
+}
+.country_167 {
+    background-position: 0 -3796px;
+}
+.country_168 {
+    background-position: 0 -3820px;
+}
+.country_169 {
+    background-position: 0 -3844px;
+}
+.country_170 {
+    background-position: 0 -3868px;
+}
+.country_171 {
+    background-position: 0 -1252px;
+}
+.country_24 {
+    background-position: 0 -3916px;
+}
+.country_172 {
+    background-position: 0 -3964px;
+}
+.country_10 {
+    background-position: 0 -3940px;
+}
+.country_12 {
+    background-position: 0 -364px;
+}
+.country_173 {
+    background-position: 0 -1588px;
+}
+.country_33 {
+    background-position: 0 -4036px;
+}
+.country_11 {
+    background-position: 0 -4060px;
+}
+.country_174 {
+    background-position: 0 -4084px;
+}
+.country_184 {
+    background-position: 0 -5164px;
+}
+.country_175 {
+    background-position: 0 -1540px;
+}
+.country_176 {
+    background-position: 0 -4132px;
+}
+.country_52 {
+    background-position: 0 -4108px;
+}
+.country_177 {
+    background-position: 0 -4108px;
+}
+.country_178 {
+    background-position: 0 -4204px;
+}
+.country_179 {
+    background-position: 0 -4252px;
+}
+.country_14 {
+    background-position: 0 -3412px;
+}
+.country_59 {
+    background-position: 0 -3628px;
+}
+.country_180 {
+    background-position: 0 -4324px;
+}
+.country_181 {
+    background-position: 0 -4348px;
+}
+.country_182 {
+    background-position: 0 -4372px;
+}
+.country_7 {
+    background-position: 0 -4420px;
+}
+.country_39 {
+    background-position: 0 -4444px;
+}
+.country_183 {
+    background-position: 0 -4492px;
+}
+.country_38 {
+    background-position: 0 -4300px;
+}
+.country_185 {
+    background-position: 0 -4588px;
+}
+.country_186 {
+    background-position: 0 -988px;
+}
+.country_187 {
+    background-position: 0 -4684px;
+}
+.country_188 {
+    background-position: 0 -4708px;
+}
+.country_190 {
+    background-position: 0 -4732px;
+}
+.country_191 {
+    background-position: 0 -4804px;
+}
+.country_192 {
+    background-position: 0 -4468px;
+}
+.country_17 {
+    background-position: 0 -4228px;
+}
+.country_2 {
+    background-position: 0 -4564px;
+}
+.country_22 {
+    background-position: 0 -4780px;
+}
+.country_18 {
+    background-position: 0 -4756px;
+}
+.country_193 {
+    background-position: 0 -4852px;
+}
+.country_71 {
+    background-position: 0 -1084px;
+}
+.country_6 {
+    background-position: 0 -2452px;
+}
+.country_194 {
+    background-position: 0 -4876px;
+}
+.country_77 {
+    background-position: 0 -4900px;
+}
+.country_195 {
+    background-position: 0 -4924px;
+}
+.country_196 {
+    background-position: 0 -4948px;
+}
+.country_197 {
+    background-position: 0 -4972px;
+}
+.country_198 {
+    background-position: 0 -4996px;
+}
+.country_16 {
+    background-position: 0 -5020px;
+}
+.country_199 {
+    background-position: 0 -5044px;
+}
+.country_200 {
+    background-position: 0 -5092px;
+}
+.country_50 {
+    background-position: 0 -1684px;
+}
+.country_201 {
+    background-position: 0 -5116px;
+}
+.country_35 {
+    background-position: 0 -5140px;
+}
+.country_68 {
+    background-position: 0 -5212px;
+}
+.country_19 {
+    background-position: 0 -5188px;
+}
+.country_73 {
+    background-position: 0 -5260px;
+}
+.country_202 {
+    background-position: 0 -5284px;
+}
+.country_65 {
+    background-position: 0 -1972px;
+}
+.country_203 {
+    background-position: 0 -5308px;
+}
+.country_204 {
+    background-position: 0 -5332px;
+}
+.country_205 {
+    background-position: 0 -1468px;
+}
+.country_58 {
+    background-position: 0 -5356px;
+}
+.country_67 {
+    background-position: 0 -5380px;
+}
+.country_206 {
+    background-position: 0 -5428px;
+}
+.country_209 {
+    background-position: 0 -5452px;
+}
+.country_207 {
+    background-position: 0 -5476px;
+}

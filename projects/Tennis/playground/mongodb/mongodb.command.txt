@@ -1,0 +1,2 @@
+To connect using the shell:
+mongo ds029797.mongolab.com:29797/betting -u <username> -p <password>

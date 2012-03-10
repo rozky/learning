@@ -3,7 +3,7 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-    <display-name>Cashback Portal</display-name>
+    <display-name>Tennis Portal</display-name>
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
@@ -13,34 +13,60 @@
         </param-value>
     </context-param>
 
-    <!-- ===== Reads request input using UTF-8 encoding ====== -->
-	<filter>
-		<filter-name>characterEncodingFilter</filter-name>
-		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>UTF-8</param-value>
-		</init-param>
-		<init-param>
-			<param-name>forceEncoding</param-name>
-			<param-value>true</param-value>
-		</init-param>
-	</filter>
+    <context-param>
+        <param-name>sitemesh.configfile</param-name>
+        <param-value>/WEB-INF/config/sitemesh/sitemesh.xml</param-value>
+    </context-param>
 
+    <!-- ===== Reads request input using UTF-8 encoding ====== -->
     <filter>
-        <filter-name>springSecurityFilterChain</filter-name>
-        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <filter-name>characterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
     </filter>
 
-	<filter-mapping>
-		<filter-name>characterEncodingFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+    <!--<filter>-->
+        <!--<filter-name>springSecurityFilterChain</filter-name>-->
+        <!--<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
+    <!--</filter>-->
+
+    <filter>
+        <filter-name>sitemesh</filter-name>
+        <filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+    </filter>
+
+
+    <!--<filter>-->
+    <!--<filter-name>sitemesh</filter-name>-->
+    <!--<filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>-->
+    <!--<init-param>-->
+    <!--<param-name>CONFIG_FILE_PARAM</param-name>-->
+    <!--<param-value>/WEB-INF/config/sitemes/sitemesh.xml</param-value>-->
+    <!--</init-param>-->
+    <!--</filter>-->
 
     <filter-mapping>
-        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-name>sitemesh</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+
+    <filter-mapping>
+        <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--<filter-mapping>-->
+        <!--<filter-name>springSecurityFilterChain</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -56,8 +82,70 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+    <servlet>
+        <servlet-name>sitemesh</servlet-name>
+        <servlet-class>com.watchitlater.spring.sitemesh.StringTemplateDecoratorServlet</servlet-class>
+        <init-param>
+            <param-name>templateRoot</param-name>
+            <param-value>/WEB-INF/stringtemplate/decorators</param-value>
+        </init-param>
+        <!--<init-param>-->
+        <!--<param-name>sharedRoot</param-name>-->
+        <!--<param-value>/WEB-INF/stringtemplate/decorators</param-value>-->
+        <!--</init-param>-->
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>sitemesh</servlet-name>
+        <url-pattern>/decorators/*</url-pattern>
+    </servlet-mapping>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>HTTPS</web-resource-name>
+            <url-pattern>/betfair/*</url-pattern>
+            <http-method>DELETE</http-method>
+            <http-method>PUT</http-method>
+            <http-method>HEAD</http-method>
+            <http-method>OPTIONS</http-method>
+            <http-method>TRACE</http-method>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Restricted access</web-resource-name>
+            <url-pattern>/secured/*</url-pattern>
+            <http-method>DELETE</http-method>
+            <http-method>PUT</http-method>
+            <http-method>HEAD</http-method>
+            <http-method>OPTIONS</http-method>
+            <http-method>TRACE</http-method>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>*</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <!--<welcome-file-list>-->
+    <!--<welcome-file>index.jsp</welcome-file>-->
+    <!--<welcome-file>default.jsp</welcome-file>-->
+    <!--<welcome-file>index.html</welcome-file>-->
+    <!--</welcome-file-list>-->
 </web-app>

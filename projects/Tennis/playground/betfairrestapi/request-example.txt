@@ -1,0 +1,131 @@
+https://rest.labs.betfair.com/market/104919872?extend=price&format=json
+
+104919872
+
+{
+   "market":{
+      "id":"104877747",
+      "name":"Match Odds",
+      "eventTypeId":"2",
+      "subtreeDepth":"0",
+      "eventName":"",
+      "menuPath":"\\Group A\\Copa Colsanitas 2012\\Second Round Matches\\Babos v Oprandi",
+      "marketInfo":"",
+      "exchange":"UK",
+      "marketStatus":"ACTIVE",
+      "winners":"1",
+      "startTime":"3 Jan 0001 00:00:00",
+      "marketTime":"15 Feb 2012 15:00:00",
+      "timezone":"KMT",
+      "marketType":"ODDS",
+      "totalAmountMatched":"",
+      "betDelay":"0",
+      "interval":"0.0",
+      "goingInPlay":"true",
+      "venue":"",
+      "runners":{
+         "runner":[
+            {
+               "id":"4828174",
+               "name":"Timea Babos",
+               "price":{
+                  "selectionId":"4828174",
+                  "bestBackPrice":"3.2",
+                  "bestLayPrice":"3.45",
+                  "bestBackAmount":"76.86",
+                  "bestLayAmount":"55.41",
+                  "orderIndex":"0",
+                  "withdrawn":"false",
+                  "totalAmountMatched":"310.47",
+                  "lastPriceMatched":"3.35",
+                  "marketId":"104877747"
+               },
+               "marketId":"104877747"
+            },
+            {
+               "id":"2256455",
+               "name":"Romina Oprandi",
+               "price":{
+                  "selectionId":"2256455",
+                  "bestBackPrice":"1.42",
+                  "bestLayPrice":"1.44",
+                  "bestBackAmount":"252.15",
+                  "bestLayAmount":"3.9",
+                  "orderIndex":"1",
+                  "withdrawn":"false",
+                  "totalAmountMatched":"5828.69",
+                  "lastPriceMatched":"1.44",
+                  "marketId":"104877747"
+               },
+               "marketId":"104877747"
+            }
+         ]
+      },
+      "lastRefresh":"15 Feb 2012 14:58:29",
+      "eventHierarchy":"\/2\/26807428\/26808570\/26808569"
+   }
+}
+
+{
+   "market":{
+      "id":"104919872",
+      "name":"Match Odds",
+      "eventTypeId":"2",
+      "subtreeDepth":"0",
+      "eventName":"",
+      "menuPath":"\\Group A\\Copa Claro 2012\\First Round Matches\\Bagnis v L Mayer",
+      "marketInfo":"",
+      "exchange":"UK",
+      "marketStatus":"ACTIVE",
+      "winners":"1",
+      "startTime":"3 Jan 0001 00:00:00",
+      "marketTime":"20 Feb 2012 17:30:00",
+      "timezone":"SMT",
+      "marketType":"ODDS",
+      "totalAmountMatched":"",
+      "betDelay":"5",
+      "interval":"0.0",
+      "goingInPlay":"true",
+      "venue":"",
+      "runners":{
+         "runner":[
+            {
+               "id":"4520808",
+               "name":"Facundo Bagnis",
+               "price":{
+                  "selectionId":"4520808",
+                  "bestBackPrice":"2.1",
+                  "bestLayPrice":"2.64",
+                  "bestBackAmount":"38.41",
+                  "bestLayAmount":"25.0",
+                  "orderIndex":"0",
+                  "withdrawn":"false",
+                  "totalAmountMatched":"7189.97",
+                  "lastPriceMatched":"2.24",
+                  "marketId":"104919872"
+               },
+               "marketId":"104919872"
+            },
+            {
+               "id":"3186303",
+               "name":"Leonardo Mayer",
+               "price":{
+                  "selectionId":"3186303",
+                  "bestBackPrice":"1.6",
+                  "bestLayPrice":"1.8",
+                  "bestBackAmount":"20.87",
+                  "bestLayAmount":"615.85",
+                  "orderIndex":"1",
+                  "withdrawn":"false",
+                  "totalAmountMatched":"122246.01",
+                  "lastPriceMatched":"1.8",
+                  "marketId":"104919872"
+               },
+               "marketId":"104919872"
+            }
+         ]
+      },
+      "lastRefresh":"20 Feb 2012 22:32:45",
+      "eventHierarchy":"\/2\/26810390\/26810391\/26810394"
+   }
+}

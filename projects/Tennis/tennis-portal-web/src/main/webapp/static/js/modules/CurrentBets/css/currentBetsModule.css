@@ -1,0 +1,112 @@
+.currentBets {
+    color: #666666;
+    margin-top: 15px;
+}
+
+.currentBets .content {
+    position: relative;
+}
+
+.currentBets .content div {
+    /*position: relative;*/
+}
+
+.currentBets .notification {
+    background-color: #0087FF;
+    /*display: none;*/
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.currentBets .bet {
+    background-color: #e2e2e2;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.currentBets .bet div, .currentBets .header div {
+    float: left;
+    padding: 5px 0px;
+    font-size: 1em;
+}
+
+.currentBets .bet {
+    border-bottom: 1px solid #afafaf;
+}
+
+.currentBets .bet .betType, .currentBets .header .betType {
+    width: 32px;
+    text-align: center;
+}
+
+.currentBets .header {
+    background-color: #bfbfbf;
+    font-weight: bold;
+    margin-bottom: 0px !important;
+    border-bottom: 1px solid #919191;
+    overflow: hidden;
+}
+
+.currentBets .bet .time, .currentBets .header .time {
+
+    width: 38px;
+    text-align: center;
+}
+
+.currentBets .bet .selection , .currentBets .header .selection {
+    padding-left: 5px;
+    width: 144px;
+}
+
+.currentBets .bet .size, .currentBets .header .size {
+    padding-right: 5px;
+    text-align: right;
+    width: 52px;
+}
+
+.currentBets .bet .price, .currentBets .header .price {
+    padding-right: 5px;
+    text-align: right;
+    width: 52px;
+}
+
+.currentBets .bet .profit, .currentBets .header .profit {
+   padding-right: 5px;
+   text-align: right;
+   width: 52px;
+}
+
+.currentBets .bet .overlay {
+    background-color: #FFE710;
+    color: #000;
+    display: none;
+}
+
+.currentBets .bet .overlay em {
+    background: url('../img/spinner-yellow.gif') no-repeat center transparent;
+    text-indent: -1000em;
+    width: 28px;
+    display: inline-block;
+}
+
+.currentBets #betOverlayTmp {
+    display: none;
+}
+
+.currentBets .overlay {
+    background-color: #8f8f8f;
+    color: #fff;
+    display: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.currentBets .spinner {
+    background: url('../img/spinner-blue.gif') no-repeat left transparent;
+    padding-left: 25px;
+}
+

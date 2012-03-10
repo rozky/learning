@@ -1,0 +1,22 @@
+check ubuntu version:
+lsb_release -a
+
+install java:
+http://www.multimediaboom.com/how-to-install-java-in-ubuntu-11-04-natty-narwhal-ppa/
+http://www.ghacks.net/2010/05/21/install-java-on-ubuntu-10-04/
+sudo add-apt-repository deb-src http://archive.canonical.com/ubuntu natty partner
+
+jetty downloads:
+http://download.eclipse.org/jetty/
+
+
+
+vim /etc/nginx/nginx.conf
+tail /var/log/nginx/access.log
+
+sudo /etc/init.d/nginx restart
+sudo /etc/init.d/nginx stop
+
+
+URL:
+http://ec2-23-20-32-8.compute-1.amazonaws.com:8080/

@@ -1,0 +1,75 @@
+#account-wallets .wallet .name {}
+#account-wallets .wallet .balance {}
+#account-wallets .wallet .exposure {}
+
+
+#account-wallets {
+    color: #fff;
+    margin-top: 15px;
+}
+
+#account-wallets .content {
+    position: relative;
+}
+
+#account-wallets .wallet {
+    background-color: #0087FF;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+#account-wallets .wallet div {
+    float: left;
+    padding: 5px 0px;
+    font-size: 1em;
+}
+
+#account-wallets .wallet .betType {
+    width: 32px;
+    text-align: center;
+}
+
+#account-wallets div.header {
+    background-color: #0057a5;
+    font-weight: bold;
+    margin-bottom: 0px !important;
+    border-bottom: 1px solid #006ccc;
+}
+
+#account-wallets .wallet .name {
+    width: 50px;
+    text-align: center;
+}
+
+#account-wallets .wallet .balance, #account-wallets .wallet .availableBalance, #account-wallets .wallet .exposure {
+    padding-left: 5px;
+    width: 100px;
+}
+
+#account-wallets .wallet .exposure {
+    width: 127px;
+}
+
+#account-wallets .notification {
+    background-color: #0087FF;
+    /*display: none;*/
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+#account-wallets .overlay {
+    background-color: #0087FF;
+    color: #fff;
+    display: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+
+
+

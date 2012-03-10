@@ -1,0 +1,202 @@
+.betSlipWrapper {
+    font-family: Arial, Helvetica, Helvetica Neue, Verdana, sans-serif; /*background-color: #444;*/
+/*color: #fff;*/
+/*font-size: 1.5em;*/
+    padding: 0px    ;
+
+    border-radius: 5px;
+}
+
+.betSlipWrapper  div.content {
+    position: relative;
+}
+
+.betSlipWrapper h2 {
+    background-color: #ffbf27;
+    color: black;
+    line-height: 1;
+    padding-left: 0px;
+    margin-left: 0px;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.betSlipWrapper h3 {
+    background-color: #ffbf27;
+    /*border-bottom: 1px solid #D89C0D;*/
+    color: #8c6508;
+    font-size: 1em;
+    line-height: 1;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+
+}
+
+.betSlipWrapper ol li {
+    background-color: #ffbf27;
+    /*border-bottom: 1px solid #E5A50E;*/
+    font-size: 1.1em;
+    padding: 5px 0px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.betSlipWrapper input {
+    float: left;
+    font-weight: bold;
+    padding: 0px 5px;
+    width: 60px;
+    border: 1px solid #FFE710;
+    text-align: right;
+}
+
+.betSlipWrapper label {
+    color: #594005;
+    float: left;
+    font-weight: bold;
+    padding: 2px 5px;
+    width: 50px;
+}
+
+.betSlipWrapper button {
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin-left: 0px;
+
+}
+
+.betSlipWrapper button.green {
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+
+    background: #a6c544; /* Old browsers */
+    background: -moz-linear-gradient(top, #a6c544 0%, #9bc320 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a6c544), color-stop(100%, #9bc320)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #a6c544 0%, #9bc320 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #a6c544 0%, #9bc320 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #a6c544 0%, #9bc320 100%); /* IE10+ */
+}
+
+.betSlipWrapper button.yellow {
+    background-color: #FFB515;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.betSlipWrapper div.profit {
+    background-color: #ffe29f;
+    border-radius: 5px;
+    position: absolute;
+    top: 44px;
+    right: 10px;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.betSlipWrapper div.overlay, .betSlipWrapper div.emptyOverlay {
+    color: #fff;
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.betSlipWrapper div.overlay {
+    background: url("../img/transparent_60.png");
+    display: none;
+}
+
+.betSlipWrapper div.emptyOverlay {
+    background-color: #ffc63f;
+}
+
+.betSlipWrapper div.overlay table, .betSlipWrapper div.emptyOverlay table {
+    width: 100%;
+    height: 100%;
+}
+
+.betSlipWrapper div.emptyOverlay .big {
+    color: #333;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.betSlipWrapper div.emptyOverlay .small {
+    color: #8C6508;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.betSlipWrapper div.overlay table div {
+    background-color: #0087FF;
+    border: 2px solid #0057a5;
+    border-radius: 5px;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 15px 32px 15px 10px;
+    position: relative;
+}
+
+.betSlipWrapper div.overlay table button {
+    border: 0px none;
+    border-radius: 3px;
+    cursor: pointer;
+    position: absolute;
+    top: 11px;
+    right: 5px;
+    width: 22px;
+    height: 22px;
+    background: url("../img/cross.png") no-repeat center transparent;
+    text-indent: -3000px;
+}
+
+.betSlipWrapper div.overlay table button:hover {
+    background-color: #0057a5;
+}
+
+.betSlipWrapper .betInProgress {
+    background-color: #0087FF;
+    border: 2px solid #0057a5;
+}
+
+
+
+.betSlipWrapper .betPlaced {
+    background-color: #4aa41d;
+    border: 2px solid #2e8c00;
+}
+
+.betSlipWrapper .betPlaced button:hover {
+    background-color: #2e8c00;
+}
+
+.betSlipWrapper .betFailed {
+    background-color: #CC3333;
+    border: 2px solid #922424;
+}
+
+.betSlipWrapper .betFailed button:hover {
+    background-color: #922424;
+}
+
+.betSlipWrapper .spinner {
+    background: url('../img/spinner-blue.gif') no-repeat left transparent;
+    padding-left: 25px;
+}

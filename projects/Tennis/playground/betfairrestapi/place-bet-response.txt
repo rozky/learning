@@ -1,0 +1,28 @@
+https://rest.labs.betfair.com/submit?session_id=<sessionid>&marketId=104916258&selectionId=2923247&exchange=UK&betType=B&price=500&stake=2&format=json
+
+
+{
+   "bet":{
+      "id":"18400608946",
+      "betType":"BACK",
+      "marketId":"104916258",
+      "selectionId":"2923247",
+      "betStatus":"OK",
+      "profitAndLoss":"",
+      "price":"500.0",
+      "size":"2.0",
+      "bspLiability":"",
+      "sizeMatched":"0.0",
+      "placedDate":"",
+      "averagePriceMatched":"0.0",
+      "matchedDate":"",
+      "cancelledDate":"",
+      "lapsedDate":"",
+      "voidedDate":"",
+      "settledDate":"",
+      "date":"",
+      "category":"E",
+      "persistence":"NONE",
+      "errorMessage":""
+   }
+}

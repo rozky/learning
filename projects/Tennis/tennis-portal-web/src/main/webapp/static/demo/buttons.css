@@ -1,0 +1,40 @@
+body {font: 13px/1.4 "Lora",Georgia,Times,serif;}
+.buttons a {
+    background-image: url("arr-right.png");
+    background-position: 8px 6px;
+    background-repeat: no-repeat;
+    font-size: 14px;
+    margin-bottom: 2px;
+    padding-left: 28px;
+    text-transform: uppercase;
+    width: 160px;
+}
+
+.btn a {
+    /*background: url("../i/bg2.png") repeat scroll 0 0 #2999B9;*/
+    background-color: #2999B9;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 20px;
+}
+
+.btn a:hover, .btn a.preview:hover {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+a {
+    color: #2999B9;
+    text-decoration: none;
+}
+
+a {
+    background: none repeat scroll 0 0 transparent;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}

@@ -1,0 +1,79 @@
+.marketList {
+    font-size: 1.2em;
+    margin: 0px auto;
+    padding: 0px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.marketWrapper {
+    margin: 0px auto;
+    position: relative;
+}
+
+.marketList .marketWrapper .time, .marketList .marketWrapper .live {
+    background-color: #aaa;
+    float: left;
+    width: 42px;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.marketList .marketWrapper .live {
+    background-color: #FFB810;
+    color: #221802;
+    font-weight: bold;
+}
+
+.marketList .marketWrapper .today {
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+}
+
+.marketList .marketWrapper ol {
+    float: left;
+    position: relative;
+}
+
+.marketWrapper ol li {
+    background-color: #0F67A1;
+    color: #fff;
+    cursor: pointer;
+    float: left;
+    width: 244px;
+    padding: 5px 5px;
+    margin-bottom: 10px;
+}
+
+.marketWrapper ol li:hover, .marketWrapper ol li.position-2:hover {
+    background-color: #222;
+}
+
+.marketWrapper ol li.position-1 {
+    text-align: left;
+}
+
+.marketWrapper ol li.position-2 {
+    background-color: #0c5788;
+    text-align: left;
+}
+
+.marketWrapper ol li em {
+    font-weight: bold;
+    float: right;
+}
+
+.marketWrapper ol .overlay {
+    background: url("../img/transparent_60.png");
+    display: none;
+    height: 26px;
+}
+
+
+.marketWrapper ol .overlay em{
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    padding: 3px 10px;
+}

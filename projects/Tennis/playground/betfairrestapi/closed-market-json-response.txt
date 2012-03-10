@@ -1,0 +1,26 @@
+{
+   "market":{
+      "id":"104916323",
+      "name":"Match Odds",
+      "eventTypeId":"2",
+      "subtreeDepth":"0",
+      "eventName":"",
+      "menuPath":"\\Group A\\Dubai Duty Free Tennis 2012\\Qualifying Matches\\Benesova v Garcia",
+      "marketInfo":"",
+      "exchange":"UK",
+      "marketStatus":"CLOSED",
+      "winners":"1",
+      "startTime":"3 Jan 0001 00:00:00",
+      "marketTime":"18 Feb 2012 11:00:00",
+      "timezone":"UAE",
+      "marketType":"ODDS",
+      "totalAmountMatched":"",
+      "betDelay":"5",
+      "interval":"0.0",
+      "goingInPlay":"false",
+      "venue":"",
+      "runners":"",
+      "lastRefresh":"18 Feb 2012 12:43:12",
+      "eventHierarchy":"\/2\/26810106\/26810107\/26810225"
+   }
+}

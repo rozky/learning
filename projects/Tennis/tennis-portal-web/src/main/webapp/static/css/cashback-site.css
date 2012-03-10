@@ -1,0 +1,552 @@
+/* TIPSY */
+.tipsy { padding: 5px; font-size: 10px; opacity: 0.8; filter: alpha(opacity=80); background-repeat: no-repeat;  background-image: url(../img/tipsy.gif); }
+.tipsy-inner { padding: 5px 8px 4px 8px; background-color: black; color: white; max-width: 200px; text-align: center; }
+.tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; }
+.tipsy-north { background-position: top center; }
+.tipsy-south { background-position: bottom center; }
+.tipsy-east { background-position: right center; }
+.tipsy-west { background-position: left center; }
+
+/* FORMS */
+form input#submit {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  -khtml-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7ae26), to(#df8608));
+  background-image: -moz-linear-gradient(top, #f7ae26, #df8608);
+  background-image: -o-gradient(top, #f7ae26, #df8608);
+  background-color: #df8608 !important;
+  *background-color: #df8608 !important;
+  border: 1px solid #df8608;
+  color: white;
+  cursor: pointer;
+  outline: medium none;
+  padding: 4px 12px 6px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4); }
+  
+  form input#submit:hover {
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    -khtml-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    border-color: #824b0a; }
+
+form.test_msg {
+  padding: 10px 15px;
+  width: 218px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+  -moz-box-shadow: inset 0 1px 2px #c1e2f2 !important;
+  -webkit-box-shadow: inset 0 1px 2px #c1e2f2 !important;
+  box-shadow: inset 0 1px 2px #c1e2f2 !important;
+  background: #e3f2f9; }
+  form.test_msg input[type='submit'] {
+    padding: 7px 12px 6px;
+    cursor: pointer;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 1;
+    letter-spacing: 0.5px !important;
+    outline: none;
+    -moz-outline: none;
+    outline-color: -moz-use-text-color;
+    outline-style: none;
+    outline-width: 0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#00aefb), to(#008ac8));
+    background-image: -moz-linear-gradient(top, #00aefb, #008ac8);
+    background-image: -o-gradient(top, #00aefb, #008ac8);
+    background-color: #0080b9 !important;
+    *background-color: #0080b9 !important;
+    color: white;
+    border: 1px solid #008ac8;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -khtml-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: 1em;
+    font-size: 1.2em !important; }
+    form.test_msg input[type='submit']:hover {
+      border-color: #14568a;
+      -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      -khtml-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
+
+form.login ul li, form#service_console ul li, form#mobile_list ul li, form.register ul li, form.console ul li, form.gvsms ul li, form.create_msg ul li, form.create_timer ul li, form.service-prefs ul li, form.profile-settings ul li, form.notifications_settings ul li, form.reset-pass ul li {
+  line-height: 3em; }
+  form.login ul li:last-child, form#service_console ul li:last-child, form#mobile_list ul li:last-child, form.register ul li:last-child, form.console ul li:last-child, form.gvsms ul li:last-child, form.create_msg ul li:last-child, form.create_timer ul li:last-child, form.service-prefs ul li:last-child, form.profile-settings ul li:last-child, form.notifications_settings ul li:last-child, form.reset-pass ul li:last-child {
+    margin-top: 10px; }
+  form.login ul li span, form#service_console ul li span, form#mobile_list ul li span, form.register ul li span, form.console ul li span, form.gvsms ul li span, form.create_msg ul li span, form.create_timer ul li span, form.service-prefs ul li span, form.profile-settings ul li span, form.notifications_settings ul li span, form.reset-pass ul li span {
+    font-size: 0.9em;
+    color: #666666;
+    margin-left: 5px; }
+    form.login ul li span.forgot_pwd, form#service_console ul li span.forgot_pwd, form#mobile_list ul li span.forgot_pwd, form.register ul li span.forgot_pwd, form.console ul li span.forgot_pwd, form.gvsms ul li span.forgot_pwd, form.create_msg ul li span.forgot_pwd, form.create_timer ul li span.forgot_pwd, form.service-prefs ul li span.forgot_pwd, form.profile-settings ul li span.forgot_pwd, form.notifications_settings ul li span.forgot_pwd, form.reset-pass ul li span.forgot_pwd {
+      margin-left: 30px !important; }
+  form.login ul li label, form#service_console ul li label, form#mobile_list ul li label, form.register ul li label, form.console ul li label, form.gvsms ul li label, form.create_msg ul li label, form.create_timer ul li label, form.service-prefs ul li label, form.profile-settings ul li label, form.notifications_settings ul li label, form.reset-pass ul li label {
+    color: #222222;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 white;
+    text-align: left;
+    float: left;
+    display: block;
+    width: 350px; }
+  form.login ul li input[type='text'], form.login ul li input[type='password'], form#service_console ul li input[type='text'], form#service_console ul li input[type='password'], form#mobile_list ul li input[type='text'], form#mobile_list ul li input[type='password'], form.register ul li input[type='text'], form.register ul li input[type='password'], form.console ul li input[type='text'], form.console ul li input[type='password'], form.gvsms ul li input[type='text'], form.gvsms ul li input[type='password'], form.create_msg ul li input[type='text'], form.create_msg ul li input[type='password'], form.create_timer ul li input[type='text'], form.create_timer ul li input[type='password'], form.service-prefs ul li input[type='text'], form.service-prefs ul li input[type='password'], form.profile-settings ul li input[type='text'], form.profile-settings ul li input[type='password'], form.notifications_settings ul li input[type='text'], form.notifications_settings ul li input[type='password'], form.reset-pass ul li input[type='text'], form.reset-pass ul li input[type='password'] {
+    font-size: 1.1em;
+    padding: 3px 5px;
+    width: 270px;
+    border: inset 1px #cccccc;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 1px 1px 0 white;
+    -moz-box-shadow: 1px 1px 0 white;
+    -khtml-box-shadow: 1px 1px 0 white;
+    -o-box-shadow: 1px 1px 0 white;
+    box-shadow: 1px 1px 0 white; }
+    form.login ul li input[type='text']:focus, form.login ul li input[type='password']:focus, form#service_console ul li input[type='text']:focus, form#service_console ul li input[type='password']:focus, form#mobile_list ul li input[type='text']:focus, form#mobile_list ul li input[type='password']:focus, form.register ul li input[type='text']:focus, form.register ul li input[type='password']:focus, form.console ul li input[type='text']:focus, form.console ul li input[type='password']:focus, form.gvsms ul li input[type='text']:focus, form.gvsms ul li input[type='password']:focus, form.create_msg ul li input[type='text']:focus, form.create_msg ul li input[type='password']:focus, form.create_timer ul li input[type='text']:focus, form.create_timer ul li input[type='password']:focus, form.service-prefs ul li input[type='text']:focus, form.service-prefs ul li input[type='password']:focus, form.profile-settings ul li input[type='text']:focus, form.profile-settings ul li input[type='password']:focus, form.notifications_settings ul li input[type='text']:focus, form.notifications_settings ul li input[type='password']:focus, form.reset-pass ul li input[type='text']:focus, form.reset-pass ul li input[type='password']:focus {
+      border: inset 1px #14568a;
+      background: #feffb7 !important;
+      -webkit-box-shadow: 0 0 2px #444444;
+      -moz-box-shadow: 0 0 2px #444444;
+      -khtml-box-shadow: 0 0 2px #444444;
+      -o-box-shadow: 0 0 2px #444444;
+      box-shadow: 0 0 2px #444444; }
+  form.login ul li input#submit_login, form.login ul li input[type='submit'], form#service_console ul li input#submit_login, form#service_console ul li input[type='submit'], form#mobile_list ul li input#submit_login, form#mobile_list ul li input[type='submit'], form.register ul li input#submit_login, form.register ul li input[type='submit'], form.console ul li input#submit_login, form.console ul li input[type='submit'], form.gvsms ul li input#submit_login, form.gvsms ul li input[type='submit'], form.create_msg ul li input#submit_login, form.create_msg ul li input[type='submit'], form.create_timer ul li input#submit_login, form.create_timer ul li input[type='submit'], form.service-prefs ul li input#submit_login, form.service-prefs ul li input[type='submit'], form.profile-settings ul li input#submit_login, form.profile-settings ul li input[type='submit'], form.notifications_settings ul li input#submit_login, form.notifications_settings ul li input[type='submit'], form.reset-pass ul li input#submit_login, form.reset-pass ul li input[type='submit'] {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -khtml-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f7ae26), to(#df8608));
+    background-image: -moz-linear-gradient(top, #f7ae26, #df8608);
+    background-image: -o-gradient(top, #f7ae26, #df8608);
+    background-color: #df8608 !important;
+    *background-color: #df8608 !important;
+    border: 1px solid #df8608;
+    color: white;
+    cursor: pointer;
+    outline: medium none;
+    padding: 4px 12px 6px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    margin-left: 348px;
+    font-size: 1.15em; }
+    form.login ul li input#submit_login:hover, form.login ul li input[type='submit']:hover, form#service_console ul li input#submit_login:hover, form#service_console ul li input[type='submit']:hover, form#mobile_list ul li input#submit_login:hover, form#mobile_list ul li input[type='submit']:hover, form.register ul li input#submit_login:hover, form.register ul li input[type='submit']:hover, form.console ul li input#submit_login:hover, form.console ul li input[type='submit']:hover, form.gvsms ul li input#submit_login:hover, form.gvsms ul li input[type='submit']:hover, form.create_msg ul li input#submit_login:hover, form.create_msg ul li input[type='submit']:hover, form.create_timer ul li input#submit_login:hover, form.create_timer ul li input[type='submit']:hover, form.service-prefs ul li input#submit_login:hover, form.service-prefs ul li input[type='submit']:hover, form.profile-settings ul li input#submit_login:hover, form.profile-settings ul li input[type='submit']:hover, form.notifications_settings ul li input#submit_login:hover, form.notifications_settings ul li input[type='submit']:hover, form.reset-pass ul li input#submit_login:hover, form.reset-pass ul li input[type='submit']:hover {
+      -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      -khtml-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      border-color: #824b0a; }
+
+form.profile-settings ul li label, form.service-prefs ul li label {
+  margin-bottom: -15px; }
+form.profile-settings ul li input[type='submit'], form.service-prefs ul li input[type='submit'] {
+  margin-left: 0px; }
+form.profile-settings ul li select, form.service-prefs ul li select {
+  border: inset 1px #cccccc;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 1px 1px 0 white;
+  -moz-box-shadow: 1px 1px 0 white;
+  -khtml-box-shadow: 1px 1px 0 white;
+  -o-box-shadow: 1px 1px 0 white;
+  box-shadow: 1px 1px 0 white;
+  font-size: 1em;
+  padding: 3px 5px;
+  vertical-align: middle; }
+  form.profile-settings ul li select:focus, form.service-prefs ul li select:focus {
+    background: #feffb7; }
+  form.profile-settings ul li select option, form.service-prefs ul li select option {
+    background-color: #fef5e6;
+    border-bottom: 1px solid #ebdac0;
+    border-right: 1px solid #d6bb86;
+    border-left: 1px solid #d6bb86; }
+    form.profile-settings ul li select option:hover, form.service-prefs ul li select option:hover {
+      cursor: pointer; }
+  form.profile-settings ul li select option[disabled], form.service-prefs ul li select option[disabled] {
+    background: white;
+    color: #222222;
+    cursor: default; }
+
+div.gravatar-box {
+  padding: 10px;
+  background: white;
+  margin-left: -30px;
+  border-bottom-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #e9decc;
+  width: 290px;
+  margin-bottom: 10px;
+  overflow: auto;
+  overflow: -moz-scrollbars-none;
+  display: inline-block; }
+  div.gravatar-box {
+    display: block; }
+  div.gravatar-box p {
+    float: right;
+    margin: 3px 0 0 0;
+    width: 190px;
+    color: #444444; }
+    div.gravatar-box p small {
+      text-shadow: none;
+      color: #666666;
+      font-weight: 300; }
+  div.gravatar-box img {
+    padding: 2px;
+    margin: 5px 15px 5px 20px !important;
+    background: white;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 1px 2px #cccccc;
+    -moz-box-shadow: 0 1px 2px #cccccc;
+    -khtml-box-shadow: 0 1px 2px #cccccc;
+    -o-box-shadow: 0 1px 2px #cccccc;
+    box-shadow: 0 1px 2px #cccccc; }
+
+form.service-prefs {
+  float: left;
+  width: 60%; }
+  form.service-prefs ul li label {
+    width: 220px; }
+    form.service-prefs ul li label small {
+      display: block;
+      font-weight: normal;
+      color: #444444;
+      margin-top: -25px; }
+  form.service-prefs ul li.desc textarea {
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-family: "Verdana", sans-serif;
+    padding: 3px 5px;
+    width: 490px;
+    height: 90px;
+    border: inset 1px #cccccc;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 1px 1px 0 white;
+    -moz-box-shadow: 1px 1px 0 white;
+    -khtml-box-shadow: 1px 1px 0 white;
+    -o-box-shadow: 1px 1px 0 white;
+    box-shadow: 1px 1px 0 white; }
+    form.service-prefs ul li.desc textarea:focus {
+      border: inset 1px #14568a;
+      background: #feffb7 !important;
+      -webkit-box-shadow: 0 0 2px #444444;
+      -moz-box-shadow: 0 0 2px #444444;
+      -khtml-box-shadow: 0 0 2px #444444;
+      -o-box-shadow: 0 0 2px #444444;
+      box-shadow: 0 0 2px #444444; }
+  form.service-prefs ul li.desc small {
+    margin-top: -10px;
+    margin-bottom: 5px;
+    display: block;
+    line-height: 1.3em;
+    width: 490px; }
+  form.service-prefs ul li.desc p.charsRemaining {
+    margin-top: -20px;
+    color: #444444;
+    text-shadow: 1px 1px 0 white;
+    font-size: 0.9em; }
+  form.service-prefs ul li input[type='submit'] {
+    margin-left: 400px; }
+
+form.reset-pass ul li label[for='username'] {
+  width: 200px !important; }
+form.reset-pass ul li input[name='submit_reset'] {
+  margin-left: 200px; }
+form.reset-pass ul li small {
+  font-weight: normal;
+  font-size: 1em; }
+
+div.service-prefs-icon {
+  float: right;
+  width: 34%;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-right: -20px;
+  padding: 15px;
+  background: #f5f5f5;
+  border-bottom-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box; }
+  div.service-prefs-icon form.icon-update ul li span.formerror {
+    font-size: 0.95em; }
+  div.service-prefs-icon form.icon-update ul li input[type='file'] {
+    margin: 10px 0; }
+  div.service-prefs-icon form.icon-update ul li input[type='submit'] {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -khtml-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f7ae26), to(#df8608));
+    background-image: -moz-linear-gradient(top, #f7ae26, #df8608);
+    background-image: -o-gradient(top, #f7ae26, #df8608);
+    background-color: #df8608 !important;
+    *background-color: #df8608 !important;
+    border: 1px solid #df8608;
+    color: white;
+    cursor: pointer;
+    outline: medium none;
+    padding: 4px 12px 6px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    font-size: 1.05em; }
+    div.service-prefs-icon form.icon-update ul li input[type='submit']:hover {
+      -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      -khtml-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      border-color: #824b0a; }
+
+form.login {
+  width: 520px;
+  float: left; }
+  form.login ul li label {
+    width: 160px;
+    margin-right: 30px;
+    text-align: right; }
+  form.login ul li input[type='submit'] {
+    margin-left: 192px !important;
+    font-size: 1.3em !important;
+    margin-top: 20px; }
+
+div.login-wrapper {
+  font-size: 1.2em;
+  color: #555555;
+  overflow: auto;
+  overflow: -moz-scrollbars-none;
+  display: inline-block;
+  min-height: 250px; }
+  div.login-wrapper {
+    display: block; }
+  div.login-wrapper div.announcement {
+    background: #f6dbc1 !important;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 0 1px #7a4311;
+    -moz-box-shadow: 0 0 1px #7a4311;
+    -khtml-box-shadow: 0 0 1px #7a4311;
+    -o-box-shadow: 0 0 1px #7a4311;
+    box-shadow: 0 0 1px #7a4311;
+    color: #64370e;
+    padding: 5px 10px;
+    margin: 20px 20px 0 0;
+    line-height: 1.4em;
+    float: right;
+    width: 300px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box; }
+    div.login-wrapper div.announcement a {
+      font-weight: bold;
+      font-size: 14px; }
+
+form.notifications_settings ul li {
+  line-height: 3.5em; }
+  form.notifications_settings ul li p.form-desc {
+    font-size: 0.95em;
+    display: block; }
+  form.notifications_settings ul li small {
+    font-weight: normal;
+    margin-top: -25px;
+    display: block; }
+  form.notifications_settings ul li input[type='text'] {
+    width: 375px; }
+  form.notifications_settings ul li input[type='submit'] {
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
+    display: inline-block;
+    margin-top: 40px; }
+    form.notifications_settings ul li input[type='submit'] {
+      display: block; }
+  form.notifications_settings ul li input[type='checkbox'] {
+    margin-left: -2px;
+    margin-right: 10px; }
+  form.notifications_settings ul li select {
+    border: inset 1px #cccccc;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 1px 1px 0 white;
+    -moz-box-shadow: 1px 1px 0 white;
+    -khtml-box-shadow: 1px 1px 0 white;
+    -o-box-shadow: 1px 1px 0 white;
+    box-shadow: 1px 1px 0 white;
+    font-size: 1em;
+    padding: 3px 5px;
+    vertical-align: middle; }
+    form.notifications_settings ul li select:focus {
+      background: #feffb7; }
+    form.notifications_settings ul li select option {
+      background-color: #fef5e6;
+      border-bottom: 1px solid #ebdac0;
+      border-right: 1px solid #d6bb86;
+      border-left: 1px solid #d6bb86; }
+      form.notifications_settings ul li select option:hover {
+        cursor: pointer; }
+    form.notifications_settings ul li select option[disabled] {
+      background: white;
+      color: #222222;
+      cursor: default; }
+
+form.gvsms ul li p {
+  line-height: 1.4;
+  width: 620px;
+  margin-bottom: 20px; }
+form.gvsms ul li label {
+  width: 300px; }
+form.gvsms ul li input[type='text'] {
+  width: 150px !important;
+  font-size: 1.2em !important;
+  padding: 4px 6px !important; }
+form.gvsms ul li input[type='submit'] {
+  margin-left: 375px; }
+
+form.register, form.console {
+  margin: 0 -19px -19px;
+  padding-bottom: 10px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background: #dfeff7 url("/web/img/header_noise_less.png") top left repeat; }
+  form.register ul li, form.console ul li {
+    font-size: 1.1em;
+    text-shadow: 1px 1px 0 white !important;
+    padding: 9px 20px 5px; }
+    form.register ul li h6, form.console ul li h6 {
+      text-shadow: 1px 1px 0 white;
+      color: #666666; }
+    form.register ul li p.formerror, form.console ul li p.formerror {
+      margin: -25px 0 0 0 !important; }
+    form.register ul li textarea, form.console ul li textarea {
+      font-size: 1em;
+      padding: 3px 5px;
+      width: 340px;
+      height: 90px;
+      border: inset 1px #cccccc;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      -webkit-background-clip: padding-box;
+      -moz-background-clip: padding-box;
+      background-clip: padding-box;
+      -webkit-box-shadow: 1px 1px 0 white;
+      -moz-box-shadow: 1px 1px 0 white;
+      -khtml-box-shadow: 1px 1px 0 white;
+      -o-box-shadow: 1px 1px 0 white;
+      box-shadow: 1px 1px 0 white; }
+      form.register ul li textarea:focus, form.console ul li textarea:focus {
+        border: inset 1px #14568a;
+        background: #feffb7 !important;
+        -webkit-box-shadow: 0 0 2px #444444;
+        -moz-box-shadow: 0 0 2px #444444;
+        -khtml-box-shadow: 0 0 2px #444444;
+        -o-box-shadow: 0 0 2px #444444;
+        box-shadow: 0 0 2px #444444; }
+    form.register ul li:nth-child(even), form.console ul li:nth-child(even) {
+      background: #d1e3ec url("/web/img/header_noise_less.png") top left repeat; }
+    form.register ul li.register-pitch, form.console ul li.register-pitch {
+      background: #eeeeee !important;
+      color: black;
+      padding: 5px 20px; }
+    form.register ul li.errors, form.console ul li.errors {
+      padding: 0 20px; }
+    form.register ul li.tos_priv, form.console ul li.tos_priv {
+      line-height: 1.5em !important;
+      font-size: 0.95em !important;
+      padding: 10px; }
+      form.register ul li.tos_priv p, form.console ul li.tos_priv p {
+        float: left;
+        margin: 0 0 0 10px;
+        padding: 0;
+        width: 300px; }
+      form.register ul li.tos_priv input[type='submit'], form.console ul li.tos_priv input[type='submit'] {
+        margin-left: 200px;
+        margin-top: 5px;
+        font-size: 2.05em;
+        letter-spacing: -1px !important; }
+    form.register ul li input[type='text'], form.register ul li input[type='password'], form.console ul li input[type='text'], form.console ul li input[type='password'] {
+      font-size: 1.2em !important;
+      padding: 4px 6px !important; }
+    form.register ul li label, form.console ul li label {
+      font-weight: bold; }
+      form.register ul li label small, form.console ul li label small {
+        font-weight: normal; }
+
+
+
+

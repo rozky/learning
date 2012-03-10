@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+
+    <bean id="messageSource"
+          p:basename="/WEB-INF/i18n/messages"
+          p:cacheSeconds="1"
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource"/>
+
+    <bean id="themeSource"
+          class="org.springframework.ui.context.support.ResourceBundleThemeSource"/>
+
+    <bean id="themeResolver"
+          p:defaultThemeName="exampleTheme"
+          class="org.springframework.web.servlet.theme.FixedThemeResolver"/>
+
+    <!-- import required modules -->
+    <!--<beans profile="stub">-->
+        <!--<import resource="classpath:/spring/betfairapi/stub/betfairapi-context.xml" />-->
+    <!--</beans>-->
+
+    <!--<beans profile="live">-->
+        <!--<import resource="classpath:/spring/betfairapi/external/betfairapi-context.xml" />-->
+    <!--</beans>-->
+
+    <beans>
+        <!--<import resource="classpath:/spring/betfairapi/external/betfairapi-context.xml" />-->
+        <import resource="classpath:/spring/external/server-context.xml" />
+    </beans>
 
 </beans>

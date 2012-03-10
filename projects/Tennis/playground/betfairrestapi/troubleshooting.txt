@@ -1,0 +1,7 @@
+new BufferedReader(new InputStreamReader(response.getBody())).readLine()
+new String(body, 0, 126)
+
+new String(FileCopyUtils.copyToByteArray(response.getBody()),0, 389)
+FileCopyUtils.copyToByteArray(response.getBody()).length
+
+{"marketId":"104916268","session_id":"","price":"1000.0","betType":"B","selectionId":"585761","format":"json","exchange":"UK","size":"2.0"}

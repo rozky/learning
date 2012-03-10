@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <import resource="classpath:/spring/betfairapi/internal/betfairapi-context.xml"/>
+
+    <!-- enable processing of annotations such as @Autowired and @Configuration -->
+    <context:annotation-config/>
+
+    <!-- enable processing of annotations such as @Cacheable and @CacheEvict -->
+    <cache:annotation-driven/>
+
+    <!-- Ehcache library setup -->
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+        <property name="cacheManager" ref="ehcache"/>
+    </bean>
+    <bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation" value="classpath:/ehcache/betfairapi-ehcache.xml"/>
+    </bean>
+
+    <context:component-scan base-package="com.rozarltd.betfairapi.service"/>
+
+    <!--<context:property-placeholder location="betfair-api.properties"/>-->
+
+    <!--<bean class="org.jasypt.spring3.properties.EncryptablePropertyPlaceholderConfigurer">-->
+    <!--<constructor-arg ref="configurationEncryptor"/>-->
+    <!--<property name="location" value="classpath:/betfair-api.properties"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="configurationEncryptor" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">-->
+    <!--<property name="config" ref="environmentVariablesConfiguration"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="environmentVariablesConfiguration"-->
+    <!--class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig">-->
+    <!--<property name="algorithm" value="PBEWithMD5AndDES"/>-->
+    <!--<property name="passwordEnvName" value="jasypt.password"/>-->
+    <!--</bean>-->
+
+
+    <!--<bean class="com.rozarltd.betfairapi.spring.configuration.BetfairApiInternalSpringConfiguration"/>-->
+
+</beans>

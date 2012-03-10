@@ -1,21 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
         <groupId>com.rozarltd.betting.portal.tennis</groupId>
         <artifactId>aggregator</artifactId>
-        <version>1.0.0.SNAPSHOT</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>tennis-portal-server</artifactId>
-    <packaging>jar</packaging>
     <name>Tennis Portal - Server Module</name>
+    <packaging>jar</packaging>
+
+    <properties>
+        <betfair.ws.clients.version>1.0.0-SNAPSHOT</betfair.ws.clients.version>
+        <spring.stringtemplate.version>1.5.1</spring.stringtemplate.version>
+        <ehcache.version>2.5.1</ehcache.version>
+
+        <!-- ===== persistence layer dependencies ===== -->
+        <spring.data.mongodb>1.0.1.RELEASE</spring.data.mongodb>
+
+    </properties>
 
     <build>
         <finalName>tennis-portal-server</finalName>
     </build>
+
+    <dependencies>
+        <!-- ===== project modules ===== -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>tennis-portal-domain</artifactId>
+        </dependency>
+
+        <!-- ===== spring framework : core ===== -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+
+        <!-- ===== MongoDB support ===== -->
+        <dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>${spring.data.mongodb}</version>
+		</dependency>
+
+        <!-- ===== caching ===== -->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>${ehcache.version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <!-- ===== encryption ===== -->
+        <dependency>
+            <groupId>org.jasypt</groupId>
+            <artifactId>jasypt-spring3</artifactId>
+        </dependency>
+
+        <!-- ===== betfair web services ===== -->
+        <dependency>
+            <groupId>sk.rozky.services.clients</groupId>
+            <artifactId>betfair-global-api</artifactId>
+            <version>${betfair.ws.clients.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>sk.rozky.services.clients</groupId>
+            <artifactId>betfair-exchange-api</artifactId>
+            <version>${betfair.ws.clients.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.functional-collections</groupId>
+            <artifactId>functional-collections</artifactId>
+        </dependency>
+
+        <!-- ===== JSON support ===== -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+        </dependency>
+
+        <!-- ===== spring framework : test ===== -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -6,13 +6,13 @@
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <http auto-config="false" access-decision-manager-ref="accessDecisionManager" use-expressions="true">
-        <!-- exclude static resources from security checks -->
-        <intercept-url pattern="/resources/**" filters="none"/>
+    <!-- exclude static resources from security checks -->
+    <http pattern="/static/**" security="none" />
 
+    <http auto-config="false" access-decision-manager-ref="accessDecisionManager" use-expressions="true">
         <intercept-url pattern="/login" access="hasRole('ROLE_ANONYMOUS')" requires-channel="http"/>
         <intercept-url pattern="/logout" access="hasRole('ROLE_USER')" requires-channel="http"/>
-        <intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/secured/**" access="hasRole('ROLE_USER')"/>
 
         <!--
         <port-mappings>
@@ -21,16 +21,17 @@
         -->
 
         <form-login login-page="/login" />
-
-        <openid-login login-page="/openidlogin" authentication-failure-url="/openidlogin?failed=1">
-            <attribute-exchange>
-                <openid-attribute name="email" type="http://schema.openid.net/contact/email" required="true" count="2" />
-                <openid-attribute name="name" type="http://schema.openid.net/namePerson/friendly" required="true" count="2" />
-
-            </attribute-exchange>
-        </openid-login>
-
         <logout logout-url="/logout" invalidate-session="true" logout-success-url="/"/>
+
+        <!--<openid-login login-page="/openidlogin" authentication-failure-url="/openidlogin?failed=1">-->
+            <!--<attribute-exchange>-->
+                <!--<openid-attribute name="email" type="http://schema.openid.net/contact/email" required="true" count="2" />-->
+                <!--<openid-attribute name="name" type="http://schema.openid.net/namePerson/friendly" required="true" count="2" />-->
+
+            <!--</attribute-exchange>-->
+        <!--</openid-login>-->
+
+
 
         <session-management>
             <concurrency-control max-sessions="1" error-if-maximum-exceeded="false"/>
@@ -45,7 +46,6 @@
             </user-service>
             <!--<jdbc-user-service data-source-ref="dataSource" authorities-by-username-query="select username,authority from users where username=?"/>-->
         </authentication-provider>
-
     </authentication-manager>
 
     <beans:bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">

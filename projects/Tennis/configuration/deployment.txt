@@ -1,0 +1,4 @@
+1. the application requires java 1.6+ (at least jasypt will not work without addition configuration with java < 1.6)
+2. I'm using jasypt to encrypt sensible properties in properties files like password. To decrypt those encrypted
+properties the application need to know what password was used to encrypt them. The application expects
+ that tha password is stored in environment variable called 'jasypt.password'.
