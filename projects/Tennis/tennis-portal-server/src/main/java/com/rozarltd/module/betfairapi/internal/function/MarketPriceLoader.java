@@ -4,9 +4,7 @@ import com.googlecode.functionalcollections.Block;
 import com.rozarltd.module.betfairapi.domain.market.BetfairMarket;
 import com.rozarltd.module.betfairwebsite.service.BetfairWebsiteClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
 public class MarketPriceLoader implements Block<BetfairMarket> {
     private BetfairWebsiteClient betfairWebsiteService;
 

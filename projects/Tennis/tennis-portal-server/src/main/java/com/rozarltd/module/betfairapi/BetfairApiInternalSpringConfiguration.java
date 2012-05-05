@@ -1,11 +1,10 @@
-package com.rozarltd.module.betfairapi.spring.configuration;
+package com.rozarltd.module.betfairapi;
 
 
 import com.betfair.publicapi.global.BFGlobalService;
 import com.betfair.publicapi.global.types.LoginErrorEnum;
 import com.betfair.publicapi.global.types.LoginReq;
 import com.betfair.publicapi.global.types.LoginResp;
-import com.rozarltd.module.betfairapi.BetfairApiRuntimeException;
 import com.rozarltd.module.betfairapi.internal.BetfairSessionToken;
 import com.rozarltd.module.betfairapi.internal.factory.GlobalAPIRequestFactory;
 import org.springframework.context.annotation.Bean;

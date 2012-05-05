@@ -1,5 +1,6 @@
 package com.rozarltd.module.betfairwebsite.service;
 
+import com.google.inject.Inject;
 import com.rozarltd.module.betfairwebsite.exception.WebScrapingException;
 import com.rozarltd.module.betfairwebsite.page.coupon.component.TennisInPlayCouponExtractor;
 import com.rozarltd.module.betfairwebsite.page.coupon.domain.TennisInPlayCoupon;
@@ -9,19 +10,17 @@ import com.rozarltd.util.http.HttpTemplate;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.jsoup.nodes.Document;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.stereotype.Component;
 
-@Component
 public class BetfairWebsiteClient {
 
     // todo - inject this
     private ObjectMapper jsonObjectMapper = new ObjectMapper();
-    private HttpTemplate httpTemplate = new HttpTemplate();
+    private HttpTemplate httpTemplate;
 
-//    @Autowired
-//    public BetfairWebsiteClient(HttpTemplate httpTemplate) {
-//        this.httpTemplate = httpTemplate;
-//    }
+    @Inject
+    public BetfairWebsiteClient(HttpTemplate httpTemplate) {
+        this.httpTemplate = httpTemplate;
+    }
 
     public WebMarket getMarket(int marketId) throws WebScrapingException {
 
