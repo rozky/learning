@@ -1,6 +1,7 @@
 package com.rozarltd.betting.portal.service;
 
-import com.rozarltd.betfairapi.service.BetfairExchangeApiService;
+import com.rozarltd.betting.service.TennisMarketService;
+import com.rozarltd.module.betfairapi.service.BetfairExchangeApiService;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -16,7 +17,7 @@ public class TennisMarketServiceTest {
     public void beforeEachTest() {
         initMocks(this);
 
-        service = new TennisMarketService(betfairMarketService);
+        service = new TennisMarketService(null, null, null);
     }
     
     @Test

@@ -3,8 +3,8 @@ package com.rozarltd.betting.account;
 
 import com.betfair.publicapi.exchange.types.AccountStatementEnum;
 import com.betfair.publicapi.exchange.types.AccountStatementItem;
-import com.rozarltd.betfairapi.service.AccountWalletService;
 import com.rozarltd.betting.domain.account.AccountStatementRecord;
+import com.rozarltd.module.betfairapi.service.AccountWalletService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
