@@ -4,6 +4,7 @@ var BetSlipModel = Backbone.Model.extend({
         selectionId: "0",
         price: "1.0",
         stake: "2.0",
+        profit: "1.0",
 
         messages: {
             PLACING: "Placing your bet please wait ...",
@@ -14,25 +15,39 @@ var BetSlipModel = Backbone.Model.extend({
         }
     },
 
-    update: function(marketId, selectionId, price, stake) {
+    initialize: function() {
+        this.on("change", function(){console.log('changed')});
+    },
+
+    update: function(selectionName, marketName, marketId, selectionId, price) {
         this.set({
+            selectionName: selectionName,
+            marketFullName: marketName,
             marketId: marketId,
             selectionId: selectionId,
             price: price,
-            stake: stake
+            stake: "2.0",
+            profit: ((parseFloat(price, 10) - 1) * 2.0).toFixed(2)
         });
     }
 });
 
 var BetSlipView = Backbone.View.extend({
     initialize: function() {
-        _.bindAll(this, "_showOverlay", "_hideOverlay");
+        _.bindAll(this, "_showOverlay", "_hideOverlay", "_updateProfit");
         this.model.on("change", this._updateFormData, this);
     },
 
     events: {
         "submit form": "_handlePlaceBet",
-        "click .overlay button": "_hideOverlay"
+        "click .overlay button": "_hideOverlay",
+        "keyup input[name='price']": "_updateProfit",
+        "keyup input[name='stake']": "_updateProfit"
+    },
+
+    _updateProfit: function() {
+        var newProfit = (parseFloat(this.$el.find("input[name='price']").val(), 10) - 1) * parseFloat(this.$el.find("input[name='stake']").val(), 10);
+        this.$el.find("input[name='profit']").val(newProfit.toFixed(2));
     },
 
     _updateFormData: function() {
@@ -44,9 +59,11 @@ var BetSlipView = Backbone.View.extend({
         this.$el.find("input[name='selectionId']").val(this.model.get("selectionId"));
         this.$el.find("input[name='price']").val(this.model.get("price"));
         this.$el.find("input[name='stake']").val(this.model.get("stake"));
+        this.$el.find("input[name='profit']").val(this.model.get("profit"));
     },
 
     _handlePlaceBet: function(event) {
+        console.log('placing bet');
         if(event.stopPropagation) event.stopPropagation();
         event.preventDefault();
 

@@ -1,9 +1,11 @@
 package com.rozarltd.betting.service;
 
-import com.rozarltd.betfairapi.internal.mapper.betfair.BFTypeMapperManager;
-import com.rozarltd.betfairapi.service.BFRestApiService;
-import com.rozarltd.betting.domain.BetLittle;
-import com.rozarltd.domain.account.User;
+import com.rozarltd.module.betfairapi.internal.mapper.betfair.BFTypeMapperManager;
+import com.rozarltd.module.betfairrestapi.BetfairRestApi;
+import com.rozarltd.betting.domain.BetRequest;
+import com.rozarltd.account.User;
+import com.rozarltd.betting.rules.BetSizeLimitRule;
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
@@ -15,8 +17,9 @@ public class RuleBasedBettingFacadeTest {
     private static User DEFAULT_USER = new User("username", "betfairSoapApiToken", "betfairRestApiToken");
     private BettingFacade bettingFacade;
     private BFTypeMapperManager typeMapperManager;
-    @Mock private BFRestApiService betfairRestApiService;
+    @Mock private BetfairRestApi betfairRestApiService;
 
+    @Before
     public void beforeEach() {
         initMocks(this);
         typeMapperManager = new BFTypeMapperManager();
@@ -26,7 +29,7 @@ public class RuleBasedBettingFacadeTest {
     @Test
     public void shouldNotPlaceWhenBetSizeExceedAllowedBetSize() {
         // given
-        BetLittle betWithToHeightStake = createBet(2001);
+        BetRequest betWithToHeightStake = createBet(BetSizeLimitRule.MAX_BET_SIZE + 1);
 
         // when
         BetPlacementResult result = bettingFacade.placeABet(DEFAULT_USER, betWithToHeightStake);
@@ -35,8 +38,8 @@ public class RuleBasedBettingFacadeTest {
         assertThat(result.isError(), is(true));
     }
 
-    private BetLittle createBet(double betSize) {
-        return new BetLittle(1,1,1,betSize);
+    private BetRequest createBet(double betSize) {
+        return new BetRequest(1,1,1,betSize);
     }
 
     private User createUser() {

@@ -1,19 +1,19 @@
 package com.rozarltd.betting.portal.tennis.web.betfair.controller;
 
-import com.rozarltd.betfairapi.service.AccountFacade;
-import com.rozarltd.betfairapi.service.AccountService;
-import com.rozarltd.betfairapi.service.BFExchangeApiService;
-import com.rozarltd.betfairapi.service.BFRestApiService;
-import com.rozarltd.betfairapi.service.MarketFacade;
-import com.rozarltd.betting.domain.BetLittle;
+import com.rozarltd.account.User;
+import com.rozarltd.module.betfairapi.service.AccountFacade;
+import com.rozarltd.module.betfairapi.service.AccountService;
+import com.rozarltd.module.betfairapi.service.BFExchangeApiService;
+import com.rozarltd.module.betfairrestapi.BetfairRestApi;
+import com.rozarltd.betting.domain.BetRequest;
 import com.rozarltd.betting.portal.tennis.web.ModelAttributeName;
 import com.rozarltd.betting.portal.tennis.web.Routing;
-import com.rozarltd.betting.portal.tennis.web.betfair.domain.StatusJsonResponse;
+import com.rozarltd.betting.portal.tennis.web.betfair.domain.StatusResponse;
 import com.rozarltd.betting.portal.tennis.web.betfair.model.CurrentBetsTemplateModelBuilder;
 import com.rozarltd.betting.portal.tennis.web.service.UserService;
 import com.rozarltd.betting.service.BetPlacementResult;
 import com.rozarltd.betting.service.BettingFacade;
-import com.rozarltd.domain.account.User;
+import com.rozarltd.betting.service.MarketService;
 import org.apache.commons.lang.math.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,20 +26,20 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class BetfairRestController{
-    private BFRestApiService restApiService;
+    private BetfairRestApi restApiService;
     private BFExchangeApiService exchangeApiService;
     private AccountService betfairAccountService;
     private BettingFacade bettingFacade;
     private BFExchangeApiService betfairExchangeApiService;
-    private MarketFacade betfairMarketFacade;
+    private MarketService betfairMarketFacade;
     private AccountFacade betfairAccountFacade;
     private UserService userService;
 
     @Autowired
-    public BetfairRestController(BFRestApiService restApiService, BFExchangeApiService exchangeApiService,
+    public BetfairRestController(BetfairRestApi restApiService, BFExchangeApiService exchangeApiService,
                                  AccountService betfairAccountService, BettingFacade bettingFacade,
                                  BFExchangeApiService betfairExchangeApiService,
-                                 MarketFacade betfairMarketFacade,
+                                 MarketService betfairMarketFacade,
                                  AccountFacade betfairAccountFacade,
                                  UserService userService) {
         this.restApiService = restApiService;
@@ -69,7 +69,7 @@ public class BetfairRestController{
     }
 
     @RequestMapping(value = Routing.BETFAIR_BET, method = RequestMethod.POST)
-    public @ResponseBody BetPlacementResult placeBet(HttpServletRequest request, BetLittle bet) {
+    public @ResponseBody BetPlacementResult placeBet(HttpServletRequest request, BetRequest bet) {
         User user = userService.getCurrentUser(request);
         BetPlacementResult betPlacementResult = bettingFacade.placeABet(user, bet);
 
@@ -77,17 +77,23 @@ public class BetfairRestController{
     }
 
     @RequestMapping(value = Routing.BETFAIR_CANCEL_BET, method = RequestMethod.POST)
-    public @ResponseBody StatusJsonResponse cancelBet(HttpServletRequest request, String betId) {
+    public @ResponseBody StatusResponse cancelBet(HttpServletRequest request, String betId) {
         long betIdAsLong = NumberUtils.toLong(betId, -1);
         if(betIdAsLong > 0) {
             User user = userService.getCurrentUser(request);
             if(user == null) {
-                return new StatusJsonResponse("USER_NOT_LOGGED_IN");
+                return new StatusResponse("USER_NOT_LOGGED_IN");
             }
 
             String betCancellationStatus = exchangeApiService.cancelBet(user.getBetfairPublicApiToken(), betIdAsLong);
-            return new StatusJsonResponse(betCancellationStatus);
+            return new StatusResponse(betCancellationStatus);
         }
-        return new StatusJsonResponse("INVALID_BET_ID");
+        return new StatusResponse("INVALID_BET_ID");
+    }
+
+    @RequestMapping(value = Routing.REST_BETFAIR_MARKET, method = RequestMethod.GET)
+    public void getTodayMarkets(ModelMap modelMap) {
+//        Set<BetfairMarket> matchOddMarkets = betfairMarketFacade.getMatchOddMarkets();
+//        modelMap.addAttribute(ModelAttributeName.markets, MarketViewAdapter.transform(matchOddMarkets));
     }
 }

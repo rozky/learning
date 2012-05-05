@@ -1,8 +1,8 @@
 package com.rozarltd.betting.service;
 
-import com.rozarltd.betting.domain.BetLittle;
-import com.rozarltd.domain.account.User;
+import com.rozarltd.betting.domain.BetRequest;
+import com.rozarltd.account.User;
 
 public interface BettingFacade {
-    public BetPlacementResult placeABet(User user, BetLittle bet);
+    public BetPlacementResult placeABet(User user, BetRequest bet);
 }

@@ -1,15 +1,16 @@
 package com.rozarltd.betting.portal.tennis.web.betfair.controller;
 
-import com.rozarltd.betfairapi.domain.market.BetfairMarket;
-import com.rozarltd.betfairapi.domain.market.BetfairRootEventId;
-import com.rozarltd.betfairapi.service.AccountFacade;
-import com.rozarltd.betfairapi.service.AccountService;
-import com.rozarltd.betfairapi.service.BFExchangeApiService;
-import com.rozarltd.betfairapi.service.MarketFacade;
+import com.rozarltd.module.betfairapi.domain.market.BetfairMarket;
+import com.rozarltd.module.betfairapi.domain.market.BetfairRootEventId;
+import com.rozarltd.module.betfairapi.service.AccountFacade;
+import com.rozarltd.module.betfairapi.service.AccountService;
+import com.rozarltd.module.betfairapi.service.BFExchangeApiService;
+import com.rozarltd.betting.service.MarketService;
 import com.rozarltd.betting.portal.tennis.web.ModelAttributeName;
 import com.rozarltd.betting.portal.tennis.web.Routing;
 import com.rozarltd.betting.portal.tennis.web.service.UserService;
-import com.rozarltd.domain.account.User;
+import com.rozarltd.account.User;
+import com.rozarltd.domain.market.Market;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,14 +25,14 @@ import java.util.Set;
 @Controller
 public class BetfairMarketController {
 
-    private MarketFacade betfairMarketFacade;
+    private MarketService betfairMarketFacade;
     private AccountFacade betfairAccountFacade;
     private BFExchangeApiService betfairExchangeApiService;
     private AccountService betfairAccountService;
     private UserService userService;
 
     @Autowired
-    public BetfairMarketController(MarketFacade betfairMarketFacade,
+    public BetfairMarketController(MarketService betfairMarketFacade,
                                    BFExchangeApiService betfairExchangeApiService,
                                    AccountService betfairAccountService,
                                    AccountFacade betfairAccountFacade, UserService userService) {
@@ -55,7 +56,7 @@ public class BetfairMarketController {
         modelMap.addAttribute(ModelAttributeName.runnerNames, runnerNames);
 
 
-        Set<BetfairMarket> matchOddMarkets = betfairMarketFacade.getMatchOddMarkets(BetfairRootEventId.tennis.getEventId());
+        Set<Market> matchOddMarkets = betfairMarketFacade.getMatchOddMarkets();
         modelMap.addAttribute(ModelAttributeName.markets, matchOddMarkets);
 
         // wallets
@@ -68,12 +69,5 @@ public class BetfairMarketController {
 
         modelMap.addAttribute(ModelAttributeName.markets,markets);
         modelMap.addAttribute(ModelAttributeName.marketsCount, markets.size());
-    }
-
-    @RequestMapping(value = Routing.BETFAIR_MARKET_LIVE, method = RequestMethod.GET)
-    public void renderLiveMarkets(ModelMap modelMap) {
-        List<BetfairMarket> inPlayMarkets = betfairMarketFacade.getInPlayMarkets(BetfairRootEventId.tennis.getEventId());
-        modelMap.addAttribute(ModelAttributeName.markets, inPlayMarkets);
-        modelMap.addAttribute(ModelAttributeName.marketsCount, inPlayMarkets.size());
     }
 }

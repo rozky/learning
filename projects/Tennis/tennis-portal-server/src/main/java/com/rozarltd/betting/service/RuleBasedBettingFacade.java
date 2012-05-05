@@ -1,16 +1,17 @@
 package com.rozarltd.betting.service;
 
 import com.google.common.base.Optional;
-import com.rozarltd.betfairapi.domain.bet.BetfairBet;
-import com.rozarltd.betfairapi.internal.mapper.ObjectTypeMapperManager;
-import com.rozarltd.betfairapi.service.BFRestApiService;
-import com.rozarltd.betfairapi.service.ServiceResponse;
-import com.rozarltd.betfairrestapi.domain.bet.BFRestBet;
-import com.rozarltd.betfairrestapi.domain.response.PlaceBetResponse;
-import com.rozarltd.betting.domain.BetLittle;
+import com.rozarltd.module.betfairapi.domain.bet.BetfairBet;
+import com.rozarltd.module.betfairapi.internal.mapper.ObjectTypeMapperManager;
+import com.rozarltd.module.betfairrestapi.BetfairRestApi;
+import com.rozarltd.module.betfairapi.service.ServiceResponse;
+import com.rozarltd.module.betfairrestapi.domain.bet.BFRestBet;
+import com.rozarltd.module.betfairrestapi.domain.response.PlaceBetResponse;
+import com.rozarltd.betting.domain.BetRequest;
 import com.rozarltd.betting.rules.BetSizeLimitRule;
 import com.rozarltd.betting.rules.BettingRule;
-import com.rozarltd.domain.account.User;
+import com.rozarltd.account.User;
+import com.rozarltd.betting.rules.RuleViolation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ import java.util.TreeSet;
 
 @Service
 public class RuleBasedBettingFacade implements BettingFacade {
-    private final BFRestApiService betfairRestApiService;
+    private final BetfairRestApi betfairRestApiService;
     private final ObjectTypeMapperManager objectTypeMapperManager;
 
 
@@ -29,7 +30,7 @@ public class RuleBasedBettingFacade implements BettingFacade {
 
 
     @Autowired
-    public RuleBasedBettingFacade(BFRestApiService betfairRestApiService, ObjectTypeMapperManager objectTypeMapperManager) {
+    public RuleBasedBettingFacade(BetfairRestApi betfairRestApiService, ObjectTypeMapperManager objectTypeMapperManager) {
         this.betfairRestApiService = betfairRestApiService;
         this.objectTypeMapperManager = objectTypeMapperManager;
 
@@ -37,7 +38,7 @@ public class RuleBasedBettingFacade implements BettingFacade {
     }
 
     @Override
-    public BetPlacementResult placeABet(User user, BetLittle bet) {
+    public BetPlacementResult placeABet(User user, BetRequest bet) {
 
         // check rules
         List<RuleViolation> violations = checkAgainstBettingRules(user, bet);
@@ -59,7 +60,7 @@ public class RuleBasedBettingFacade implements BettingFacade {
         return new BetPlacementResult(betfairBet);
     }
 
-    private List<RuleViolation> checkAgainstBettingRules(User user, BetLittle placeBetDetails) {
+    private List<RuleViolation> checkAgainstBettingRules(User user, BetRequest placeBetDetails) {
         List<RuleViolation> violations = new ArrayList<RuleViolation>();
         if(bettingRules != null && bettingRules.size() > 0) {
             for(BettingRule rule: bettingRules) {
@@ -77,7 +78,7 @@ public class RuleBasedBettingFacade implements BettingFacade {
         private static final double MAXIMUM = 3;
 
         @Override
-        public Optional<RuleViolation> verify(User user, BetLittle placeBetDetails) {
+        public Optional<RuleViolation> verify(User user, BetRequest placeBetDetails) {
             return null;
         }
     }

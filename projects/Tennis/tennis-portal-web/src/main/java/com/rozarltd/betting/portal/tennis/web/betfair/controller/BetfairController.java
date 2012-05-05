@@ -1,12 +1,12 @@
 package com.rozarltd.betting.portal.tennis.web.betfair.controller;
 
-import com.rozarltd.betfairapi.service.AccountService;
+import com.rozarltd.module.betfairapi.service.AccountService;
 import com.rozarltd.betting.portal.tennis.web.ModelAttributeName;
 import com.rozarltd.betting.portal.tennis.web.Routing;
 import com.rozarltd.betting.portal.tennis.web.form.BetfairLoginForm;
 import com.rozarltd.betting.portal.tennis.web.form.ValidationErrorAdapter;
 import com.rozarltd.betting.portal.tennis.web.session.SessionAttributeName;
-import com.rozarltd.domain.account.User;
+import com.rozarltd.account.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

@@ -1,4 +1,4 @@
-<div id="account-wallets" class="module">
+<div id="account-wallets" class="greyTable module">
     <h1 class="header">
         Account Wallets
         <button class="refresh">Refresh</button>
@@ -8,30 +8,30 @@
         $if(accountWallets)$
             <div class="wallet header">
                 <div class="name">Name</div>
-                <div class="balance">Balance</div>
+                <div class="balance">Wallet Balance</div>
                 <div class="availableBalance">Available Balance</div>
-                <div class="exposure">Exposure</div>
+                <div class="exposure">Current Exposure</div>
             </div>
             $accountWallets:{wallet|
-                <div class="wallet">
+                <div class="wallet dataRow">
                     <div class="name">$wallet.name$</div>
-                    <div class="balance">$wallet.balance$</div>
-                    <div class="availableBalance">$wallet.availableBalance$</div>
-                    <div class="exposure">$wallet.exposure$</div>
+                    <div class="balance">$wallet.balance;format="doubleScale2"$</div>
+                    <div class="availableBalance">$wallet.availableBalance;format="doubleScale2"$</div>
+                    <div class="exposure">$wallet.exposure;format="doubleScale2"$</div>
                 </div>
             }$
-
-            <div class="overlay">
-                <table class="wh100">
-                    <tr>
-                        <td>
-                            <span class="spinner">Loading wallets details</span>
-                        </td>
-                    </tr>
-                </table>
-            </div>
         $else$
-            <div class="notification">Not Loaded</div>
+            <div class="notification">Not Loaded: Click on Refresh button to load</div>
         $endif$
+
+        <div class="overlay">
+            <table class="wh100">
+                <tr>
+                    <td>
+                        <span class="blueSpinner">Loading Wallets Details</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>

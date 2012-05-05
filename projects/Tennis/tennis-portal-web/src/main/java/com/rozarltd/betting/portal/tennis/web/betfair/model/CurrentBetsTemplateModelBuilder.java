@@ -1,6 +1,6 @@
 package com.rozarltd.betting.portal.tennis.web.betfair.model;
 
-import com.rozarltd.betfairapi.domain.bet.BetfairBet;
+import com.rozarltd.module.betfairapi.domain.bet.BetfairBet;
 import com.rozarltd.betting.portal.tennis.web.ModelAttributeName;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.Assert;

@@ -21,9 +21,13 @@
 <body>
 <div id="container" class="container_24">
     <div class="grid_14">
-        <div id="market-list" class="marketList">
-            $markets:{market|
-                $if(!market.closed)$
+        <div id="market-list" class="marketList module" >
+            <h1 class="header">
+                Your Current Bets
+                <button class="refresh">Refresh</button>
+            </h1>
+            <div class="content">
+                $markets:{market|
                     <div class="marketWrapper">
                         $if(market.inPlay)$
                             <div class="live">Live</div>
@@ -38,7 +42,7 @@
                             <li class="runner position-$i$" data-market-id="$market.marketId$"
                                 data-selection-id="$runner.runnerId$">
                                 <span class="runnerName">$runner.runnerName$</span>
-                                <em class="price">$runner.bestBackPrice.price$</em>
+                                <em class="price">$runner.bestBackPrice.price;format="doubleScale2"$</em>
                             </li>
                             }$
                              <div class="overlay">
@@ -53,75 +57,17 @@
                                 </table>
                              </div>
                         </ol>
-
                     </div>
-                $endif$
-            }$
+                }$
+            </div>
         </div>
     </div>
 
     <div class="grid_10">
-        <div id="bet-slip" class="betSlipWrapper module">
-            <h1 class="header">Bet Slip</h1>
-            <div class="content">
-                <h2>Selection Name</h2>
-                <h3>Market Name</h3>
-
-                <form method="POST" action="/betfair/bet" enctype="UTF-8">
-                    <input type="hidden" name="marketId" value="">
-                    <input type="hidden" name="selectionId" value="">
-
-                    <ol>
-                        <li>
-                            <label for="betSlipPrice">Price</label>
-                            <input id="betSlipPrice" type="text" name="price" value="Price"/>
-                        </li>
-                        <li>
-                            <label for="betSlipPrice">Stake</label>
-                            <input type="text" name="stake" value="Stake"/>
-                        </li>
-                        <li style="background-color: #fff; padding: 5px 0px 5px 0px;">
-                            <button class="yellow">Place Bet</button>
-                        </li>
-                    </ol>
-
-                    <div class="profit">
-                        &pound;&nbsp;<em>1314.67</em>
-                    </div>
-                </form>
-                <div class="overlay">
-                    <table>
-                        <tr>
-                            <td>
-                                <div>
-                                    <em></em>
-                                    <button>close</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="emptyOverlay">
-                    <table>
-                        <tr>
-                            <td>
-                                <div class="big">Nothing Selected</div>
-                                <div class="small">Make your selection on the left by clicking on the runner you would like to place bet on</div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-        </div>
-
         <!--<h1 class="notification-error">Your bet has been placed successfully</h1>-->
         <!--<h1 class="notification-success">Your bet has been placed successfully</h1>-->
         <!--<h1 class="notification-warning">Processing your bet, please wait ...</h1>-->
-
-
-
+        $modules/BetSlip/bet_slip()$
         $modules/CurrentBets/current_bets()$
         $modules/AccountWallet/account_wallet()$
     </div>

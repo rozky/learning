@@ -20,10 +20,10 @@
         <property name="cacheManager" ref="ehcache"/>
     </bean>
     <bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-        <property name="configLocation" value="classpath:/ehcache/betfairapi-ehcache.xml"/>
+        <property name="configLocation" value="classpath:/ehcache/server-module-ehcache.xml"/>
     </bean>
 
-    <context:component-scan base-package="com.rozarltd.betfairapi.service"/>
+    <context:component-scan base-package="com.rozarltd.module.betfairapi.service"/>
 
     <!--<context:property-placeholder location="betfair-api.properties"/>-->
 
@@ -43,6 +43,5 @@
     <!--</bean>-->
 
 
-    <!--<bean class="com.rozarltd.betfairapi.spring.configuration.BetfairApiInternalSpringConfiguration"/>-->
 
 </beans>

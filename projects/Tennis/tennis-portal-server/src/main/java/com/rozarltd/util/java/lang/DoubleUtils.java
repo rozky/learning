@@ -1,5 +1,7 @@
 package com.rozarltd.util.java.lang;
 
+import java.math.BigDecimal;
+
 public abstract class DoubleUtils {
     public static final Double valueOf(String value) {
         if(value == null || value.trim().isEmpty()) {
@@ -7,5 +9,9 @@ public abstract class DoubleUtils {
         }
 
         return Double.valueOf(value);
+    }
+
+    public static final double valueOf(double value, int scale) {
+        return BigDecimal.valueOf(value).setScale(scale, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 }

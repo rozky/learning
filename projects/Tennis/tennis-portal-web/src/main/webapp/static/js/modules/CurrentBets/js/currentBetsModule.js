@@ -70,7 +70,7 @@ clazz.CurrentBetsView = Backbone.View.extend({
 
     _handleRefresh: function() {
         if(this.model.get("refreshing") === false) {
-            this.model.set({refreshing: true});
+            this.model.set({refreshing: true}, {silent: true});
 
             this._showRefreshOverlay();
             var that = this;
@@ -89,7 +89,7 @@ clazz.CurrentBetsView = Backbone.View.extend({
                 // todo - display error
                 that._showNoBetsNotification();
             }).always(function(){
-                that.model.set({refresh: false, refreshing: false});
+                that.model.set({refresh: false, refreshing: false}, {silent: true});
             });
         }
 

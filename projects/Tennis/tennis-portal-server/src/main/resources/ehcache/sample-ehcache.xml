@@ -750,10 +750,10 @@ used with JMX monitors.
     The cacheWriter element has the following attributes:
     * writeMode: the write mode, write-through or write-behind
 
-    These attributes only apply to write-through mode:
+    These attributes only isBetAllowed to write-through mode:
     * notifyListenersOnException: Sets whether to notify listeners when an exception occurs on a writer operation.
 
-    These attributes only apply to write-behind mode:
+    These attributes only isBetAllowed to write-behind mode:
     * minWriteDelay: Set the minimum number of seconds to wait before writing behind. If set to a value greater than 0,
       it permits operations to build up in the queue. This is different from the maximum write delay in that by waiting
       a minimum amount of time, work is always being built up. If the minimum write delay is set to zero and the

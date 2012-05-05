@@ -13,12 +13,14 @@
         <module>tennis-portal-domain</module>
         <module>tennis-portal-server</module>
         <module>tennis-portal-web</module>
+        <module>tennis-portal-server-stub</module>
     </modules>
 
     <properties>
         <!-- ===== languages ===== -->
         <java.version>1.6</java.version>
         <spring.version>3.1.0.RELEASE</spring.version>
+        <spring.batch.version>2.1.8.RELEASE</spring.batch.version>
         <scala.version>2.9.1</scala.version>
 
         <!-- ===== servlet and templating ===== -->
@@ -76,12 +78,25 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <inherited>false</inherited>
+                <configuration>
+                    <target if="maven.ant.target">
+                        <ant target="${maven.ant.target}" />
+                    </target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>UTF-8</encoding>
+                    <debug>true</debug>
                 </configuration>
             </plugin>
 
@@ -149,6 +164,28 @@
 
             </plugin>
 
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.5.7.201204190339</version>
+                <executions>
+                    <execution>
+                        <id>jacoco-init</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
 
         </plugins>
     </build>
@@ -168,6 +205,13 @@
                 <version>${project.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.rozarltd.betting.portal.tennis</groupId>
+                <artifactId>tennis-portal-server-stub</artifactId>
+                <version>${project.version}</version>
+                <scope>test</scope>
+            </dependency>
+
             <!-- ===== servlet, jsp, jstl ===== -->
             <dependency>
                 <groupId>javax.servlet</groupId>
@@ -175,19 +219,6 @@
                 <version>${servlet.api.version}</version>
                 <scope>provided</scope>
             </dependency>
-            <!--<dependency>-->
-            <!--<groupId>javax.servlet.jsp</groupId>-->
-            <!--<artifactId>jsp-api</artifactId>-->
-            <!--<version>${jsp.api.version}</version>-->
-            <!--&lt;!&ndash;<scope>runtime</scope>&ndash;&gt;-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-            <!--<groupId>jstl</groupId>-->
-            <!--<artifactId>jstl</artifactId>-->
-            <!--<version>${jstl.version}</version>-->
-            <!--&lt;!&ndash;<scope>runtime</scope>&ndash;&gt;-->
-            <!--</dependency>-->
 
             <!-- ===== templating engine ===== -->
             <dependency>
@@ -237,6 +268,13 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-aop</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+
+            <!-- ===== spring framework : batch ===== -->
+            <dependency>
+                <groupId>org.springframework.batch</groupId>
+                <artifactId>spring-batch-core</artifactId>
+                <version>${spring.batch.version}</version>
             </dependency>
 
             <!-- ===== spring framework : security ===== -->

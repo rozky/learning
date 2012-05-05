@@ -82,6 +82,9 @@ h1.notification-warning {
     padding: 7px 10px;
 }
 
+div.module {
+    margin-top: 15px;
+}
 
 div.module h1.header {
     background-color: #333;
@@ -94,6 +97,11 @@ div.module h1.header button {
     cursor: pointer;
     border: none;
     float: right;
+}
+
+div.module .blueSpinner {
+    background: url('../img/spinner-blue.gif') no-repeat left transparent;
+    padding-left: 25px;
 }
 
 table.wh100 {

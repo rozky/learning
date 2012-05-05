@@ -19,6 +19,11 @@
             <li><a href="/betfair/account/balance">Account Balance</a></li>
             <li><a hreg="/betfair/login">login</a></li>
             <li><a href="/betfair/logout">logout</a></li>
+            <li><a href="#">Replicate Account Statement</a></li>
+            <li><a href="#">Generate Daily Betting Report</a></li>
+            <li><a href="#">Generate Weekly Betting Report</a></li>
+            <li><a href="#">Generate Monthly Betting Report</a></li>
+            <li><a href="#">Display overall betting statistics</a></li>
         </ul>
     </div>
 </body>

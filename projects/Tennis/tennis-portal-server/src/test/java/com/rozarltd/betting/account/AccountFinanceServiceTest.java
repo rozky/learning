@@ -2,8 +2,9 @@ package com.rozarltd.betting.account;
 
 import com.betfair.publicapi.exchange.types.AccountStatementEnum;
 import com.betfair.publicapi.exchange.types.AccountStatementItem;
-import com.rozarltd.betfairapi.service.AccountWalletService;
+import com.rozarltd.module.betfairapi.service.AccountWalletService;
 import com.rozarltd.betting.domain.account.AccountStatementRecord;
+import com.rozarltd.betting.service.AccountFinanceService;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

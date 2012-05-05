@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xsi:schemaLocation="http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="com.rozarltd.mongodb.MongoDbRepositoryConfiguration"/>
+    <mongo:mongo id="mongo" host="ds029297.mongolab.com" port="29297"/>
 
-     <repositories base-package="com.acme.repositories" />
+    <mongo:db-factory id="mongoDbFactory" mongo-ref="mongo" dbname="development" username="development" password="development"/>
+
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+        <constructor-arg name="mongoConverter" ref="mappingConverter"/>
+    </bean>
+
+    <mongo:repositories base-package="com.rozarltd.repository" mongo-template-ref="mongoTemplate"/>
+    <mongo:repositories base-package="com.rozarltd.module.betfairdata.repository" mongo-template-ref="mongoTemplate"/>
+
+    <bean class="org.springframework.data.mongodb.core.MongoExceptionTranslator"/>
+
+    <mongo:mapping-converter id="mappingConverter">
+        <mongo:custom-converters>
+            <mongo:converter>
+                <bean class="com.rozarltd.repository.converter.BetfairMarketWriteConverter"/>
+            </mongo:converter>
+        </mongo:custom-converters>
+    </mongo:mapping-converter>
 </beans>

@@ -1,6 +1,6 @@
 package com.rozarltd.betting.portal.tennis.web.controller;
 
-import com.rozarltd.betfairapi.service.AccountWalletService;
+import com.rozarltd.module.betfairapi.service.AccountWalletService;
 import com.rozarltd.betting.portal.tennis.web.ModelAttributeName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,49 +1,12 @@
-.currentBets {
+.greyTable {
     color: #666666;
-    margin-top: 15px;
 }
 
-.currentBets .content {
+.greyTable .content {
     position: relative;
 }
 
-.currentBets .content div {
-    /*position: relative;*/
-}
-
-.currentBets .notification {
-    background-color: #0087FF;
-    /*display: none;*/
-    font-size: 1.2em;
-    font-weight: bold;
-    padding: 20px 0px;
-    text-align: center;
-}
-
-.currentBets .bet {
-    background-color: #e2e2e2;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-.currentBets .bet div, .currentBets .header div {
-    float: left;
-    padding: 5px 0px;
-    font-size: 1em;
-}
-
-.currentBets .bet {
-    border-bottom: 1px solid #afafaf;
-}
-
-.currentBets .bet .betType, .currentBets .header .betType {
-    width: 32px;
-    text-align: center;
-}
-
-.currentBets .header {
+.greyTable .content .header {
     background-color: #bfbfbf;
     font-weight: bold;
     margin-bottom: 0px !important;
@@ -51,42 +14,70 @@
     overflow: hidden;
 }
 
-.currentBets .bet .time, .currentBets .header .time {
+.greyTable .content .header div, .greyTable .content .dataRow div {
+    float: left;
+    padding: 5px 0px;
+    font-size: 1em;
+}
 
+.greyTable .content .dataRow {
+    border-bottom: 1px solid #afafaf;
+    background-color: #e2e2e2;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.currentBets .dataRow .betType, .currentBets .header .betType {
+    width: 32px;
+    text-align: center;
+}
+
+.currentBets .dataRow .time, .currentBets .header .time {
     width: 38px;
     text-align: center;
 }
 
-.currentBets .bet .selection , .currentBets .header .selection {
+.currentBets .dataRow .selection , .currentBets .header .selection {
     padding-left: 5px;
     width: 144px;
 }
 
-.currentBets .bet .size, .currentBets .header .size {
+.currentBets .dataRow .size, .currentBets .header .size {
     padding-right: 5px;
     text-align: right;
     width: 52px;
 }
 
-.currentBets .bet .price, .currentBets .header .price {
+.currentBets .dataRow .price, .currentBets .header .price {
     padding-right: 5px;
     text-align: right;
     width: 52px;
 }
 
-.currentBets .bet .profit, .currentBets .header .profit {
+.currentBets .dataRow .profit, .currentBets .header .profit {
    padding-right: 5px;
    text-align: right;
-   width: 52px;
+   width: 67px;
 }
 
-.currentBets .bet .overlay {
+.currentBets .notification {
+    background-color: #e2e2e2;
+    /*display: none;*/
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.currentBets .dataRow .overlay {
     background-color: #FFE710;
     color: #000;
     display: none;
 }
 
-.currentBets .bet .overlay em {
+.currentBets .dataRow .overlay em {
     background: url('../img/spinner-yellow.gif') no-repeat center transparent;
     text-indent: -1000em;
     width: 28px;

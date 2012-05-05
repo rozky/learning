@@ -1,9 +1,9 @@
 package com.rozarltd.betting.portal.tennis.web.service;
 
-import com.rozarltd.betfairapi.service.AccountService;
-import com.rozarltd.setting.ApplicationProperties;
+import com.rozarltd.application.ApplicationProperties;
+import com.rozarltd.module.betfairapi.service.AccountService;
 import com.rozarltd.betting.portal.tennis.web.session.SessionAttributeName;
-import com.rozarltd.domain.account.User;
+import com.rozarltd.account.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

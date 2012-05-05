@@ -1,6 +1,7 @@
 package com.rozarltd.betting.service;
 
-import com.rozarltd.betfairapi.domain.bet.BetfairBet;
+import com.rozarltd.module.betfairapi.domain.bet.BetfairBet;
+import com.rozarltd.betting.rules.RuleViolation;
 
 import java.util.List;
 

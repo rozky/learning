@@ -1,0 +1,12 @@
+<!-- mvn antrun:run -o -Dmaven.ant.target=michal -->
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-antrun-plugin</artifactId>
+    <version>1.7</version>
+    <inherited>false</inherited>
+    <configuration>
+        <target if="maven.ant.target">
+            <ant target="${maven.ant.target}"/>
+        </target>
+    </configuration>
+</plugin>

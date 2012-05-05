@@ -1,36 +1,35 @@
 .betSlipWrapper {
-    font-family: Arial, Helvetica, Helvetica Neue, Verdana, sans-serif; /*background-color: #444;*/
-/*color: #fff;*/
-/*font-size: 1.5em;*/
-    padding: 0px    ;
-
+    font-family: Arial, Helvetica, Helvetica Neue, Verdana, sans-serif;
     border-radius: 5px;
 }
 
 .betSlipWrapper  div.content {
+    background-color: #464646;
     position: relative;
 }
 
 .betSlipWrapper h2 {
-    background-color: #ffbf27;
-    color: black;
+    /*background-color: #ffbf27;*/
+    /*color: black;*/
+    color: #fff;
     line-height: 1;
     padding-left: 0px;
     margin-left: 0px;
     font-size: 1.5em;
     font-weight: bold;
     padding-left: 5px;
-    padding-top: 5px;
+    padding-top: 12px;
 }
 
 .betSlipWrapper h3 {
-    background-color: #ffbf27;
+    /*background-color: #ffbf27;*/
     /*border-bottom: 1px solid #D89C0D;*/
-    color: #8c6508;
+    /*color: #8c6508;*/
+    color: #cfcfcf;
     font-size: 1em;
     line-height: 1;
     padding-top: 2px;
-    padding-bottom: 5px;
+    padding-bottom: 12px;
     padding-left: 5px;
 
 }
@@ -47,19 +46,33 @@
 .betSlipWrapper input {
     float: left;
     font-weight: bold;
-    padding: 0px 5px;
-    width: 60px;
-    border: 1px solid #FFE710;
+    padding: 3px 5px;
+
+    /*border: 1px solid #FFE710;*/
+    border: 1px solid #464646;
     text-align: right;
+    font-size: 1.4em;
 }
 
-.betSlipWrapper label {
-    color: #594005;
-    float: left;
-    font-weight: bold;
-    padding: 2px 5px;
-    width: 50px;
+.betSlipWrapper .price input {
+    width: 40px;
 }
+
+.betSlipWrapper .stake input {
+    width: 55px;
+}
+
+.betSlipWrapper .profit input {
+    width: 70px;
+}
+
+/*.betSlipWrapper label {*/
+    /*color: #594005;*/
+    /*float: left;*/
+    /*font-weight: bold;*/
+    /*padding: 2px 5px;*/
+    /*width: 50px;*/
+/*}*/
 
 .betSlipWrapper button {
     border: 0 none;
@@ -96,16 +109,16 @@
     text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
 }
 
-.betSlipWrapper div.profit {
-    background-color: #ffe29f;
-    border-radius: 5px;
-    position: absolute;
-    top: 44px;
-    right: 10px;
-    padding: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-}
+/*.betSlipWrapper div.profit {*/
+    /*background-color: #ffe29f;*/
+    /*border-radius: 5px;*/
+    /*position: absolute;*/
+    /*top: 44px;*/
+    /*right: 10px;*/
+    /*padding: 10px;*/
+    /*font-size: 1.2em;*/
+    /*font-weight: bold;*/
+/*}*/
 
 .betSlipWrapper div.overlay, .betSlipWrapper div.emptyOverlay {
     color: #fff;
@@ -199,4 +212,54 @@
 .betSlipWrapper .spinner {
     background: url('../img/spinner-blue.gif') no-repeat left transparent;
     padding-left: 25px;
+}
+
+.betSlipWrapper .content .header {
+    background-color: #e2e2e2;
+    font-weight: bold;
+    margin-bottom: 0px !important;
+    /*border-bottom: 1px solid #919191;*/
+    overflow: hidden;
+    text-align: right;
+}
+
+
+.betSlipWrapper .selection {
+    background-color: #e2e2e2;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.betSlipWrapper .selection div, .betSlipWrapper .header div {
+    float: left;
+    padding: 7px 0px;
+    font-size: 1em;
+}
+
+.betSlipWrapper .selection .price , .betSlipWrapper .header .price, .betSlipWrapper .selection .stake, .betSlipWrapper .header .stake {
+    padding-left: 5px;
+    /*padding-right: 10px;*/
+    /*width: 125px;*/
+    text-align: right;
+
+}
+
+.betSlipWrapper .selection .profit{
+    padding-right: 5px;
+    /*padding-right: 10px;*/
+    /*width: 125px;*/
+    text-align: right;
+    float: right;
+
+}
+
+.betSlipWrapper .content label {
+    /*background-color: #FFE710;*/
+    background-color: #464646;
+    color: #dfdfdf;
+    padding: 4px 10px 4px 10px;
+    float: left;
+    font-size: 1.2em;
 }

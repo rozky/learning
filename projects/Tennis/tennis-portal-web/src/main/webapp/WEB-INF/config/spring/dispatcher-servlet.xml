@@ -30,6 +30,7 @@
             <list>
                 <bean class="com.rozarltd.stringtemplate.renderer.PageletRenderer" />
                 <bean class="com.rozarltd.stringtemplate.renderer.DateAttributeRenderer" />
+                <bean class="com.rozarltd.stringtemplate.renderer.DoubleRenderer" />
             </list>
         </property>
 
