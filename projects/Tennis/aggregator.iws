@@ -621,7 +621,7 @@
       <file leaf-file-name="ZipPropertyValues.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tennis-portal-server/src/main/java/com/rozarltd/spring/bean/ZipPropertyValues.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.5048544">
+            <state line="51" column="54" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.3398058">
               <folding />
             </state>
           </provider>
@@ -3339,7 +3339,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tennis-portal-server/src/main/java/com/rozarltd/spring/bean/ZipPropertyValues.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.5048544">
+        <state line="51" column="54" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.3398058">
           <folding />
         </state>
       </provider>
@@ -3348,6 +3348,11 @@
   <component name="masterDetails">
     <states>
       <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions />
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
         <settings>
           <splitter-proportions />
         </settings>
