@@ -1,35 +1,31 @@
 package com.rozarltd.betting.service;
 
 import com.google.common.base.Optional;
-import com.rozarltd.module.betfairapi.domain.bet.BetfairBet;
-import com.rozarltd.module.betfairapi.internal.mapper.ObjectTypeMapperManager;
-import com.rozarltd.module.betfairrestapi.BetfairRestApi;
-import com.rozarltd.module.betfairapi.service.ServiceResponse;
-import com.rozarltd.module.betfairrestapi.domain.bet.BFRestBet;
-import com.rozarltd.module.betfairrestapi.domain.response.PlaceBetResponse;
+import com.google.inject.Inject;
+import com.rozarltd.account.User;
 import com.rozarltd.betting.domain.BetRequest;
 import com.rozarltd.betting.rules.BetSizeLimitRule;
 import com.rozarltd.betting.rules.BettingRule;
-import com.rozarltd.account.User;
 import com.rozarltd.betting.rules.RuleViolation;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.rozarltd.module.betfairapi.domain.bet.BetfairBet;
+import com.rozarltd.module.betfairapi.internal.mapper.ObjectTypeMapperManager;
+import com.rozarltd.module.betfairapi.service.ServiceResponse;
+import com.rozarltd.module.betfairrestapi.BetfairRestApi;
+import com.rozarltd.module.betfairrestapi.domain.bet.BFRestBet;
+import com.rozarltd.module.betfairrestapi.domain.response.PlaceBetResponse;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-@Service
 public class RuleBasedBettingFacade implements BettingFacade {
     private final BetfairRestApi betfairRestApiService;
     private final ObjectTypeMapperManager objectTypeMapperManager;
 
-
     private Set<BettingRule> bettingRules = new TreeSet<BettingRule>();
 
-
-    @Autowired
+    @Inject
     public RuleBasedBettingFacade(BetfairRestApi betfairRestApiService, ObjectTypeMapperManager objectTypeMapperManager) {
         this.betfairRestApiService = betfairRestApiService;
         this.objectTypeMapperManager = objectTypeMapperManager;

@@ -72,6 +72,17 @@
             <name>Spring Maven Milestone Repository</name>
             <url>http://maven.springframework.org/milestone</url>
         </repository>
+        <repository>
+            <id>totallylazy</id>
+            <name>totallylazy</name>
+            <url>http://repo.bodar.com/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
     <build>

@@ -8,8 +8,12 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.rozarltd.module.betfairapi.internal.BetfairSessionToken;
 import com.rozarltd.module.betfairapi.internal.factory.GlobalAPIRequestFactory;
+import com.rozarltd.module.betfairapi.internal.mapper.ObjectTypeMapperManager;
+import com.rozarltd.module.betfairapi.internal.mapper.betfair.BFTypeMapperManager;
+import com.rozarltd.module.betfairapi.service.AccountFacade;
 import com.rozarltd.module.betfairapi.service.AccountService;
 import com.rozarltd.module.betfairapi.service.BFExchangeApiService;
+import com.rozarltd.module.betfairapi.service.BetfairAccountFacade;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,6 +37,17 @@ public class BetfairPublicApiSpringContext implements InitializingBean {
     @Bean
     public AccountService accountService() {
         return moduleBeans.getInstance(AccountService.class);
+    }
+
+    @Bean
+    public AccountFacade accountFacade() {
+        return moduleBeans.getInstance(BetfairAccountFacade.class);
+    }
+
+    // TODO - I think this one should be internal or provided by root container
+    @Bean
+    public ObjectTypeMapperManager BFTypeMapperManager() {
+        return new BFTypeMapperManager();
     }
 
 

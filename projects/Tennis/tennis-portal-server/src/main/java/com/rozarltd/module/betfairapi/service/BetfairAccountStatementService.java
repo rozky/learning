@@ -4,6 +4,7 @@ package com.rozarltd.module.betfairapi.service;
 import com.betfair.publicapi.exchange.BFExchangeService;
 import com.betfair.publicapi.exchange.types.AccountStatementItem;
 import com.betfair.publicapi.global.BFGlobalService_Service;
+import com.google.inject.Inject;
 import com.rozarltd.module.betfairapi.domain.account.statement.AccountStatementRecord;
 import com.rozarltd.module.betfairapi.internal.factory.BFExchangeAPIRequestFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ public class BetfairAccountStatementService implements AccountWalletService {
 
 
     @Autowired
+    @Inject
     public BetfairAccountStatementService(BFExchangeService betfairExchangeService,
                                           BFExchangeAPIRequestFactory requestFactory) {
         this.betfairExchangeService = betfairExchangeService;

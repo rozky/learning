@@ -1,4 +1,4 @@
-package com.rozarltd.betting.service;
+package com.rozarltd.module.bettingdata.service;
 
 import com.rozarltd.account.User;
 

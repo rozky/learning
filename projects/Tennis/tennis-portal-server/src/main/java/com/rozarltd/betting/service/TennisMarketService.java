@@ -1,27 +1,28 @@
 package com.rozarltd.betting.service;
 
 import com.google.common.base.Function;
+import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import com.googlecode.functionalcollections.FunctionalIterable;
 import com.googlecode.functionalcollections.FunctionalIterables;
 import com.rozarltd.betting.comparator.BetfairMarketByStartDateComparator;
+import com.rozarltd.betting.functional.Filters;
+import com.rozarltd.betting.functional.TodayMarketFilter;
+import com.rozarltd.domain.market.Market;
+import com.rozarltd.domain.market.MarketRunner;
 import com.rozarltd.module.betfairapi.domain.BetfairEventId;
 import com.rozarltd.module.betfairapi.domain.market.BetfairMarket;
 import com.rozarltd.module.betfairapi.domain.market.BetfairMarketNameEnum;
 import com.rozarltd.module.betfairapi.internal.filter.InPlayMarketFilter;
 import com.rozarltd.module.betfairapi.internal.filter.MarketNameFilter;
-import com.rozarltd.module.betfairapi.internal.filter.TodayMarketFilter;
 import com.rozarltd.module.betfairapi.internal.function.MarketRefresher;
 import com.rozarltd.module.betfairapi.service.BFExchangeApiService;
-import com.rozarltd.domain.market.Market;
-import com.rozarltd.domain.market.MarketRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -30,7 +31,6 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-@Service
 public class TennisMarketService implements MarketService {
     private static final Logger logger = LoggerFactory.getLogger(TennisMarketService.class);
 
@@ -40,7 +40,6 @@ public class TennisMarketService implements MarketService {
     private MarketRefresher marketRefresher;
     private ConversionService conversionService;
 
-    @Autowired
     @Inject
     public TennisMarketService(BFExchangeApiService marketService,
                                MarketRefresher marketRefresher,
@@ -54,12 +53,18 @@ public class TennisMarketService implements MarketService {
     public Set<BetfairMarket> getTodayMarkets() {
         Set<BetfairMarket> todayMarketsSorted = new TreeSet<BetfairMarket>(BetfairMarketByStartDateComparator.getInstance());
 
-        List<BetfairMarket> markets = this.getMarkets(TENNIS_EVENT_ID, BetfairMarketNameEnum.matchOdds.getName());
-        if (markets != null) {
-            FunctionalIterable<BetfairMarket> todayMarkets = FunctionalIterables.make(markets).filter(new TodayMarketFilter());
+        // TODO - replace with getMarketIds
+        List<BetfairMarket> allMarketsNoPrices = this.getMarkets(TENNIS_EVENT_ID, BetfairMarketNameEnum.matchOdds.getName());
+        if (allMarketsNoPrices != null && !allMarketsNoPrices.isEmpty()) {
+            FunctionalIterable<BetfairMarket> todayMarketsNoPrices =
+                    FunctionalIterables.make(allMarketsNoPrices).filter(Filters.todayMarket());
+
+            Iterable<BetfairMarket> filter = Iterables.filter(allMarketsNoPrices, Filters.todayMarket());
 
             // load runner names and prices
-            todayMarketsSorted.addAll(FunctionalIterables.make(todayMarkets).each(marketRefresher).toCollection());
+            Collection<BetfairMarket> todayMarketsWithPrices =
+                    FunctionalIterables.make(todayMarketsNoPrices).each(marketRefresher).toCollection();
+            todayMarketsSorted.addAll(todayMarketsWithPrices);
         }
 
         return todayMarketsSorted;

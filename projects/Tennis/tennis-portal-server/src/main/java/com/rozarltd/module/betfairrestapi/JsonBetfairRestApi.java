@@ -9,22 +9,16 @@ import com.rozarltd.module.betfairrestapi.domain.response.PlaceBetResponse;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestOperations;
 
-@Component
 public class JsonBetfairRestApi implements BetfairRestApi {
     private static final String REST_API_ENDPOINT = "https://rest.labs.betfair.com/";
     private static final String GET_MARKET_PATH = REST_API_ENDPOINT + "market/{marketId}?extend=price&format=json";
     private static final String PLACE_BET_PATH = REST_API_ENDPOINT + "submit";
 
     private RestOperations restTemplate;
-
-//    public JsonBetfairRestApi() {
-//
-//    }
 
     @Inject
     public JsonBetfairRestApi(RestOperations restTemplate) {

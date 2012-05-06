@@ -3,6 +3,7 @@ package com.rozarltd.betting.service;
 import com.rozarltd.module.betfairapi.stub.domain.AccountStatementBuilder;
 import com.rozarltd.betting.domain.stats.DailyBettingReport;
 import com.rozarltd.betting.domain.stats.ReportStatus;
+import com.rozarltd.module.bettingdata.service.DailyBettingReportBuilder;
 import org.apache.commons.lang.time.DateUtils;
 import org.junit.BeforeClass;
 import org.junit.Test;

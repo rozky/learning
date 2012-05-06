@@ -1,10 +1,9 @@
-package com.rozarltd.module.betfairapi.service;
+package com.rozarltd.betting.service;
 
 import com.google.common.base.Function;
 import com.google.inject.Inject;
 import com.googlecode.functionalcollections.FunctionalIterables;
 import com.rozarltd.module.betfairapi.domain.market.BetfairMarket;
-import com.rozarltd.betting.service.TennisMarketService;
 import com.rozarltd.repository.BetfairMarketRepository;
 import com.rozarltd.util.java.lang.CollectionUtilities;
 import com.rozarltd.util.java.lang.DateUtilities;

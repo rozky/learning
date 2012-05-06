@@ -18,13 +18,6 @@ public class BetfairRestApiSpringContext implements InitializingBean {
 
     @Autowired private RestOperations restTemplate;
 
-    private Injector injector;
-
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        injector = Guice.createInjector(new Module());
-    }
-
     @Bean
     public BetfairRestApi betfairRestApi() {
         return injector.getInstance(BetfairRestApi.class);
@@ -38,4 +31,11 @@ public class BetfairRestApiSpringContext implements InitializingBean {
             bind(RestOperations.class).toInstance(restTemplate);
         }
     }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        injector = Guice.createInjector(new Module());
+    }
+
+    private Injector injector;
 }

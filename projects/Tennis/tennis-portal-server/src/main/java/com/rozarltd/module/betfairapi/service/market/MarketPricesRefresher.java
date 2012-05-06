@@ -1,6 +1,7 @@
 package com.rozarltd.module.betfairapi.service.market;
 
 import com.google.common.base.Predicate;
+import com.google.inject.Inject;
 import com.googlecode.functionalcollections.FunctionalIterables;
 import com.rozarltd.module.betfairwebsite.service.BetfairWebsiteClient;
 import com.rozarltd.module.betfairwebsite.exception.WebScrapingException;
@@ -23,6 +24,7 @@ public class MarketPricesRefresher implements MarketRefresher {
     private BetfairWebsiteClient betfairWebsiteClient;
 
     @Autowired
+    @Inject
     public MarketPricesRefresher(BetfairWebsiteClient betfairWebsiteClient) {
         this.betfairWebsiteClient = betfairWebsiteClient;
     }

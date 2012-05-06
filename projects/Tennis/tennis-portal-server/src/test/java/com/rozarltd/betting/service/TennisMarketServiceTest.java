@@ -20,7 +20,10 @@ public class TennisMarketServiceTest {
     public void shouldWireUp() {
         // given
         // when
+//        Set<BetfairMarket> todayMarkets = tennisMarketService.getTodayMarkets();
+
         // then
+//        assertThat(todayMarkets.size(), greaterThan(0));
     }
 
 

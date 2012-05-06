@@ -4,6 +4,7 @@ import com.rozarltd.module.betfairapi.domain.account.statement.AccountStatementR
 import com.rozarltd.module.betfairapi.stub.domain.AccountStatementBuilder;
 import com.rozarltd.module.betfairapi.stub.domain.AccountStatementRecordFixture;
 import com.rozarltd.betting.domain.stats.DailyBettingReport;
+import com.rozarltd.module.bettingdata.service.DailyBettingReportBuilder;
 import com.rozarltd.util.java.lang.DoubleUtils;
 import org.apache.commons.lang.time.DateUtils;
 import org.junit.Before;

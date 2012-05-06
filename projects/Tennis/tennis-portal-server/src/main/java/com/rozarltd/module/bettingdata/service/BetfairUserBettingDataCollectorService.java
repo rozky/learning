@@ -1,10 +1,10 @@
-package com.rozarltd.betting.service;
+package com.rozarltd.module.bettingdata.service;
 
 import com.google.inject.Inject;
 import com.rozarltd.account.User;
+import com.rozarltd.betting.domain.stats.DailyBettingReport;
 import com.rozarltd.module.betfairapi.domain.account.statement.AccountStatementRecord;
 import com.rozarltd.module.betfairapi.service.AccountService;
-import com.rozarltd.betting.domain.stats.DailyBettingReport;
 import com.rozarltd.repository.AccountStatementRepository;
 import com.rozarltd.repository.DailyBettingDataRepository;
 import org.apache.commons.lang.time.DateUtils;

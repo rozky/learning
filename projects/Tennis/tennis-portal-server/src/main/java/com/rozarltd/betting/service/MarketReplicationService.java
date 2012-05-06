@@ -1,4 +1,4 @@
-package com.rozarltd.module.betfairapi.service;
+package com.rozarltd.betting.service;
 
 public interface MarketReplicationService {
     public void replicateTodayMarkets();

@@ -1,18 +1,16 @@
 package com.rozarltd.module.betfairapi.service;
 
-import com.rozarltd.module.betfairapi.domain.account.Wallet;
+import com.google.inject.Inject;
 import com.rozarltd.account.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.rozarltd.module.betfairapi.domain.account.Wallet;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
 public class BetfairAccountFacade implements AccountFacade {
     private BetfairAccountService betfairAccountService;
 
-    @Autowired
+    @Inject
     public BetfairAccountFacade(BetfairAccountService betfairAccountService) {
         this.betfairAccountService = betfairAccountService;
     }

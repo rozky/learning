@@ -1,4 +1,4 @@
-package com.rozarltd.betting.service;
+package com.rozarltd.module.bettingdata.service;
 
 import com.rozarltd.module.betfairapi.domain.account.statement.AccountStatementRecord;
 import com.rozarltd.betting.domain.stats.DailyBettingReport;
@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-class DailyBettingReportBuilder {
+public class DailyBettingReportBuilder {
     private Date reportDate;
     private int placedBetCount = 0;
     private int wonBetCount = 0;

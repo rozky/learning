@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
     <bean id="messageSource"
           p:basename="/WEB-INF/i18n/messages"
@@ -30,6 +31,8 @@
     <!--<import resource="classpath:/spring/external/server-module-context.xml" />-->
     <!--</beans>-->
 
+    <!-- enable processing of annotations such as @Autowired and @Configuration -->
+    <context:annotation-config/>
     <bean class="com.rozarltd.ServerSpringContext"/>
 
 </beans>

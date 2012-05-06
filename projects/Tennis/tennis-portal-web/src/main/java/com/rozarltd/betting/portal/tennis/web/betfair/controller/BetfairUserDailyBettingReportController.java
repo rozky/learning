@@ -3,7 +3,7 @@ package com.rozarltd.betting.portal.tennis.web.betfair.controller;
 import com.rozarltd.account.User;
 import com.rozarltd.betting.portal.tennis.web.Routing;
 import com.rozarltd.betting.portal.tennis.web.service.UserService;
-import com.rozarltd.betting.service.UserBettingDataCollectorService;
+import com.rozarltd.module.bettingdata.service.UserBettingDataCollectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;

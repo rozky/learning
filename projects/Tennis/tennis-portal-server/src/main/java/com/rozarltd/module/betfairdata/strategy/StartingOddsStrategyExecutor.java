@@ -1,5 +1,6 @@
 package com.rozarltd.module.betfairdata.strategy;
 
+import com.google.inject.Inject;
 import com.rozarltd.module.betfairdata.repository.MarketDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,6 +14,7 @@ public class StartingOddsStrategyExecutor {
     private MarketDataRepository marketDataRepository;
 
     @Autowired
+    @Inject
     public StartingOddsStrategyExecutor(MarketDataRepository marketDataRepository) {
         this.marketDataRepository = marketDataRepository;
     }

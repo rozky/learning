@@ -17,6 +17,9 @@ public class BetfairWebsiteClient {
     private ObjectMapper jsonObjectMapper = new ObjectMapper();
     private HttpTemplate httpTemplate;
 
+    public BetfairWebsiteClient() {
+    }
+
     @Inject
     public BetfairWebsiteClient(HttpTemplate httpTemplate) {
         this.httpTemplate = httpTemplate;

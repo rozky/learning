@@ -1,6 +1,7 @@
 package com.rozarltd.betting.service;
 
 import com.rozarltd.account.User;
+import com.rozarltd.module.bettingdata.service.BetfairUserBettingDataCollectorService;
 import org.apache.commons.lang.time.DateUtils;
 import org.junit.Ignore;
 import org.junit.Test;

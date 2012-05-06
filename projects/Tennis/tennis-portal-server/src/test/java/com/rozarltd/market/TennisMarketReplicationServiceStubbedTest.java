@@ -2,10 +2,10 @@ package com.rozarltd.market;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.rozarltd.betting.service.TennisMarketReplicationService;
 import com.rozarltd.module.betfairapi.domain.market.BetfairMarket;
 import com.rozarltd.module.betfairapi.service.TennisMarketServiceStub;
 import com.rozarltd.betting.service.TennisMarketService;
-import com.rozarltd.module.betfairapi.service.TennisMarketReplicationService;
 import com.rozarltd.module.betfairapi.stub.domain.BetfairMarkets;
 import com.rozarltd.module.BettingModule;
 import com.rozarltd.repository.BetfairMarketRepository;

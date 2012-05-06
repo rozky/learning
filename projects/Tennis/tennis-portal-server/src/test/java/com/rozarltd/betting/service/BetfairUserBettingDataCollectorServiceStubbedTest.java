@@ -5,6 +5,7 @@ import com.google.inject.Injector;
 import com.rozarltd.account.User;
 import com.rozarltd.betting.domain.stats.DailyBettingReport;
 import com.rozarltd.module.BettingModule;
+import com.rozarltd.module.bettingdata.service.UserBettingDataCollectorService;
 import com.rozarltd.repository.DailyBettingDataRepository;
 import com.rozarltd.repository.DailyBettingDataRepositoryStub;
 import com.rozarltd.util.java.lang.DateUtilities;

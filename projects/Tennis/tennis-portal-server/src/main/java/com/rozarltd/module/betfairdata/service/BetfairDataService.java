@@ -1,5 +1,6 @@
 package com.rozarltd.module.betfairdata.service;
 
+import com.google.inject.Inject;
 import com.rozarltd.module.betfairdata.BetfairDataFilter;
 import com.rozarltd.module.betfairdata.parser.BetfairDataRow;
 import com.rozarltd.module.betfairdata.repository.MarketDataRepository;
@@ -18,6 +19,7 @@ public class BetfairDataService {
     private BetfairDataReader dataReader;
 
     @Autowired
+    @Inject
     public BetfairDataService(MarketDataRepository marketDataRepository, BetfairDataReader dataLoader) {
         this.marketDataRepository = marketDataRepository;
         this.dataReader = dataLoader;

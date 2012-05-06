@@ -32,13 +32,23 @@ public class BetfairRestApiFacade implements BFRestApiFacade {
     public BetfairMarket getMarket(int marketId) {
         BetfairMarket market = new BetfairMarket();
 
-
-
         BetfairRestApiMarket apiMarket = restApiService.getMarket(marketId).getMarket();
         if(apiMarket != null) {
             market.setMarketId(NumberUtils.toInt(apiMarket.getId()));
+            market.setMarketName(apiMarket.getName());
             market.setMarketStatus(apiMarket.getMarketStatus());
             market.setRunners(new ArrayList<BetfairRunner>());
+            market.setMarketType(apiMarket.getMarketType());    // ODDS vs O
+            market.setEventHierarchy(apiMarket.getEventHierarchy()); // mising market id at the end
+            market.setExchangeId(apiMarket.getExchange());      // UK vs 1
+            market.setBetDelay(apiMarket.getBetDelay());
+            market.setMenuPath(apiMarket.getMenuPath());    // missing Tennis at the begin
+            market.setTurningInPlay(apiMarket.getGoingInPlay());
+            market.setLastRefreshedAt(apiMarket.getLastRefresh());  // 6 May 2012 15:43:37 vs long
+//            market.setStartAt(Long.valueOf(apiMarket.getStartTime())); // doesn't work: value is: 3 Jan 0001 00:00:00
+            market.setNumberOfWinners(apiMarket.getWinners());
+            market.setTotalAmountMatched(apiMarket.getTotalAmountMatched()); // not set
+//            apiMarket.get
 
             // build runners
             List<BetfairRestApiMarketRunner> runners = apiMarket.getRunners().getRunner();
