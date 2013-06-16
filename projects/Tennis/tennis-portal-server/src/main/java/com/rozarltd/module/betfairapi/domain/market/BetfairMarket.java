@@ -2,11 +2,17 @@ package com.rozarltd.module.betfairapi.domain.market;
 
 import org.apache.commons.lang.time.DateUtils;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class BetfairMarket {
+    @Id
+    private int id;
     private int marketId;
     private String marketName;
     private String marketType;
@@ -24,6 +30,7 @@ public class BetfairMarket {
     private String totalAmountMatched;
     private String bspMarket;
     private String turningInPlay;
+    @Transient
     private List<BetfairRunner> runners;
 
     public String getParentEventId() {

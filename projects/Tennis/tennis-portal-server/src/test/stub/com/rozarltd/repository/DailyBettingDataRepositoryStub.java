@@ -13,17 +13,6 @@ public class DailyBettingDataRepositoryStub implements DailyBettingDataRepositor
     }
 
     @Override
-    public DailyBettingReport save(DailyBettingReport entity) {
-        savedObject.add(entity);
-        return entity;
-    }
-
-    @Override
-    public Iterable<DailyBettingReport> save(Iterable<? extends DailyBettingReport> entities) {
-        return null;
-    }
-
-    @Override
     public DailyBettingReport findOne(Integer integer) {
         return null;
     }
@@ -61,5 +50,20 @@ public class DailyBettingDataRepositoryStub implements DailyBettingDataRepositor
     @Override
     public void deleteAll() {
 
+    }
+
+    @Override
+    public <S extends DailyBettingReport> S save(S s) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public <S extends DailyBettingReport> Iterable<S> save(Iterable<S> ses) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public Iterable<DailyBettingReport> findAll(Iterable<Integer> integers) {
+        return null;
     }
 }

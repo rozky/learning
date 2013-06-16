@@ -1,6 +1,6 @@
 package com.rozarltd.betting.service;
 
-import com.rozarltd.account.User;
+import com.rozarltd.account.BetfairUser;
 import com.rozarltd.module.bettingdata.service.BetfairUserBettingDataCollectorService;
 import org.apache.commons.lang.time.DateUtils;
 import org.junit.Ignore;
@@ -17,7 +17,7 @@ import java.util.Calendar;
 @Ignore
 public class BetfairUserBettingDataCollectorServiceIntegrationTest {
     @Autowired private BetfairUserBettingDataCollectorService bettingDataService;
-    private User user = new User("michal", "FRO7qQAQMGE+PjizvML0BX6JA3UHVTX8FE6MmHrG5EQ=", null);
+    private BetfairUser user = new BetfairUser("michal", "FRO7qQAQMGE+PjizvML0BX6JA3UHVTX8FE6MmHrG5EQ=", null);
 
     @Test
     public void shouldReplicateAccountStatement() {

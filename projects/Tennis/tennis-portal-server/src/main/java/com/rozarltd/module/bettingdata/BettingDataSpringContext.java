@@ -2,9 +2,9 @@ package com.rozarltd.module.bettingdata;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.rozarltd.module.betfairapi.service.AccountService;
+import com.rozarltd.module.betfairapi.service.BetfairAccountApi;
 import com.rozarltd.module.bettingdata.service.UserBettingDataCollectorService;
-import com.rozarltd.repository.AccountStatementRepository;
+import com.rozarltd.repository.BetfairAccountStatementRepository;
 import com.rozarltd.repository.DailyBettingDataRepository;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +13,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class BettingDataSpringContext implements InitializingBean {
-    @Autowired private AccountService accountService;
-    @Autowired private AccountStatementRepository accountStatementRepository;
+    @Autowired private BetfairAccountApi accountService;
+    @Autowired private BetfairAccountStatementRepository accountStatementRepository;
     @Autowired private DailyBettingDataRepository dailyBettingDataRepository;
 
     @Bean

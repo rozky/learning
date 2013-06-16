@@ -6,11 +6,10 @@ import com.rozarltd.module.betfairapi.domain.market.BetfairMarket;
 import com.rozarltd.module.betfairapi.domain.market.BetfairRunner;
 import com.rozarltd.module.betfairapi.service.BFRestApiFacade;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+// todo - not used anymore
 public class MarketRefresher implements Block<BetfairMarket> {
     private BFRestApiFacade restApiFacade;
 

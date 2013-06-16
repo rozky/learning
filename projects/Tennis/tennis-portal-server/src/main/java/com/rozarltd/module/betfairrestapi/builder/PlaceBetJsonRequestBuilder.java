@@ -1,5 +1,6 @@
 package com.rozarltd.module.betfairrestapi.builder;
 
+import com.rozarltd.betting.common.domain.BetParams;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -65,6 +66,15 @@ public class PlaceBetJsonRequestBuilder {
         withSelectionId(selectionId);
         withPrice(price);
         withStake(stake);
+
+        return buildBackBet();
+    }
+
+    public HttpEntity<MultiValueMap<String, String>> buildBackBet(BetParams bet) {
+        withMarketId(bet.getMarketId());
+        withSelectionId(bet.getSelectionId());
+        withPrice(bet.getPrice());
+        withStake(bet.getStake());
 
         return buildBackBet();
     }

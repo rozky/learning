@@ -1,5 +1,25 @@
+/* Well module */
+.well strong {
+    color:#fff;
+    font-size: 160%;
+}
+
+.well small {
+    color: #fff;
+}
+
+.bgblue {
+    background-color: #2d8aeb;
+}
+
+.well-red {
+    background-color: #ff6868;
+}
+
+/* Quick stats box */
+
 body {
-    padding-top: 10px;
+    padding-top: 60px;
 }
 
 h1 {

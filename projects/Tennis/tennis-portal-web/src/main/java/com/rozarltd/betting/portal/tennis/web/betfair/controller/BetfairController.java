@@ -1,12 +1,12 @@
 package com.rozarltd.betting.portal.tennis.web.betfair.controller;
 
-import com.rozarltd.module.betfairapi.service.AccountService;
+import com.rozarltd.account.BetfairUser;
+import com.rozarltd.module.betfairapi.service.BetfairAccountApi;
 import com.rozarltd.betting.portal.tennis.web.ModelAttributeName;
 import com.rozarltd.betting.portal.tennis.web.Routing;
 import com.rozarltd.betting.portal.tennis.web.form.BetfairLoginForm;
 import com.rozarltd.betting.portal.tennis.web.form.ValidationErrorAdapter;
 import com.rozarltd.betting.portal.tennis.web.session.SessionAttributeName;
-import com.rozarltd.account.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,10 +23,10 @@ import javax.validation.Valid;
 @Controller
 //@RequestMapping("/betfair")
 public class BetfairController {
-    private AccountService betfairAccountService;
+    private BetfairAccountApi betfairAccountService;
 
     @Autowired
-    public BetfairController(AccountService betfairAccountService) {
+    public BetfairController(BetfairAccountApi betfairAccountService) {
         this.betfairAccountService = betfairAccountService;
     }
 
@@ -61,7 +61,7 @@ public class BetfairController {
         }
         String betfairSession = betfairAccountService.login(loginForm.getUsername(), loginForm.getPassword());
         if (betfairSession != null) {
-            User currentUser = new User(loginForm.getUsername(), betfairSession, null);
+            BetfairUser currentUser = new BetfairUser(loginForm.getUsername(), betfairSession, null);
             session.setAttribute(SessionAttributeName.currentUser, currentUser);
 
             // todo

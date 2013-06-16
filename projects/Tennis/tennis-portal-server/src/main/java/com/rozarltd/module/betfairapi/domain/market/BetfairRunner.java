@@ -1,8 +1,13 @@
 package com.rozarltd.module.betfairapi.domain.market;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.util.List;
 
+@Entity
 public class BetfairRunner {
+    @Id
     private int runnerId;
     private String runnerName;
     private Integer orderIndex;
@@ -15,10 +20,15 @@ public class BetfairRunner {
     private Double farSpPrice;
     private Double nearSpPrice;
     private Double actualSpPrice;
+    @Transient
     private List<BetfairRunnerPrice> prices;
+    @Transient
     private List<BetfairRunnerPrice> backPrices;
+    @Transient
     private List<BetfairRunnerPrice> layPrices;
+    @Transient
     private BetfairRunnerPrice bestBackPrice;
+    @Transient
     private BetfairRunnerPrice bestLayPrice;
 
     public BetfairRunner() {

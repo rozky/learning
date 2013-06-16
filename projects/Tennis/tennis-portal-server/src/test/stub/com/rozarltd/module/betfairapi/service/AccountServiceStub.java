@@ -1,6 +1,6 @@
 package com.rozarltd.module.betfairapi.service;
 
-import com.rozarltd.module.betfairapi.domain.account.Wallet;
+import com.rozarltd.module.betfairapi.domain.account.BetfairWallet;
 import com.rozarltd.module.betfairapi.domain.account.statement.AccountStatementRecord;
 
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class AccountServiceStub implements AccountService {
+public class AccountServiceStub implements BetfairAccountApi {
     public static final String VALID_SESSION_TOKEN = "VALID_SESSION_TOKEN";
 
     @Override
@@ -17,7 +17,7 @@ public class AccountServiceStub implements AccountService {
     }
 
     @Override
-    public Wallet getAccountWallets(String sessionToken) {
+    public BetfairWallet getAccountWallets(String sessionToken) {
         throw new IllegalStateException("method not implemented");
     }
 

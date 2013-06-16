@@ -1,8 +1,13 @@
 package com.rozarltd.betting.domain.stats;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class DailyBettingReport {
+    @Id
+    private int id;
     private Date date;
     private double startBalance;
     private double endBalance;

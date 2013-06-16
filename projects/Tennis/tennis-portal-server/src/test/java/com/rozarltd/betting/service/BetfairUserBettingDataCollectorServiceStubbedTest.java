@@ -2,7 +2,7 @@ package com.rozarltd.betting.service;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.rozarltd.account.User;
+import com.rozarltd.account.BetfairUser;
 import com.rozarltd.betting.domain.stats.DailyBettingReport;
 import com.rozarltd.module.BettingModule;
 import com.rozarltd.module.bettingdata.service.UserBettingDataCollectorService;
@@ -36,7 +36,7 @@ public class BetfairUserBettingDataCollectorServiceStubbedTest {
         // given
         Date startDate = new Date();
         Date endDate = DateUtils.addDays(startDate, 2);
-        User user = new User("MichalR", "BetfairApiToken", "BetfairRestApiToken");
+        BetfairUser user = new BetfairUser("MichalR", "BetfairApiToken", "BetfairRestApiToken");
 
         // when
         bettingDataCollectorService.createDailyBettingSummaryReport(user, startDate, endDate);

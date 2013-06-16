@@ -3,6 +3,7 @@
 <decorators defaultdir="/decorators">
     <excludes>
         <pattern>/static/*</pattern>
+        <pattern>/mobile*</pattern>
         <pattern>*decorator=none*</pattern>
         <pattern>*.json*</pattern>
         <pattern>*.rss</pattern>

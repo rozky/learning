@@ -1,11 +1,11 @@
 package com.rozarltd.module.bettingdata.service;
 
 import com.google.inject.Inject;
-import com.rozarltd.account.User;
+import com.rozarltd.account.BetfairUser;
 import com.rozarltd.betting.domain.stats.DailyBettingReport;
 import com.rozarltd.module.betfairapi.domain.account.statement.AccountStatementRecord;
-import com.rozarltd.module.betfairapi.service.AccountService;
-import com.rozarltd.repository.AccountStatementRepository;
+import com.rozarltd.module.betfairapi.service.BetfairAccountApi;
+import com.rozarltd.repository.BetfairAccountStatementRepository;
 import com.rozarltd.repository.DailyBettingDataRepository;
 import org.apache.commons.lang.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,24 +18,24 @@ import java.util.List;
 
 @Component
 public class BetfairUserBettingDataCollectorService implements UserBettingDataCollectorService {
-    private AccountService accountService;
-    private AccountStatementRepository accountStatementRepository;
+    private BetfairAccountApi accountService;
+    private BetfairAccountStatementRepository accountStatementRepository;
     private DailyBettingDataRepository dailyBettingDataRepository;
 
     @Autowired
     @Inject
-    public BetfairUserBettingDataCollectorService(AccountService accountService,
-                                                  AccountStatementRepository accountStatementRepository,
+    public BetfairUserBettingDataCollectorService(BetfairAccountApi accountService,
+                                                  BetfairAccountStatementRepository accountStatementRepository,
                                                   DailyBettingDataRepository dailyBettingDataRepository) {
         this.accountService = accountService;
         this.accountStatementRepository = accountStatementRepository;
         this.dailyBettingDataRepository = dailyBettingDataRepository;
     }
 
-    public void replicateAccountStatement(User user, Date startDate) {
+    public void replicateAccountStatement(BetfairUser user, Date startDate) {
 
         List<AccountStatementRecord> statementRecords =
-                accountService.getWalletStatement(user.getBetfairPublicApiToken(), startDate, new Date());
+                accountService.getWalletStatement(user.getPublicApiToken(), startDate, new Date());
 
         if (statementRecords != null && statementRecords.size() > 0) {
             for (AccountStatementRecord record : statementRecords) {
@@ -44,18 +44,18 @@ public class BetfairUserBettingDataCollectorService implements UserBettingDataCo
         }
     }
 
-    public void createDailyBettingSummaryReport(User user, Date reportDay) {
-        List<AccountStatementRecord> statement = accountService.getWalletStatement(user.getBetfairPublicApiToken(), reportDay);
+    public void createDailyBettingSummaryReport(BetfairUser user, Date reportDay) {
+        List<AccountStatementRecord> statement = accountService.getWalletStatement(user.getPublicApiToken(), reportDay);
         DailyBettingReport dailyBettingData =  new DailyBettingReportBuilder().build(reportDay, statement);
 
         dailyBettingDataRepository.save(dailyBettingData);
     }
 
-    public void createDailyBettingSummaryReport(User user, Date start, Date end) {
+    public void createDailyBettingSummaryReport(BetfairUser user, Date start, Date end) {
         Date endDate = DateUtils.addDays(DateUtils.truncate(end, Calendar.DATE), 1);
 
         List<AccountStatementRecord> statement =
-                accountService.getWalletStatement(user.getBetfairPublicApiToken(),
+                accountService.getWalletStatement(user.getPublicApiToken(),
                         DateUtils.truncate(start, Calendar.DATE), endDate);
 
         Date current = start;

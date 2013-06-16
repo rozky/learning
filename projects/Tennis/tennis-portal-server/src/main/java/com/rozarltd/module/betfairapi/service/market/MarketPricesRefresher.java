@@ -3,11 +3,11 @@ package com.rozarltd.module.betfairapi.service.market;
 import com.google.common.base.Predicate;
 import com.google.inject.Inject;
 import com.googlecode.functionalcollections.FunctionalIterables;
-import com.rozarltd.module.betfairwebsite.service.BetfairWebsiteClient;
+import com.rozarltd.domain.market.MarketAdapter;
+import com.rozarltd.domain.market.MarketRunner;
 import com.rozarltd.module.betfairwebsite.exception.WebScrapingException;
 import com.rozarltd.module.betfairwebsite.page.coupon.domain.TennisInPlayCoupon;
-import com.rozarltd.domain.market.Market;
-import com.rozarltd.domain.market.MarketRunner;
+import com.rozarltd.module.betfairwebsite.service.BetfairWebsiteClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class MarketPricesRefresher implements MarketRefresher {
     }
 
     @Override
-    public void refresh(Collection<Market> markets) {
+    public void refresh(Collection<MarketAdapter> markets) {
         Assert.notEmpty(markets);
 
         TennisInPlayCoupon tennisCoupon;
@@ -41,7 +41,7 @@ public class MarketPricesRefresher implements MarketRefresher {
             return;
         }
 
-        for (Market market : markets) {
+        for (MarketAdapter market : markets) {
             if (tennisCoupon.containsMarket(market.getMarketId())) {
                 List<MarketRunner> newRunners = tennisCoupon.getMarketRunners(market.getMarketId());
 

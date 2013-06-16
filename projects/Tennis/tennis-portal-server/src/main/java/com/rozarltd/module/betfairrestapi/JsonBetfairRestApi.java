@@ -1,6 +1,7 @@
 package com.rozarltd.module.betfairrestapi;
 
 import com.google.inject.Inject;
+import com.rozarltd.betting.common.domain.BetParams;
 import com.rozarltd.module.betfairapi.service.ServiceError;
 import com.rozarltd.module.betfairapi.service.ServiceResponse;
 import com.rozarltd.module.betfairrestapi.builder.PlaceBetJsonRequestBuilder;
@@ -31,12 +32,13 @@ public class JsonBetfairRestApi implements BetfairRestApi {
     }
 
     @Override
-    public ServiceResponse<PlaceBetResponse> placeBet(String sessionId, int marketId, int selectionId, double price, double stake) {
+    public ServiceResponse<PlaceBetResponse> placeBet(String sessionId, BetParams bet) {
         Assert.notNull(sessionId);
+        Assert.notNull(bet);
 
         try {
             HttpEntity<MultiValueMap<String, String>> request =
-                    new PlaceBetJsonRequestBuilder(sessionId).buildBackBet(marketId, selectionId, price, stake);
+                    new PlaceBetJsonRequestBuilder(sessionId).buildBackBet(bet);
 
             ResponseEntity<PlaceBetResponse> response =
                     restTemplate.exchange(PLACE_BET_PATH, HttpMethod.POST, request, PlaceBetResponse.class);

@@ -17,7 +17,7 @@ public class TennisMarketServiceTest {
     public void beforeEachTest() {
         initMocks(this);
 
-        service = new TennisMarketService(null, null, null);
+        service = new TennisMarketService(null, null);
     }
     
     @Test

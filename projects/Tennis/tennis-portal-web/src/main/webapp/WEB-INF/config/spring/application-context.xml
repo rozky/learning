@@ -35,4 +35,6 @@
     <context:annotation-config/>
     <bean class="com.rozarltd.ServerSpringContext"/>
 
+    <bean class="com.rozarltd.config.HsqlPersistenceConfig" />
+
 </beans>

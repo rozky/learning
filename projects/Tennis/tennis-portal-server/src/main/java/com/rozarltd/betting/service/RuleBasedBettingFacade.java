@@ -2,8 +2,8 @@ package com.rozarltd.betting.service;
 
 import com.google.common.base.Optional;
 import com.google.inject.Inject;
-import com.rozarltd.account.User;
-import com.rozarltd.betting.domain.BetRequest;
+import com.rozarltd.account.BetfairUser;
+import com.rozarltd.betting.common.domain.BetParams;
 import com.rozarltd.betting.rules.BetSizeLimitRule;
 import com.rozarltd.betting.rules.BettingRule;
 import com.rozarltd.betting.rules.RuleViolation;
@@ -34,17 +34,16 @@ public class RuleBasedBettingFacade implements BettingFacade {
     }
 
     @Override
-    public BetPlacementResult placeABet(User user, BetRequest bet) {
+    public BetPlacementResult placeBet(BetfairUser user, BetParams bet) {
 
         // check rules
-        List<RuleViolation> violations = checkAgainstBettingRules(user, bet);
+        List<RuleViolation> violations = checkBettingRules(user, bet);
         if(violations.size() > 0) {
             return new BetPlacementResult(violations);
         }
 
         // place bet
-        ServiceResponse<PlaceBetResponse> response = betfairRestApiService.placeBet(user.getBetfairPublicApiToken(), bet.getMarketId(),
-                bet.getSelectionId(), bet.getPrice(), bet.getStake());
+        ServiceResponse<PlaceBetResponse> response = betfairRestApiService.placeBet(user.getPublicApiToken(), bet);
 
         if(response.isError()) {
             return new BetPlacementResult(response.getError().getErrorCode());
@@ -56,7 +55,7 @@ public class RuleBasedBettingFacade implements BettingFacade {
         return new BetPlacementResult(betfairBet);
     }
 
-    private List<RuleViolation> checkAgainstBettingRules(User user, BetRequest placeBetDetails) {
+    private List<RuleViolation> checkBettingRules(BetfairUser user, BetParams placeBetDetails) {
         List<RuleViolation> violations = new ArrayList<RuleViolation>();
         if(bettingRules != null && bettingRules.size() > 0) {
             for(BettingRule rule: bettingRules) {
@@ -74,7 +73,7 @@ public class RuleBasedBettingFacade implements BettingFacade {
         private static final double MAXIMUM = 3;
 
         @Override
-        public Optional<RuleViolation> verify(User user, BetRequest placeBetDetails) {
+        public Optional<RuleViolation> verify(BetfairUser user, BetParams placeBetDetails) {
             return null;
         }
     }

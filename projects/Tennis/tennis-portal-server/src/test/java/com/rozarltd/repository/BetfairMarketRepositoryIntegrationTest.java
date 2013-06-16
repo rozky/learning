@@ -2,7 +2,6 @@ package com.rozarltd.repository;
 
 import com.rozarltd.module.betfairapi.domain.market.BetfairMarket;
 import com.rozarltd.module.betfairapi.stub.domain.BetfairMarkets;
-import com.rozarltd.util.java.lang.DateUtilities;
 import de.flapdoodle.embedmongo.MongoDBRuntime;
 import de.flapdoodle.embedmongo.MongodExecutable;
 import de.flapdoodle.embedmongo.MongodProcess;
@@ -17,8 +16,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -65,11 +62,12 @@ public class BetfairMarketRepositoryIntegrationTest {
         repository.save(BetfairMarkets.todayMarket(2));
         repository.save(BetfairMarkets.tomorrowMarket(3));
 
-        // when
-        List<BetfairMarket> markets = repository.findMarkets(DateUtilities.today().getTime(), DateUtilities.tomorrow().getTime());
-
-        // then
-        assertThat(markets.size(), is(1));
-        assertThat(markets.get(0).getMarketId(), is(2));
+        // TODO - I removed tested method as I don't need it at the moment (or at all)
+//        // when
+//        List<BetfairMarket> markets = repository.findByStartAtBetween(DateUtilities.today().getTime(), DateUtilities.tomorrow().getTime());
+//
+//        // then
+//        assertThat(markets.size(), is(1));
+//        assertThat(markets.get(0).getMarketId(), is(2));
     }
 }

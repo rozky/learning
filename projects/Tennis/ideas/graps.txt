@@ -1,0 +1,11 @@
+ROI over winning bets(markets) - not including lost bets(markets)
+ROI over losing bets(markets) - not including won bets(markets)
+
+
+categorisation:
+- by market type
+- by sport
+- by gender
+- by price
+- by stake
+- by bank exposure

@@ -28,8 +28,8 @@ public class BFTypeMapperManager implements ObjectTypeMapperManager {
     };
 
     @Override
-    public <IN_TYPE, OUT_TYPE> ObjectTypeMapper<IN_TYPE, OUT_TYPE> getMapper(Class<IN_TYPE> inType, Class<OUT_TYPE> outType) {
-        return (ObjectTypeMapper<IN_TYPE, OUT_TYPE>) mappers.get(new Key(inType, outType));
+    public <IN, OUT> ObjectTypeMapper<IN, OUT> getMapper(Class<IN> inType, Class<OUT> outType) {
+        return (ObjectTypeMapper<IN, OUT>) mappers.get(new Key(inType, outType));
     }
 
     private class Key {

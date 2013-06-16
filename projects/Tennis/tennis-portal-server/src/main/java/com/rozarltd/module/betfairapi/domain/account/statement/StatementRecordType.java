@@ -6,5 +6,5 @@ public enum StatementRecordType {
     RESULT_LOST,
     COMMISSION,
     DEPOSIT,
-    WITHDRAWAL;
+    WITHDRAWAL
 }

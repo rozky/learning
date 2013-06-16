@@ -15,26 +15,27 @@ public class BFAccountStatementItemTypeMapper implements ObjectTypeMapper<Accoun
 
     @Override
     public AccountStatementRecord mapFrom(AccountStatementItem item) {
-        AccountStatementRecord statementItem = new AccountStatementRecord();
-        statementItem.setEventId(item.getEventId());
-        statementItem.setEventTypeId(item.getEventTypeId());
-        statementItem.setSelectionId(item.getSelectionId());
-        statementItem.setSelectionName(item.getSelectionName());
-        statementItem.setBetId(item.getBetId());
-        statementItem.setAmount(item.getAmount());
-        statementItem.setGrossBetAmount(item.getGrossBetAmount());
-        statementItem.setPrice(item.getAvgPrice());
-        statementItem.setStake(item.getBetSize());
-        statementItem.setBetType(EnumUtils.safeValueOf(item.getBetType(), BetType.class));
-        statementItem.setMarketName(item.getMarketName());
-        statementItem.setFullMarketName(item.getFullMarketName());
-        statementItem.setWinLost(getRecordType(item));
-        statementItem.setAccountBalance(item.getAccountBalance());
-        statementItem.setTransactionType(EnumUtils.safeValueOf(item.getTransactionType(), TransactionType.class));
-        statementItem.setPlacedAt(item.getPlacedDate().getTime().getTime());
-        statementItem.setSettledAt(item.getSettledDate().getTime().getTime());
+        AccountStatementRecord record = new AccountStatementRecord();
+        record.setEventId(item.getEventId());
+        record.setEventTypeId(item.getEventTypeId());
+        record.setSelectionId(item.getSelectionId());
+        record.setSelectionName(item.getSelectionName());
+        record.setBetId(item.getBetId());
+        record.setAmount(item.getAmount());
+        record.setGrossBetAmount(item.getGrossBetAmount());
+        record.setPrice(item.getAvgPrice());
+        record.setStake(item.getBetSize());
+        record.setBetType(EnumUtils.safeValueOf(item.getBetType(), BetType.class));
+        record.setMarketName(item.getMarketName());
+        record.setFullMarketName(item.getFullMarketName());
+        record.setWinLost(getRecordType(item));
+        record.setAccountBalance(item.getAccountBalance());
+        record.setTransactionType(EnumUtils.safeValueOf(item.getTransactionType(), TransactionType.class));
+        record.setPlacedAt(item.getPlacedDate().getTime().getTime());
+        record.setSettledAt(item.getSettledDate().getTime().getTime());
+        record.setId(record.getSettledAt() + ":" + record.getBetId() + ":" + record.getWinLost());
 
-        return statementItem;
+        return record;
     }
 
     private StatementRecordType getRecordType(AccountStatementItem item) {

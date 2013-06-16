@@ -1,6 +1,6 @@
 package com.rozarltd.betting.portal.tennis.web.betfair.controller;
 
-import com.rozarltd.account.User;
+import com.rozarltd.account.BetfairUser;
 import com.rozarltd.betting.service.TennisMarketReplicationService;
 import com.rozarltd.betting.portal.tennis.web.Routing;
 import com.rozarltd.betting.portal.tennis.web.betfair.domain.StatusResponse;
@@ -18,8 +18,8 @@ import java.util.Date;
 
 @Controller
 public class BetfairReplicationController {
-    private UserBettingDataCollectorService bettingDataCollectorService;
     private UserService userService;
+    private UserBettingDataCollectorService bettingDataCollectorService;
     private TennisMarketReplicationService tennisMarketReplicationService;
 
     @Autowired
@@ -36,7 +36,7 @@ public class BetfairReplicationController {
 
     @RequestMapping(value = Routing.BETFAIR_ACCOUNT_STATEMENT, method = RequestMethod.POST)
     public void replicateAccountStatement(@RequestParam Date startDate, HttpServletRequest request) {
-        User currentUser = userService.getCurrentUser(request);
+        BetfairUser currentUser = userService.getCurrentUser(request);
         bettingDataCollectorService.replicateAccountStatement(currentUser, startDate);
     }
 

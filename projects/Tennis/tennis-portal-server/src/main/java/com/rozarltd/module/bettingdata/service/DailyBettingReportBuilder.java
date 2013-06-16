@@ -79,14 +79,14 @@ public class DailyBettingReportBuilder {
                     wonBetCount++;
                     placedBetCount++;
                     totalAmountWon += record.getAmount();
-                    amountPlaced += record.getStake();
+                    amountPlaced += record.getLiability();
                     marketNames.add(record.getFullMarketName());
                     break;
                 case RESULT_LOST:
                     lostBetCount++;
                     placedBetCount++;
                     totalAmountLost += (-1 * record.getAmount());
-                    amountPlaced += record.getStake();
+                    amountPlaced += record.getLiability();
                     marketNames.add(record.getFullMarketName());
                     break;
                 case COMMISSION:

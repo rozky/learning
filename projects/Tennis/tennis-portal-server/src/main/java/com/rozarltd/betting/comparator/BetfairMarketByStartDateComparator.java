@@ -7,10 +7,6 @@ import java.util.Comparator;
 public class BetfairMarketByStartDateComparator implements Comparator<BetfairMarket> {
     public static Comparator<BetfairMarket> instance = new BetfairMarketByStartDateComparator();
 
-    public static Comparator<BetfairMarket> getInstance() {
-        return instance;
-    }
-
     @Override
     public int compare(BetfairMarket o1, BetfairMarket o2) {
         boolean bothInPlay = o1.isInPlay() == o2.isInPlay();

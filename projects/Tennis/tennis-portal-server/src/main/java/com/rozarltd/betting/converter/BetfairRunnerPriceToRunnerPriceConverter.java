@@ -8,8 +8,7 @@ public class BetfairRunnerPriceToRunnerPriceConverter implements Converter<Betfa
 
     @Override
     public RunnerPrice convert(BetfairRunnerPrice source) {
-        double amount = source.getTotalAvailableToBack() > source.getTotalAvailableToLay() ?
-                source.getTotalAvailableToBack() : source.getTotalAvailableToLay();
+        double amount = source.isBackPrice() ? source.getTotalAvailableToBack() : source.getTotalAvailableToLay();
 
         return new RunnerPrice(source.getPrice(), amount);
     }

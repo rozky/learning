@@ -2,7 +2,13 @@ package com.rozarltd.module.betfairdata.strategy;
 
 import com.rozarltd.module.betfairdata.parser.BetfairDataRow;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class MarketData {
+    @Id
+    private int id;
     private int marketId;
     private String marketName;
     private SelectionStats winningSelection = new SelectionStats();

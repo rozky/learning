@@ -1,6 +1,6 @@
 package com.rozarltd.module.betfairapi;
 
-import com.rozarltd.module.betfairapi.service.AccountService;
+import com.rozarltd.module.betfairapi.service.BetfairAccountApi;
 import com.rozarltd.module.betfairapi.service.BFExchangeApiService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +12,7 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=BetfairPublicApiSpringContext.class, loader=AnnotationConfigContextLoader.class)
 public class BetfairPublicApiSpringContextTest {
-    @Autowired private AccountService accountService;
+    @Autowired private BetfairAccountApi accountService;
     @Autowired private BFExchangeApiService bfExchangeApiService;
     
     @Test

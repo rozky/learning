@@ -6,10 +6,22 @@
     <display-name>Tennis Portal</display-name>
 
     <context-param>
+        <param-name>spring.profiles.active</param-name>
+        <param-value>hsql</param-value>
+    </context-param>
+
+    <!--<context-param>-->
+        <!--<param-name>contextConfigLocation</param-name>-->
+        <!--<param-value>-->
+            <!--/WEB-INF/config/spring/application-context.xml-->
+            <!--/WEB-INF/config/spring/application-security.xml-->
+        <!--</param-value>-->
+    <!--</context-param>-->
+
+    <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
             /WEB-INF/config/spring/application-context.xml
-            /WEB-INF/config/spring/application-security.xml
         </param-value>
     </context-param>
 
@@ -82,6 +94,24 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+
+    <servlet>
+        <servlet-name>roger</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+                <param-name>contextClass</param-name>
+                <param-value>
+                    org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+                </param-value>
+            </init-param>
+            <init-param>
+                <param-name>contextConfigLocation</param-name>
+                <param-value>com.rozarltd.roger.config.RogerServletConfig</param-value>
+            </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+
     <servlet>
         <servlet-name>sitemesh</servlet-name>
         <servlet-class>com.watchitlater.spring.sitemesh.StringTemplateDecoratorServlet</servlet-class>
@@ -98,7 +128,12 @@
 
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/v1/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>roger</servlet-name>
+        <url-pattern>/roger/*</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

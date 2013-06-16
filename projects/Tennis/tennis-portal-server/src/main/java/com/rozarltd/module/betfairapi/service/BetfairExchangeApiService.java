@@ -50,7 +50,7 @@ public class BetfairExchangeApiService implements BFExchangeApiService {
     private BFExchangeAPIRequestFactory exchangeApiRequestFactory;
     private GetAllMarketResponseDataParser getAllMarketResponseDataParser;
     private ObjectTypeMapperManager typeMapperManager;
-    private AccountService betfairAccountService;
+    private BetfairAccountApi betfairAccountService;
     private String betfairApiSessionToken;
 
     @Autowired
@@ -59,7 +59,7 @@ public class BetfairExchangeApiService implements BFExchangeApiService {
                                      BFExchangeAPIRequestFactory requestFactory,
                                      GetAllMarketResponseDataParser getAllMarketResponseDataParser,
                                      ObjectTypeMapperManager betfairApiTypeMapperManager,
-                                     AccountService accountService) {
+                                     BetfairAccountApi accountService) {
         this.exchangeApiRequestFactory = requestFactory;
         this.exchangeApiService = exchangeApiService;
         this.getAllMarketResponseDataParser = getAllMarketResponseDataParser;

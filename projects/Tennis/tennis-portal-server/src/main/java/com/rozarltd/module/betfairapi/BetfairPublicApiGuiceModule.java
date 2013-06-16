@@ -8,12 +8,12 @@ import com.rozarltd.module.betfairapi.internal.factory.GlobalAPIRequestFactory;
 import com.rozarltd.module.betfairapi.internal.mapper.ObjectTypeMapperManager;
 import com.rozarltd.module.betfairapi.internal.mapper.betfair.BFTypeMapperManager;
 import com.rozarltd.module.betfairapi.internal.parser.GetAllMarketResponseDataParser;
-import com.rozarltd.module.betfairapi.service.AccountFacade;
-import com.rozarltd.module.betfairapi.service.AccountService;
+import com.rozarltd.module.betfairapi.service.BetfairAccountApi;
 import com.rozarltd.module.betfairapi.service.BFExchangeApiService;
-import com.rozarltd.module.betfairapi.service.BetfairAccountFacade;
-import com.rozarltd.module.betfairapi.service.BetfairAccountService;
+import com.rozarltd.module.betfairapi.service.DefaultBetfairAccountApi;
 import com.rozarltd.module.betfairapi.service.BetfairExchangeApiService;
+import com.rozarltd.module.frontendservices.AccountFacade;
+import com.rozarltd.module.frontendservices.BetfairAccountFacade;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
 import javax.inject.Singleton;
@@ -25,7 +25,7 @@ class BetfairPublicApiGuiceModule extends AbstractModule {
         // injected external dependencies
 
         // exposed beans
-        bind(AccountService.class).to(BetfairAccountService.class).in(Singleton.class);
+        bind(BetfairAccountApi.class).to(DefaultBetfairAccountApi.class).in(Singleton.class);
         bind(BFExchangeApiService.class).to(BetfairExchangeApiService.class).in(Singleton.class);
         bind(AccountFacade.class).to(BetfairAccountFacade.class).in(Singleton.class);
 

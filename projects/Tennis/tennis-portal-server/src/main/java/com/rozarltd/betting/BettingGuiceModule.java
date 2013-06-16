@@ -1,13 +1,13 @@
 package com.rozarltd.betting;
 
 import com.google.inject.AbstractModule;
+import com.rozarltd.betting.functional.BetfairMarketFunctions;
 import com.rozarltd.betting.service.BettingFacade;
 import com.rozarltd.betting.service.MarketReplicationService;
 import com.rozarltd.betting.service.MarketService;
 import com.rozarltd.betting.service.RuleBasedBettingFacade;
 import com.rozarltd.betting.service.TennisMarketReplicationService;
 import com.rozarltd.betting.service.TennisMarketService;
-import com.rozarltd.module.betfairapi.internal.function.MarketRefresher;
 import com.rozarltd.module.betfairapi.internal.mapper.ObjectTypeMapperManager;
 import com.rozarltd.module.betfairapi.internal.mapper.betfair.BFTypeMapperManager;
 import com.rozarltd.module.betfairapi.service.BFExchangeApiService;
@@ -57,7 +57,8 @@ class BettingGuiceModule extends AbstractModule {
 
         // internal beans
         bind(BFRestApiFacade.class).to(BetfairRestApiFacade.class).in(Singleton.class);
-        bind(MarketRefresher.class).in(Singleton.class);
+//        bind(MarketRefresher.class).in(Singleton.class);
+        bind(BetfairMarketFunctions.class).in(Singleton.class);
 
         // todo - remove as this one is from different module , I need to find out why I need it
         bind(ObjectTypeMapperManager.class).to(BFTypeMapperManager.class).in(Singleton.class);

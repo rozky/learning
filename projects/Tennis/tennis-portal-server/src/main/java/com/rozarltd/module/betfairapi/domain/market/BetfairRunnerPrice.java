@@ -1,6 +1,12 @@
 package com.rozarltd.module.betfairapi.domain.market;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class BetfairRunnerPrice {
+    @Id
+    private int id;
     private Double price;
     private Double totalAvailableToBack;
     private Double totalAvailableToLay;
@@ -60,5 +66,9 @@ public class BetfairRunnerPrice {
 
     public void setTotalBspBackersStakeVolume(Double totalBspBackersStakeVolume) {
         this.totalBspBackersStakeVolume = totalBspBackersStakeVolume;
+    }
+
+    public boolean isBackPrice() {
+        return this.totalAvailableToLay == null && this.totalAvailableToBack != null;
     }
 }

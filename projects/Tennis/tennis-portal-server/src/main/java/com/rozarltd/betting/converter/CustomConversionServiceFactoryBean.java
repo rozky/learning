@@ -12,7 +12,7 @@ public class CustomConversionServiceFactoryBean extends ConversionServiceFactory
         ConversionService conversionService = this.getObject();
         ConverterRegistry converterRegistry = (ConverterRegistry) conversionService;
 
-        converterRegistry.addConverter(new BetfairMarketToMarketConverter(conversionService));
+        converterRegistry.addConverter(new BetfairMarketToMarketAdapterConverter(conversionService));
         converterRegistry.addConverter(new BetfairRunnerToMarketRunnerConverter(conversionService));
         converterRegistry.addConverter(new BetfairRunnerPriceToRunnerPriceConverter());
     }

@@ -1,24 +1,24 @@
 package com.rozarltd.module.bettingdata;
 
 import com.google.inject.AbstractModule;
-import com.rozarltd.module.betfairapi.service.AccountService;
+import com.rozarltd.module.betfairapi.service.BetfairAccountApi;
 import com.rozarltd.module.bettingdata.service.BetfairUserBettingDataCollectorService;
 import com.rozarltd.module.bettingdata.service.UserBettingDataCollectorService;
-import com.rozarltd.repository.AccountStatementRepository;
+import com.rozarltd.repository.BetfairAccountStatementRepository;
 import com.rozarltd.repository.DailyBettingDataRepository;
 
 import javax.inject.Singleton;
 
 public class BettingDataGuiceModule extends AbstractModule {
-    private AccountService accountService;
-    private AccountStatementRepository accountStatementRepository;
+    private BetfairAccountApi accountService;
+    private BetfairAccountStatementRepository accountStatementRepository;
     private DailyBettingDataRepository dailyBettingDataRepository;
 
-    public void setAccountService(AccountService accountService) {
+    public void setAccountService(BetfairAccountApi accountService) {
         this.accountService = accountService;
     }
 
-    public void setAccountStatementRepository(AccountStatementRepository accountStatementRepository) {
+    public void setAccountStatementRepository(BetfairAccountStatementRepository accountStatementRepository) {
         this.accountStatementRepository = accountStatementRepository;
     }
 
@@ -29,8 +29,8 @@ public class BettingDataGuiceModule extends AbstractModule {
     @Override
     protected void configure() {
         // injected external dependencies
-        bind(AccountService.class).toInstance(accountService);
-        bind(AccountStatementRepository.class).toInstance(accountStatementRepository);
+        bind(BetfairAccountApi.class).toInstance(accountService);
+        bind(BetfairAccountStatementRepository.class).toInstance(accountStatementRepository);
         bind(DailyBettingDataRepository.class).toInstance(dailyBettingDataRepository);
 
         // exposed beans

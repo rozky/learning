@@ -5,6 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--<mongo:repositories base-package="com.rozarltd.repository" mongo-template-ref="mongoTemplate"/>-->
+    <mongo:repositories base-package="com.rozarltd.module.betfairdata.repository" mongo-template-ref="mongoTemplate"/>
+
     <mongo:mongo id="mongo" host="ds029297.mongolab.com" port="29297"/>
 
     <mongo:db-factory id="mongoDbFactory" mongo-ref="mongo" dbname="development" username="development" password="development"/>
@@ -14,8 +17,7 @@
         <constructor-arg name="mongoConverter" ref="mappingConverter"/>
     </bean>
 
-    <mongo:repositories base-package="com.rozarltd.repository" mongo-template-ref="mongoTemplate"/>
-    <mongo:repositories base-package="com.rozarltd.module.betfairdata.repository" mongo-template-ref="mongoTemplate"/>
+
 
     <bean class="org.springframework.data.mongodb.core.MongoExceptionTranslator"/>
 

@@ -11,8 +11,8 @@ import com.rozarltd.module.betfairapi.domain.market.BetfairMarket;
 import com.rozarltd.module.betfairapi.domain.market.BetfairMarketPrices;
 import com.rozarltd.module.betfairapi.internal.BetfairSessionToken;
 import com.rozarltd.module.betfairapi.internal.factory.BFExchangeAPIRequestFactory;
-import com.rozarltd.module.betfairapi.internal.mapper.betfair.BFTypeMapperManager;
 import com.rozarltd.module.betfairapi.internal.mapper.ObjectTypeMapperManager;
+import com.rozarltd.module.betfairapi.internal.mapper.betfair.BFTypeMapperManager;
 import com.rozarltd.module.betfairapi.internal.parser.GetAllMarketResponseDataParser;
 import com.rozarltd.module.betfairapi.stub.domain.BetfairGlobalApiResponseFixtures;
 import com.rozarltd.module.betfairapi.stub.domain.BetfairMarkets;
@@ -39,7 +39,7 @@ public class BetfairMarketServiceTest {
     private GetAllMarketResponseDataParser getAllMarketResponseDataParser = new GetAllMarketResponseDataParser();
     private ObjectTypeMapperManager objectTypeMapperManager = new BFTypeMapperManager();
     @Mock private BFExchangeService exchangeApiService;
-    @Mock private AccountService accountService;
+    @Mock private BetfairAccountApi accountService;
 
     @Before
     public void beforeEach() {

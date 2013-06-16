@@ -1,6 +1,6 @@
 package com.rozarltd.betting.portal.tennis.web.betfair.controller;
 
-import com.rozarltd.account.User;
+import com.rozarltd.account.BetfairUser;
 import com.rozarltd.betting.portal.tennis.web.Routing;
 import com.rozarltd.betting.portal.tennis.web.service.UserService;
 import com.rozarltd.module.bettingdata.service.UserBettingDataCollectorService;
@@ -37,7 +37,7 @@ public class BetfairUserDailyBettingReportController {
     public RedirectView createDailyBettingReport(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date reportDate,
                                                  HttpServletRequest request) {
 
-        User currentUser = userService.getCurrentUser(request);
+        BetfairUser currentUser = userService.getCurrentUser(request);
         bettingDataCollectorService.createDailyBettingSummaryReport(currentUser, reportDate);
 
         return new RedirectView(Routing.CONFIRMATION);

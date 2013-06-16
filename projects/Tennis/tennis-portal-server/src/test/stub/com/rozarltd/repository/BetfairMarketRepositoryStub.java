@@ -4,7 +4,6 @@ import com.rozarltd.module.betfairapi.domain.market.BetfairMarket;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 public class BetfairMarketRepositoryStub implements BetfairMarketRepository {
@@ -22,27 +21,34 @@ public class BetfairMarketRepositoryStub implements BetfairMarketRepository {
         return stubbedMarkets;
     }
 
-    @Override
-    public List<BetfairMarket> findMarkets(long startDate, long endDate) {
-        List<BetfairMarket> markets = new ArrayList<BetfairMarket>();
-        for(BetfairMarket market: stubbedMarkets) {
-            if(new Date(startDate).before(market.getStartAtDate()) && new Date(endDate).after(market.getStartAtDate())) {
-                markets.add(market);
-            }
-        }
-        return markets;
-    }
+//    @Override
+//    public List<BetfairMarket> findByStartAtBetween(long startDate, long endDate) {
+//        List<BetfairMarket> markets = new ArrayList<BetfairMarket>();
+//        for(BetfairMarket market: stubbedMarkets) {
+//            if(new Date(startDate).before(market.getStartAtDate()) && new Date(endDate).after(market.getStartAtDate())) {
+//                markets.add(market);
+//            }
+//        }
+//        return markets;
+//    }
+
 
     @Override
-    public BetfairMarket save(BetfairMarket entity) {
+    public <S extends BetfairMarket> S save(S entity) {
         stubbedMarkets.add(entity);
-        return entity;
+                return entity;
     }
 
     @Override
-    public Iterable<BetfairMarket> save(Iterable<? extends BetfairMarket> entities) {
-        throw new IllegalStateException("not supported method");
+    public <S extends BetfairMarket> Iterable<S> save(Iterable<S> entities) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
+
+    @Override
+    public Iterable<BetfairMarket> findAll(Iterable<Integer> integers) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
 
     @Override
     public BetfairMarket findOne(Integer integer) {
